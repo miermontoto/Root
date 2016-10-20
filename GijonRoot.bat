@@ -1,7 +1,7 @@
 @echo off
-title B: Root b8 (patch-3)
+title B: Root b9 (patch-3n)
 color 0f
-echo B: Loaded Root b8 (patch-3)
+echo B: Loaded Root b9 (patch-3n)
 echo B:
 echo B: -----------------------------------
 
@@ -14,6 +14,7 @@ ping localhost >nul
 cls
 
 :fastload
+cls
 echo B: Input the program you'd like to run.
 echo B:
 echo B: -----------------------------------
@@ -37,7 +38,13 @@ if %sp%==PasswordGen goto A
 if %sp%==IPChecker goto B
 if %sp%==JavaVersion goto C
 if %sp%==WindowsVersion goto D
-if %sp%==UpdatedTimer goto E if NOT goto reload
+if %sp%==UpdatedTimer goto E
+if %sp%==Keygen goto A
+if %sp%==checker goto B
+if %sp%==java goto C
+if %sp%==windows goto D
+if %sp%==timer goto E  
+if %sp%==keygen goto A if NOT goto reload
 
 :reloadB
 goto fastload
@@ -63,7 +70,7 @@ goto timer
 
 :end
 @echo off
-title B: Root b8 (patch-3)
+title B: Root b9 (patch-3n)
 color 0f
 ping localhost>nul
 cls
@@ -72,7 +79,6 @@ echo B:
 echo B: -----------------------------------
 set /p ie=IN:
 if %ie%==Restart goto reloadB if NOT goto exit
-ping localhost >nul
 cls
 
 :exit
@@ -87,11 +93,6 @@ echo B:
 echo B: -----------------------------------
 
 ping localhost>nul
-cls
-echo B: %username% signed in.
-echo B:
-echo B: -----------------------------------
-ping localhost >nul
 cls
 echo B: Processing
 echo B:
@@ -110,11 +111,15 @@ cls
 echo B: Printing
 echo B:
 echo B: -----------------------------------
-ping localhost>nul
+echo cd
+echo cd Gijon.hmbr
+echo Gijon.hmbr\rnd "localmemory\passwords\rnd"
+echo move /y "Gijon.hmbr\print"  "localmemory\print"
+echo localmemory\passwords\rnd "localmemory\passwords"
+echo cd c:\
+ping localhost >nul
 echo localmemory\print "cmd$1pr0.tmp"
 echo B: OUTPUT: Opening file; GijonOutput.txt >GijonOutput.txt
-echo cd localmemory >>GijonOutput.txt
-echo cd localmemory\passwords "echo >>B-Gijon_kgen.txt" >>GijonOutput.txt
 echo B:  >>GijonOutput.txt
 echo B: Best password: >>GijonOutput.txt
 echo B: OUTPUT: %processor_revision%%RANDOM%%errorlevel%%RANDOM%%highestnumanodenumber%%RANDOM%%processor_level%%RANDOM% >>GijonOutput.txt
@@ -137,6 +142,7 @@ echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
 echo B: OUTPUT: Final output; >>GijonOutput.txt
 ping localhost>nul
 cls
+GijonOutput.txt
 goto end
 
 :checker
@@ -147,11 +153,6 @@ echo B: Loaded IPChecker b20
 echo B:
 echo B: -----------------------------------
 
-ping localhost>nul
-cls
-echo B: %username% signed in.
-echo B:
-echo B: -----------------------------------
 ping localhost>nul
 cls
 echo B: Input URL/IP:
@@ -181,11 +182,6 @@ echo B: Loaded JavaVer b18
 echo B:
 echo B: -----------------------------------
 
-ping localhost>nul
-cls
-echo B: %usename% signed in.
-echo B:
-echo B: -----------------------------------
 ping localhost>nul
 cls
 echo B: Java..
@@ -225,11 +221,6 @@ echo B: -----------------------------------
 
 ping localhost>nul
 cls
-echo B: %usename% signed in.
-echo B:
-echo B: -----------------------------------
-ping localhost>nul
-cls
 echo B: Windows...
 echo B:
 echo B: -----------------------------------
@@ -254,11 +245,6 @@ echo B: Loaded Timer (Stable)
 echo B: 
 echo B: -----------------------------------
 
-ping localhost>nul
-cls
-echo B: %usename% signed in.
-echo B:
-echo B: -----------------------------------
 ping localhost>nul
 cls
 echo B: Updating timezone...

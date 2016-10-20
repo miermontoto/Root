@@ -1,24 +1,24 @@
 @echo off
-title B: Root b7 (patch-2)
+title B: Root b8 (patch-3)
 color 0f
-echo B: Loaded Root b7 (patch-2)
+echo B: Loaded Root b8 (patch-3)
 echo B:
 echo B: -----------------------------------
 
 ping localhost>nul
 cls
-echo B: Hello there, %username%.
+echo B: %username% signed in.
 echo B:
 echo B: -----------------------------------
 ping localhost >nul
 cls
 
 :fastload
-echo B: Please select the program you'd like to run.
+echo B: Input the program you'd like to run.
 echo B:
 echo B: -----------------------------------
 echo B: 
-echo B: Select [KeyGen],[Checker],[Java],[Windows],[Timer].
+echo B: [KeyGen] [Checker] [Java] [Windows] [Timer]
 echo B:
 echo B: -----------------------------------
 set /p sp=IN:
@@ -62,7 +62,9 @@ cls
 goto timer
 
 :end
-title B: Root b7 (patch-2)
+@echo off
+title B: Root b8 (patch-3)
+color 0f
 ping localhost>nul
 cls
 echo B: Select [Restart] or [Exit]
@@ -78,20 +80,20 @@ exit
 
 :keygen
 @echo off
-title B: KeyGen b22
+title B: KeyGen b25
 color 0f
-echo B: Loaded KeyGen b22
+echo B: Loaded KeyGen b25
 echo B:
 echo B: -----------------------------------
 
 ping localhost>nul
 cls
-echo B: Hello there, %username%.
+echo B: %username% signed in.
 echo B:
 echo B: -----------------------------------
 ping localhost >nul
 cls
-echo B: Generating
+echo B: Processing
 echo B:
 echo B: -----------------------------------
 echo cd
@@ -105,84 +107,83 @@ echo localmemory\passwords\rnd "localmemory\passwords"
 echo cd c:\
 ping localhost >nul
 cls
-echo B: Printing...
+echo B: Printing
 echo B:
 echo B: -----------------------------------
 ping localhost>nul
 echo localmemory\print "cmd$1pr0.tmp"
-echo B: OUTPUT: Opening/creating file; B-Gijon_kgen.txt >B-Gijon_kgen.txt
-echo B~ output~ (c) Gijon [do not sell $#commabuy $#commadistribute $#commacopy] gpnu-com>>B-Gijon_kgen.txt
-echo B: OUTPUT: Ready to send passwords; >>B-Gijon_kgen.txt
-echo B: First ones = Safiest ones; >>B-Gijon_kgen.txt
-echo cd localmemory >>B-Gijon_kgen.txt
-echo cd localmemory\passwords "echo >>B-Gijon_kgen.txt" >>B-Gijon_kgen.txt
-echo B:  >>B-Gijon_kgen.txt
-echo B: Best password: >>B-Gijon_kgen.txt
-echo B: OUTPUT: %processor_revision%%RANDOM%%errorlevel%%RANDOM%%highestnumanodenumber%%RANDOM%%processor_level%%RANDOM% >>B-Gijon_kgen.txt
-echo B: >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>B-Gijon_kgen.txt
-echo B: OUTPUT: Final output from rnd; >>B-Gijon_kgen.txt
-echo B: OUTPUT: Final output from Gijon; >>B-Gijon_kgen.txt
+echo B: OUTPUT: Opening file; GijonOutput.txt >GijonOutput.txt
+echo cd localmemory >>GijonOutput.txt
+echo cd localmemory\passwords "echo >>B-Gijon_kgen.txt" >>GijonOutput.txt
+echo B:  >>GijonOutput.txt
+echo B: Best password: >>GijonOutput.txt
+echo B: OUTPUT: %processor_revision%%RANDOM%%errorlevel%%RANDOM%%highestnumanodenumber%%RANDOM%%processor_level%%RANDOM% >>GijonOutput.txt
+echo B: >>GijonOutput.txt
+echo B: Generic passwords: >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: OUTPUT: Final output; >>GijonOutput.txt
 ping localhost>nul
 cls
 goto end
 
 :checker
 @echo off
-title B: IPChecker b19
+title B: IPChecker b20
 color 0f
-echo B: Loaded IPChecker b19
+echo B: Loaded IPChecker b20
 echo B:
 echo B: -----------------------------------
 
 ping localhost>nul
 cls
-echo B: Hello there, %username%.
+echo B: %username% signed in.
 echo B:
 echo B: -----------------------------------
 ping localhost>nul
 cls
-echo B: Please input URL/IP:
+echo B: Input URL/IP:
 echo B:
 echo B: -----------------------------------
 set /p ip=IN:
 cls
-echo B: Set target to "%ip%".
+echo B: Targeted [%ip%]
 echo B:
 echo B: -----------------------------------
 ping localhost>nul
 cls
-echo B: Pinging to "%ip%" 16 times.
+echo B: Pinging with 65000bytes power
 echo B:
 echo B: -----------------------------------
 ping localhost>nul
-ping %ip% -n 10
+ping localhost>nul
+ping localhost>nul
+ping %ip% -l 65000 -t
 goto end
 
 :javaver
 @echo off
-title B: JavaVer b17
+title B: JavaVer b18
 color 0f
-echo B: Loaded JavaVer b17
+echo B: Loaded JavaVer b18
 echo B:
 echo B: -----------------------------------
 
 ping localhost>nul
 cls
-echo B: Hello there, %username%.
+echo B: %usename% signed in.
 echo B:
 echo B: -----------------------------------
 ping localhost>nul
@@ -216,12 +217,17 @@ goto end
 
 :winver
 @echo off
-title B: WinVer (derivated from JavaVer b17)
+title B: WinVer (derivated from JavaVer)
 color 0f
-echo B: Loaded WinVer b17
+echo B: Loaded WinVer b18
 echo B:
 echo B: -----------------------------------
 
+ping localhost>nul
+cls
+echo B: %usename% signed in.
+echo B:
+echo B: -----------------------------------
 ping localhost>nul
 cls
 echo B: Windows...
@@ -250,8 +256,7 @@ echo B: -----------------------------------
 
 ping localhost>nul
 cls
-veecho (c) 2016 Gijon. All rights reserved.
-echo B: Hello there, %username%.
+echo B: %usename% signed in.
 echo B:
 echo B: -----------------------------------
 ping localhost>nul

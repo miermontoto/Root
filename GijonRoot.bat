@@ -1,7 +1,22 @@
 @echo off
-title B: Root b9 (patch-3n)
-color 0f
-echo B: Loaded Root b9 (patch-3n)
+set Bversion=Root b11 (patch-4)
+set Bstatus=Stable
+set Bcolor=f0
+set Bkeygencolor=a0
+set Bkeygenversion=KeyGen b26
+set Bcheckercolor=e0
+set Bcheckerversion=IPChecker b21
+set Bjavaverversion=JavaVer b19
+set Bjavavercolor=d0
+set Bwinvercolor=b0
+set Bwinverversion=WinVer b18
+set Btimercolor=c0
+set Btimerversion=Timer (Beta)
+set Bbatexeccolor=1f
+set Bbatexecversion=BatExec (alpha)
+color %Bcolor%
+title B: %bversion% (%Bstatus%)
+echo B: Loaded %bversion% (%Bstatus%)
 echo B:
 echo B: -----------------------------------
 
@@ -13,7 +28,7 @@ echo B: -----------------------------------
 ping localhost >nul
 cls
 
-:fastload
+:restart
 cls
 echo B: Input the program you'd like to run.
 echo B:
@@ -24,61 +39,19 @@ echo B:
 echo B: -----------------------------------
 set /p sp=IN:
 
-if %sp%==KeyGen goto A
-if %sp%==Checker goto B
-if %sp%==Java goto C
-if %sp%==Windows goto D
-if %sp%==Timer goto E  
-if %sp%==KeyGenerator goto A
-if %sp%==IPChecker goto B
-if %sp%==JavaVer goto C
-if %sp%==WindowsVer goto D
-if %sp%==CallTimer goto E 
-if %sp%==PasswordGen goto A
-if %sp%==IPChecker goto B
-if %sp%==JavaVersion goto C
-if %sp%==WindowsVersion goto D
-if %sp%==UpdatedTimer goto E
-if %sp%==Keygen goto A
-if %sp%==checker goto B
-if %sp%==java goto C
-if %sp%==windows goto D
-if %sp%==timer goto E  
-if %sp%==keygen goto A if NOT goto reload
-
-:reloadB
-goto fastload
-
-:A
-cls
-goto keygen
-
-:B
-cls
-goto checker
-:C
-cls
-goto javaver
-
-:D
-cls
-goto winver
-
-:E
-cls
-goto timer
+goto %sp%
 
 :end
 @echo off
-title B: Root b9 (patch-3n)
-color 0f
+title B: %Bversion% (%Bstatus%)
+color %Bcolor%
 ping localhost>nul
 cls
-echo B: Select [Restart] or [Exit]
+echo B: Task ended. Select [Restart] or [Exit] to continue.
 echo B:
 echo B: -----------------------------------
 set /p ie=IN:
-if %ie%==Restart goto reloadB if NOT goto exit
+goto %ie%
 cls
 
 :exit
@@ -86,15 +59,15 @@ exit
 
 :keygen
 @echo off
-title B: KeyGen b25
-color 0f
-echo B: Loaded KeyGen b25
+cls
+title B: %Bkeygenversion%
+color %Bkeygencolor%
+echo B: Loaded %Bkeygenversion%
 echo B:
 echo B: -----------------------------------
-
 ping localhost>nul
 cls
-echo B: Processing
+echo B: Processing...
 echo B:
 echo B: -----------------------------------
 echo cd
@@ -108,14 +81,14 @@ echo localmemory\passwords\rnd "localmemory\passwords"
 echo cd c:\
 ping localhost >nul
 cls
-echo B: Printing
+echo B: Printing...
 echo B:
 echo B: -----------------------------------
 echo cd
 echo cd Gijon.hmbr
-echo Gijon.hmbr\rnd "localmemory\passwords\rnd"
-echo move /y "Gijon.hmbr\print"  "localmemory\print"
-echo localmemory\passwords\rnd "localmemory\passwords"
+echo move /y Gijon.hmbr\rnd localmemory\passwords\rnd
+echo move /y Gijon.hmbr\print localmemory\print
+echo localmemory\passwords\rnd localmemory\passwords
 echo cd c:\
 ping localhost >nul
 echo localmemory\print "cmd$1pr0.tmp"
@@ -139,6 +112,7 @@ echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
 echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
 echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
 echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
+echo B: >>GijonOutput.txt
 echo B: OUTPUT: Final output; >>GijonOutput.txt
 ping localhost>nul
 cls
@@ -147,12 +121,12 @@ goto end
 
 :checker
 @echo off
-title B: IPChecker b20
-color 0f
-echo B: Loaded IPChecker b20
+cls
+title B: %Bcheckerversion%
+color %Bcheckerversion%
+echo B: Loaded %Bcheckerversion%
 echo B:
 echo B: -----------------------------------
-
 ping localhost>nul
 cls
 echo B: Input URL/IP:
@@ -165,7 +139,7 @@ echo B:
 echo B: -----------------------------------
 ping localhost>nul
 cls
-echo B: Pinging with 65000bytes power
+echo B: Pinging with 65000bytes power...
 echo B:
 echo B: -----------------------------------
 ping localhost>nul
@@ -176,15 +150,15 @@ goto end
 
 :javaver
 @echo off
-title B: JavaVer b18
-color 0f
-echo B: Loaded JavaVer b18
+cls
+title B: %Bjavaverversion%
+color %Bjavavercolor%
+echo B: Loaded %Bjavaverversion%
 echo B:
 echo B: -----------------------------------
-
 ping localhost>nul
 cls
-echo B: Java..
+echo B: Java...
 echo B:
 echo B: -----------------------------------
 ping localhost>nul
@@ -200,7 +174,7 @@ echo B: -----------------------------------
 ping localhost>nul
 ping localhost>nul
 cls
-echo B: Displaying Java version(s).
+echo B: Displaying Java info.
 echo B:
 echo B: -----------------------------------
 echo B:
@@ -213,9 +187,9 @@ goto end
 
 :winver
 @echo off
-title B: WinVer (derivated from JavaVer)
-color 0f
-echo B: Loaded WinVer b18
+color %Bwinvercolor%
+title B: %Bwinverversion%
+echo B: Loaded %Bwinverversion%
 echo B:
 echo B: -----------------------------------
 
@@ -239,9 +213,9 @@ goto end
 
 :timer
 @echo off
-title B: Timer (Stable)
-color 0f
-echo B: Loaded Timer (Stable)
+title B: %Btimerversion%
+color %Btimercolor%
+echo B: Loaded %Btimerversion%
 echo B: 
 echo B: -----------------------------------
 
@@ -259,3 +233,26 @@ echo B: %time% ; %date% .
 echo B: 
 echo B: -----------------------------------
 goto reload
+
+:batexec
+@echo off
+cls
+title B: %Bbatexecversion%
+color %Bbatexeccolor%
+echo B: Loaded %Bbatexecversion%
+echo B:
+echo B: -----------------------------------
+
+ping localhost>nul
+cls
+echo B: %username% signed in.
+echo B:
+echo B: -----------------------------------
+ping localhost >nul
+cls
+set /p bp=Bat File:
+echo Replied %bp%.bat 
+set /p ep=Exe File:
+echo Replied %ep%.exe
+npocmaka-bat2exe.bat  %bp%.bat %ep%.exe
+del *.DDF

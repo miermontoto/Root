@@ -1,55 +1,68 @@
-@echo off
-set Bversion=Root b11 (patch-4)
-set Bstatus=Stable
+set Bversion=Root b16
+set Bpatch=patch-5
+set Bstatus=beta
 set Bcolor=f0
+set Bnull=G#
+set Bspacer=G# ===================================
+set Blink=youtube.com/underscoreBis
 set Bkeygencolor=a0
-set Bkeygenversion=KeyGen b26
-set Bcheckercolor=e0
-set Bcheckerversion=IPChecker b21
+set Bkeygenversion=Randomizer b30
+set Bkeygenoutput=G#$dir1%output.txt
+set Bcheckeroutput=G#$dir2%output.txt
+set Bcheckercolor=a0
+set Bcheckerversion=Pinger b29
 set Bjavaverversion=JavaVer b19
-set Bjavavercolor=d0
+set Bjavavercolor=b0
 set Bwinvercolor=b0
 set Bwinverversion=WinVer b18
-set Btimercolor=c0
-set Btimerversion=Timer (Beta)
-set Bbatexeccolor=1f
+set Btimercolor=f0
+set Btimerversion=Timer I
+set Bbatexeccolor=c0
 set Bbatexecversion=BatExec (alpha)
+set Bformatcolor=e0
+set Bformatversion=Format (indev)
+echo off
+cls
+title %Blink%
+color a0
+ping localhost /n 1 >nul
+color b0
+ping localhost /n 1 >nul
+color c0
+ping localhost /n 1 >nul
 color %Bcolor%
-title B: %bversion% (%Bstatus%)
-echo B: Loaded %bversion% (%Bstatus%)
-echo B:
-echo B: -----------------------------------
-
+ping localhost >nul
+cls
+title %bversion%
+echo %Bnull% Loaded %bversion% (%Bpatch% %Bstatus%)
+echo %Bnull%
+echo %Bspacer%
 ping localhost>nul
 cls
-echo B: %username% signed in.
-echo B:
-echo B: -----------------------------------
+echo %Bnull% %username% signed in.
+echo %Bnull%
+echo %Bspacer%
 ping localhost >nul
 cls
 
 :restart
 cls
-echo B: Input the program you'd like to run.
-echo B:
-echo B: -----------------------------------
-echo B: 
-echo B: [KeyGen] [Checker] [Java] [Windows] [Timer]
-echo B:
-echo B: -----------------------------------
+echo %Bnull% Input the program you'd like to run.
+echo %Bnull%
+echo %Bspacer%
+echo %Bnull% $#randomizer,pinger,javaver,winver,timer,batexec;
 set /p sp=IN:
-
+cls
 goto %sp%
 
 :end
 @echo off
-title B: %Bversion% (%Bstatus%)
+title %Bversion%
 color %Bcolor%
-ping localhost>nul
 cls
-echo B: Task ended. Select [Restart] or [Exit] to continue.
-echo B:
-echo B: -----------------------------------
+echo %Bnull% Task ended. Select [Restart] or [Exit] to continue.
+echo %Bnull%
+echo %Bspacer%
 set /p ie=IN:
 goto %ie%
 cls
@@ -60,30 +73,39 @@ exit
 :keygen
 @echo off
 cls
-title B: %Bkeygenversion%
-color %Bkeygencolor%
-echo B: Loaded %Bkeygenversion%
-echo B:
-echo B: -----------------------------------
 ping localhost>nul
+color a0
+ping localhost /n 1 >nul
+color b0
+ping localhost /n 1 >nul
+color c0
+ping localhost /n 1 >nul
 cls
-echo B: Processing...
-echo B:
-echo B: -----------------------------------
+title %Blink%
+color %Bkeygencolor%
+echo %Bnull% Loaded %Bkeygenversion%
+echo %Bnull%
+echo %Bspacer%
+ping localhost>nul
+title %Bversion% - %Bkeygenversion%
+cls
+echo %Bnull% Processing...
+echo %Bnull%
+echo %Bspacer%
 echo cd
 echo cd Gijon.hmbr
 ping localhost>nul
-echo Gijon.hmbr\rnd "localmemory\passwords\rnd"
+echo move /y Gijon.hmbr\rnd localmemory\passwords\rnd
 ping localhost>nul
-echo move /y "Gijon.hmbr\print"  "localmemory\print"
+echo move /y Gijon.hmbr\print localmemory\print
 ping localhost>nul
-echo localmemory\passwords\rnd "localmemory\passwords"
+echo localmemory\passwords\rnd localmemory\passwords
 echo cd c:\
 ping localhost >nul
 cls
-echo B: Printing...
-echo B:
-echo B: -----------------------------------
+echo %Bnull% Printing...
+echo %Bnull%
+echo %Bspacer%
 echo cd
 echo cd Gijon.hmbr
 echo move /y Gijon.hmbr\rnd localmemory\passwords\rnd
@@ -92,92 +114,191 @@ echo localmemory\passwords\rnd localmemory\passwords
 echo cd c:\
 ping localhost >nul
 echo localmemory\print "cmd$1pr0.tmp"
-echo B: OUTPUT: Opening file; GijonOutput.txt >GijonOutput.txt
-echo B:  >>GijonOutput.txt
-echo B: Best password: >>GijonOutput.txt
-echo B: OUTPUT: %processor_revision%%RANDOM%%errorlevel%%RANDOM%%highestnumanodenumber%%RANDOM%%processor_level%%RANDOM% >>GijonOutput.txt
-echo B: >>GijonOutput.txt
-echo B: Generic passwords: >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: OUTPUT: %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>GijonOutput.txt
-echo B: >>GijonOutput.txt
-echo B: OUTPUT: Final output; >>GijonOutput.txt
+ping localhost >nul
+echo %Bnull% Output file; %Bkeygenoutput% >%Bkeygenoutput%
+echo %Bnull% >>%Bkeygenoutput%
+echo %Bnull% Best random password: >>%Bkeygenoutput%
+echo %Bnull% =%processor_revision%%RANDOM%%errorlevel%%RANDOM%%highestnumanodenumber%%RANDOM%%processor_level%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% >>%Bkeygenoutput%
+echo %Bnull% Generic passwords: >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% >>%Bkeygenoutput%
+echo %Bnull% Final output; >>%Bkeygenoutput%
 ping localhost>nul
 cls
-GijonOutput.txt
+%Bkeygenoutput%
 goto end
 
 :checker
+:pinger
 @echo off
 cls
-title B: %Bcheckerversion%
-color %Bcheckerversion%
-echo B: Loaded %Bcheckerversion%
-echo B:
-echo B: -----------------------------------
 ping localhost>nul
+color a0
+ping localhost /n 1 >nul
+color b0
+ping localhost /n 1 >nul
+color c0
+ping localhost /n 1 >nul
 cls
-echo B: Input URL/IP:
-echo B:
-echo B: -----------------------------------
+title %Blink%
+color %Bcheckercolor%
+echo %Bnull% Loaded %Bcheckerversion%
+echo %Bnull%
+echo %Bspacer%
+ping localhost>nul
+title %Bversion% - %Bcheckerversion%
+cls
+echo %Bnull% Select option:
+echo %Bnull%
+echo %Bspacer%
+echo %Bnull%
+echo %Bnull% $#LOLeuw,LOLna,google,speedtest,custom;
 set /p ip=IN:
+goto %ip%
+exit
 cls
-echo B: Targeted [%ip%]
-echo B:
-echo B: -----------------------------------
+
+:loleuw
+set ip2=prod.euw1.lol.riotgames.com
+goto final
+
+:lolna
+set ip2=192.64.170.1
+goto final
+
+:google
+set ip2=google.com
+goto final
+
+:speedtest
+set ip2=speedtest.net
+goto final
+
+:custom
+echo %Bnull% Input custom URL/IP:
+echo %Bnull%
+echo %Bspacer%
+set /p ip2=IN:
+goto final
+
+:final
+cls
+echo %Bnull% Selected [%ip2%]
+echo %Bnull%
+echo %Bspacer%
+echo setlocal
+ping localhost /n 2 >nul
+echo cd Gijon.hmbr
+echo set %ip2%=Gijon.hmbr\%ip%
+ping localhost /n 3 >nul
+echo endlocal
+ping localhost >nul
+echo Gijon.hmbr\ :requestping
+ping localhost >nul
 ping localhost>nul
 cls
-echo B: Pinging with 65000bytes power...
-echo B:
-echo B: -----------------------------------
+echo %Bnull% Pinging.
+echo %Bnull%
+echo %Bspacer%
+echo setlocal
+echo cd Gijon.hmbr
+echo set %ip2%=Gijon.hmbr\%ip%
+echo endlocal
+echo Gijon.hmbr\ :requestping
+echo Gijon.hmbr\ :ping
 ping localhost>nul
-ping localhost>nul
-ping localhost>nul
-ping %ip% -l 65000 -t
+echo %bnull% Results from pinging task to %ip2%. Printing to %Bcheckeroutput% >%Bcheckeroutput%
+echo %bnull% Testing hosts and tracers... >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %Bspacer% >>%Bcheckeroutput%
+echo %bnull% =TRACERT: >>%Bcheckeroutput%
+tracert %ip2% >>%Bcheckeroutput% >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bspacer% >>%Bcheckeroutput%
+echo %bnull% =IPCONFIG: >>%Bcheckeroutput%
+ipconfig >nul >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bspacer% >>%Bcheckeroutput%
+echo %bnull% =1B PING:  (min. ping)>>%Bcheckeroutput%
+ping %ip2% /l 10 >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bspacer% >>%Bcheckeroutput%
+echo %bnull% =65KB PING: (max. ping) >>%Bcheckeroutput%
+ping %ip2% -l 65000 >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bspacer% >>%Bcheckeroutput%
+echo %bnull% =32KB PING: (real ping) >>%Bcheckeroutput%
+ping %ip2% -l 32000 >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bnull% >>%Bcheckeroutput%
+echo %bnull% Final output; >>%Bcheckeroutput%
+%Bcheckeroutput%
+cls
 goto end
 
 :javaver
 @echo off
 cls
-title B: %Bjavaverversion%
+ping localhost>nul
+color a0
+ping localhost /n 1 >nul
+color b0
+ping localhost /n 1 >nul
+color c0
+ping localhost /n 1 >nul
+cls
+title %Blink%
 color %Bjavavercolor%
-echo B: Loaded %Bjavaverversion%
-echo B:
-echo B: -----------------------------------
+echo %Bnull% Loaded %Bjavaverversion%
+echo %Bnull%
+echo %Bspacer%
+ping localhost>nul
+title %Bversion% - %Bjavaverversion%
+cls
+echo %Bnull% Java...
+echo %Bnull%
+echo %Bspacer%
 ping localhost>nul
 cls
-echo B: Java...
-echo B:
-echo B: -----------------------------------
+echo %Bnull% Java SE-Runtime...
+echo %Bnull%
+echo %Bspacer%
 ping localhost>nul
 cls
-echo B: Java SE-Runtime...
-echo B:
-echo B: -----------------------------------
-ping localhost>nul
-cls
-echo B: Java VM-HotSpot...
-echo B:
-echo B: -----------------------------------
+echo %Bnull% Java VM-HotSpot...
+echo %Bnull%
+echo %Bspacer%
 ping localhost>nul
 ping localhost>nul
 cls
-echo B: Displaying Java info.
-echo B:
-echo B: -----------------------------------
-echo B:
+echo %Bnull% Displaying Java info.
+echo %Bnull%
+echo %Bspacer%
 java -version
 ping localhost>nul
 ping localhost>nul
@@ -187,22 +308,31 @@ goto end
 
 :winver
 @echo off
-color %Bwinvercolor%
-title B: %Bwinverversion%
-echo B: Loaded %Bwinverversion%
-echo B:
-echo B: -----------------------------------
-
-ping localhost>nul
 cls
-echo B: Windows...
-echo B:
-echo B: -----------------------------------
+ping localhost>nul
+color a0
+ping localhost /n 1 >nul
+color b0
+ping localhost /n 1 >nul
+color c0
+ping localhost /n 1 >nul
+cls
+color %Bwinvercolor%
+title %Blink%
+echo %Bnull% Loaded %Bwinverversion%
+echo %Bnull%
+echo %Bspacer%
+ping localhost>nul
+title %Bversion% - %Bwinverversion%
+cls
+echo %Bnull% Windows...
+echo %Bnull%
+echo %Bspacer%
 ping localhost >nul
 cls
-echo B: Windows version:
-echo B:
-echo B: -----------------------------------
+echo %Bnull% Windows version:
+echo %Bnull%
+echo %Bspacer%
 ver
 winver
 ping localhost>nul
@@ -212,43 +342,56 @@ ping localhost>nul
 goto end
 
 :timer
-@echo off
-title B: %Btimerversion%
-color %Btimercolor%
-echo B: Loaded %Btimerversion%
-echo B: 
-echo B: -----------------------------------
-
 ping localhost>nul
+@echo off
 cls
-echo B: Updating timezone...
-echo B:
-echo B: -----------------------------------
+ping localhost>nul
+color a0
+ping localhost /n 1 >nul
+color b0
+ping localhost /n 1 >nul
+color c0
+ping localhost /n 1 >nul
+cls
+title %Blink%
+color %Btimercolor%
+echo %Bnull% Loaded %Btimerversion%
+echo %Bnull%
+echo %Bspacer%
+ping localhost>nul
+title %Bversion% - %Btimerversion%
+cls
+echo %Bnull% Updating timezone...
+echo %Bnull%
+echo %Bspacer%
 ping localhost>nul
 cls
 :reload
 ping localhost /n 1 >nul
 cls
-echo B: %time% ; %date% .
-echo B: 
-echo B: -----------------------------------
+echo %Bnull% %time% ; %date% .
+echo %Bnull%
+echo %Bspacer%
 goto reload
 
 :batexec
 @echo off
 cls
-title B: %Bbatexecversion%
-color %Bbatexeccolor%
-echo B: Loaded %Bbatexecversion%
-echo B:
-echo B: -----------------------------------
-
 ping localhost>nul
+color a0
+ping localhost /n 1 >nul
+color b0
+ping localhost /n 1 >nul
+color c0
+ping localhost /n 1 >nul
 cls
-echo B: %username% signed in.
-echo B:
-echo B: -----------------------------------
-ping localhost >nul
+title %Blink%
+color %Bbatexeccolor%
+echo %Bnull% Loaded %Bbatexecversion%
+echo %Bnull%
+echo %Bspacer%
+ping localhost>nul
+title %Bversion% - %Bbatexecversion%
 cls
 set /p bp=Bat File:
 echo Replied %bp%.bat 
@@ -256,3 +399,26 @@ set /p ep=Exe File:
 echo Replied %ep%.exe
 npocmaka-bat2exe.bat  %bp%.bat %ep%.exe
 del *.DDF
+
+:format
+@echo off
+cls
+ping localhost>nul
+color a0
+ping localhost /n 1 >nul
+color b0
+ping localhost /n 1 >nul
+color c0
+ping localhost /n 1 >nul
+cls
+title %Blink%
+color %Bformatcolor%
+echo %bnull% Loaded %Bformatversion%
+echo %bnull%
+echo %bspacer%
+ping localhost>nul
+title %Bversion% - %Bformatversion%
+cls
+goto end
+
+

@@ -1,6 +1,12 @@
-# BasicGijon
+#BasicGijon
+Basic project using what used to be basic/qbasic. (now bat)
 
-Project using BASIC.
-I don't even know how to use github fully.
-Follow me on twitter: twitter.com/nn_Gijon
-Don't blame me if you find some bullshit in the files xd
+Started to made it just because.
+
+No installation needed. Just download and run.
+
+Feel free to submit a bug using the issue page.
+
+I am the only one making this.
+
+License: The Unlicensed. = Do what you want. I don't care.

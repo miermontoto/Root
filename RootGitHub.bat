@@ -1,7 +1,7 @@
 del *.DDF
 del *.tmp
-set Bversion=Root b18
-set Bpatch=patch-6
+set Bversion=Root b19
+set Bpatch=patch-5f
 set Bstatus=stable
 set Bcolor=f0
 set Bnull=G#
@@ -12,13 +12,13 @@ set Bkeygenversion=Randomizer b30
 set Bkeygenoutput=G#$dir1%output.txt
 set Bcheckeroutput=G#$dir2%output.txt
 set Bcheckercolor=a0
-set Bcheckerversion=Pinger b29
-set Bjavaverversion=JavaVer b19
+set Bcheckerversion=Pinger b30
+set Bjavaverversion=JavaVer b20
 set Bjavavercolor=b0
 set Bwinvercolor=b0
 set Bwinverversion=WinVer b18
 set Btimercolor=f0
-set Btimerversion=Timer II
+set Btimerversion=Timer I
 set Bbatexeccolor=c0
 set Bbatexecversion=ECXE (indev)
 echo off
@@ -51,7 +51,6 @@ echo %Bnull% Input the program you'd like to run.
 echo %Bnull%
 echo %Bspacer%
 echo %Bnull% $#randomizer,pinger,javaver,winver,timer;
-echo %bnull% $#ECXE; #not working until next updates#
 set /p sp=IN:
 cls
 goto %sp%
@@ -212,7 +211,6 @@ echo endlocal
 ping localhost >nul
 echo Gijon.hmbr\ :requestping
 ping localhost >nul
-ping localhost>nul
 cls
 echo %Bnull% Pinging.
 echo %Bnull%
@@ -235,33 +233,18 @@ echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bspacer% >>%Bcheckeroutput%
-echo %bnull% =IPCONFIG: >>%Bcheckeroutput%
-ipconfig >nul >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bspacer% >>%Bcheckeroutput%
-echo %bnull% =16B PING:  (min. ping)>>%Bcheckeroutput%
+echo %bnull% =16B PING:>>%Bcheckeroutput%
 ping %ip2% /l 16 >>%Bcheckeroutput%
-echo %bnull% >>%Bcheckeroutput%
-echo %bnull% >>%Bcheckeroutput%
-echo %bnull% >>%Bcheckeroutput%
-echo %bspacer% >>%Bcheckeroutput%
-echo %bnull% =65KB PING: (max. ping) >>%Bcheckeroutput%
-ping %ip2% -l 64000 >>%Bcheckeroutput%
-echo %bnull% >>%Bcheckeroutput%
-echo %bnull% >>%Bcheckeroutput%
-echo %bnull% >>%Bcheckeroutput%
-echo %bspacer% >>%Bcheckeroutput%
-echo %bnull% =32KB PING: (avg. ping) >>%Bcheckeroutput%
-ping %ip2% -l 32000 >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% Final output; >>%Bcheckeroutput%
 %Bcheckeroutput%
-//%ip2%
 cls
 goto end
 
@@ -298,9 +281,8 @@ echo %Bnull% Java VM-HotSpot...
 echo %Bnull%
 echo %Bspacer%
 ping localhost>nul
-ping localhost>nul
 cls
-echo %Bnull% Displaying Java info.
+echo %Bnull% Displaying.
 echo %Bnull%
 echo %Bspacer%
 java -version
@@ -371,10 +353,6 @@ echo %Bspacer%
 ping localhost>nul
 ping localhost>nul
 cls
-
-
-
-
 :reload
 ping localhost /n 1 >nul
 cls
@@ -382,6 +360,8 @@ echo %Bnull% %time% ; %date%
 echo %Bnull%
 echo %Bspacer%
 goto reload
+
+
 
 :ECXE
 @echo off
@@ -399,6 +379,11 @@ ping localhost>nul
 ping localhost>nul
 ping localhost>nul
 goto end
+
+rem Do not try to go ahead.
+rem Be warned.
+
+
 
 ping localhost>nul
 color a0

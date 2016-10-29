@@ -1,7 +1,7 @@
 del *.DDF
 del *.tmp
-set Bversion=Root b17
-set Bpatch=patch-5
+set Bversion=Root b18
+set Bpatch=patch-6
 set Bstatus=stable
 set Bcolor=f0
 set Bnull=G#
@@ -18,11 +18,9 @@ set Bjavavercolor=b0
 set Bwinvercolor=b0
 set Bwinverversion=WinVer b18
 set Btimercolor=f0
-set Btimerversion=Timer I
+set Btimerversion=Timer II
 set Bbatexeccolor=c0
-set Bbatexecversion=BatExec (alpha)
-set Bformatcolor=e0
-set Bformatversion=Format (indev)
+set Bbatexecversion=ECXE (indev)
 echo off
 cls
 title %Blink%
@@ -53,7 +51,7 @@ echo %Bnull% Input the program you'd like to run.
 echo %Bnull%
 echo %Bspacer%
 echo %Bnull% $#randomizer,pinger,javaver,winver,timer;
-echo %bnull% $#batexec; #not working until next updates#
+echo %bnull% $#ECXE; #not working until next updates#
 set /p sp=IN:
 cls
 goto %sp%
@@ -367,32 +365,39 @@ echo %Bspacer%
 ping localhost>nul
 title %Bversion% - %Btimerversion%
 cls
-echo %Bnull% Updating timezone...
+echo %Bnull% Loading files.
 echo %Bnull%
 echo %Bspacer%
 ping localhost>nul
+ping localhost>nul
 cls
+
+
+
+
 :reload
 ping localhost /n 1 >nul
 cls
-echo %Bnull% %time% ; %date% .
+echo %Bnull% %time% ; %date%
 echo %Bnull%
 echo %Bspacer%
 goto reload
 
-:batexec
+:ECXE
 @echo off
 cls
 endlocal
 
 rem Not working.
-rem Planned to work on it in patch-6/7
-rem Use the other method instead.
-rem Please do not try to use.
-rem Use the other method.
-echo NOT WORKING!
+rem npocmaka-bat2exe is being detected by some av.
+rem Please wait until I fix this or I find another method.
+rem Use at your own risk.
 echo Read the code.
 echo The application will restart.
+ping localhost>nul
+ping localhost>nul
+ping localhost>nul
+ping localhost>nul
 goto end
 
 ping localhost>nul

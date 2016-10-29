@@ -14,7 +14,7 @@ Feel free to submit a bug using the issue page.
 The Unlicensed. = Do what you want. I don't care.
 
 ###Social
- - (Twitter = @gijon_dev)[http://www.twitter.com/gijon_dev]
- - (YouTube = underscoreBis)[http://www.youtube.com/underscoreBis]
- - (LOL EUW = KIYF Bis)[http://euw.op.gg/summoner/userName=KIYF+Bis]
+ - [Twitter = @gijon_dev](http://www.twitter.com/gijon_dev)
+ - [YouTube = underscoreBis](http://www.youtube.com/underscoreBis)
+ - [LOL EUW = KIYF Bis](http://euw.op.gg/summoner/userName=KIYF+Bis)
 

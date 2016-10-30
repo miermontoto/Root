@@ -1,8 +1,7 @@
 #BasicGijon
 
 ##Project
-Basic project using what used to be basic/qbasic. (now bat)
-Started to made it just because.
+Basic project using what used to be basic/qbasic/gwbasic. (now bat)
 
 ##Installation
 No installation needed. Just download and run.

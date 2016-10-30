@@ -1,35 +1,45 @@
-del *.DDF
-del *.tmp
-set Bversion=Root b20
-set Bpatch=patch-5wa
-set Bstatus=stable
+rem This program is in no way affiliated with Microsoft Corporations.
+rem This is free to use or edit (Licensed by: unlicensed.org)
+rem Originally made by http://www.github.com/GijonDev
+rem Latest version of this product can be found on http://www.github.com/GijonDev/BasicGijon/releases
+
+tree C:\ /a
+set Bversion=Root b33
+set Bpatch=patch-6
+set Bstatus=beta
 set Bcolor=f0
-set Bnull=G#
-set Bspacer=G# ===================================
-set Blink=youtube.com/underscoreBis
+set Bnull=G:\
+set Bspacer=G:\ -----------------------------------
+set Blink=github.com/GijonDev
 set Bkeygencolor=a0
-set Bkeygenversion=Randomizer b30
+set Bkeygenversion=Randomizer b31
 set Bkeygenoutput=G#$dir1%output.txt
 set Bcheckeroutput=G#$dir2%output.txt
+set Btimeroutput=G#$dir3%output.bat
+set Bwinveroutput=G#$dir4%output.txt
 set Bcheckercolor=a0
-set Bcheckerversion=Pinger b30
+set Bcheckerversion=Pinger b32
 set Bjavaverversion=JavaVer b20
 set Bjavavercolor=b0
 set Bwinvercolor=b0
-set Bwinverversion=WinVer b18
+set Bwinverversion=System b22
 set Btimercolor=f0
-set Btimerversion=Timer I
+set Btimerversion=Timer II
 set Bbatexeccolor=c0
 set Bbatexecversion=ECXE (indev)
+set Binput=$#
+set color1=a0
+set color2=b0
+set color3=c0
 echo off
 cls
 title %Blink%
 ping localhost>nul
-color a0
+color %color1%
 ping localhost /n 1 >nul
-color b0
+color %color2%
 ping localhost /n 1 >nul
-color c0
+color %color3%
 ping localhost /n 1 >nul
 color %bcolor%
 ping localhost /n 1 >nul
@@ -48,13 +58,15 @@ cls
 
 :restart
 cls
-echo %Bnull% Input the program you'd like to run.
+echo %Bnull% Select the program you want to run:
 echo %Bnull%
 echo %Bspacer%
-echo %Bnull% $#randomizer,pinger,javaver,winver,timer;
-set /p sp=IN:
+echo %Bnull% [%Bkeygenversion%] [%Bcheckerversion%] [%Bjavaverversion%] [%Bwinverversion%] [%Btimerversion%]
+echo %Bnull% [Reload] [Exit]
+set /p aa=%Binput%
 cls
-goto %sp%
+goto %aa%
+goto restart
 
 :end
 @echo off
@@ -64,24 +76,29 @@ cls
 echo %Bnull% Task ended. Select:
 echo %Bnull%
 echo %Bspacer%
-echo %Bnull% $#restart,exit;
-set /p ie=IN:
-goto %ie%
+echo %Bnull% [Restart] [Reload] [Exit]
+set /p ab=%Binput%
+goto %ab%
 cls
 
 :exit
+exit
+
+:reload
+start RootGitHub.bat
 exit
 
 :keygen
 :randomizer
 @echo off
 cls
+title %Blink%
 ping localhost>nul
-color a0
+color %color1%
 ping localhost /n 1 >nul
-color b0
+color %color2%
 ping localhost /n 1 >nul
-color c0
+color %color3%
 ping localhost /n 1 >nul
 color %bcolor%
 ping localhost /n 1 >nul
@@ -99,30 +116,31 @@ echo %Bnull%
 echo %Bspacer%
 ping localhost>nul
 ping localhost >nul
+cls
 echo %Bnull% Printing...
 echo %Bnull%
 echo %Bspacer%
 ping localhost >nul
 echo %Bnull% Output file; %Bkeygenoutput% >%Bkeygenoutput%
 echo %Bnull% >>%Bkeygenoutput%
-echo %Bnull% Best random password: >>%Bkeygenoutput%
-echo %Bnull% =%processor_revision%%RANDOM%%errorlevel%%RANDOM%%highestnumanodenumber%%RANDOM%%processor_level%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% Best password: >>%Bkeygenoutput%
+echo %Bnull% %processor_revision%%RANDOM%%errorlevel%%RANDOM%%highestnumanodenumber%%RANDOM%%processor_level%%RANDOM% >>%Bkeygenoutput%
 echo %Bnull% >>%Bkeygenoutput%
 echo %Bnull% Generic passwords: >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
-echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
+echo %Bnull% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
 echo %Bnull% >>%Bkeygenoutput%
 echo %Bnull% Final output; >>%Bkeygenoutput%
 ping localhost>nul
@@ -133,13 +151,15 @@ goto end
 :checker
 :pinger
 @echo off
-cls
+title %Blink%
 ping localhost>nul
-color a0
+color %color1%
 ping localhost /n 1 >nul
-color b0
+color %color2%
 ping localhost /n 1 >nul
-color c0
+color %color3%
+ping localhost /n 1 >nul
+color %bcolor%
 ping localhost /n 1 >nul
 cls
 title %Blink%
@@ -154,64 +174,58 @@ echo %Bnull% Select option:
 echo %Bnull%
 echo %Bspacer%
 echo %Bnull%
-echo %Bnull% $#LOLeuw,google,speedtest,microsoft,custom;
-set /p ip=IN:
-goto %ip%
+echo %Bnull% [LOLeuw,Google,Microsoft] [Custom]
+set /p ac=%Binput%
+goto %ac%
 exit
 cls
 
 :loleuw
-set ip2=prod.euw1.lol.riotgames.com
+set ad=prod.euw1.lol.riotgames.com
 goto final
 
 :microsoft
-set ip2=microsoft.com
+set ad=microsoft.com
 goto final
 
 :google
-set ip2=google.com
-goto final
-
-:speedtest
-set ip2=speedtest.net
+set ad=google.com
 goto final
 
 :custom
-echo %Bnull% Input custom URL/IP:
+cls
+echo %Bnull% Input custom URL/IP
 echo %Bnull%
 echo %Bspacer%
-set /p ip2=IN:
+set /p ad=%Binput%
 goto final
 
 :final
 cls
-echo %Bnull% Selected [%ip2%]
+echo %Bnull% Selected [%ad%]
 echo %Bnull%
 echo %Bspacer%
-echo setlocal
 ping localhost >nul
 cls
-echo %Bnull% Pinging.
+echo %Bnull% Pinging and printing...
 echo %Bnull%
 echo %Bspacer%
-ping localhost>nul
-ping localhost >nul
-echo %bnull% Results from pinging task to %ip2%. Printing to %Bcheckeroutput% >%Bcheckeroutput%
+echo %bnull% Results from pinging task to %ad%. Printing to %Bcheckeroutput% >%Bcheckeroutput%
 echo %bnull% Testing hosts and tracers... >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %Bspacer% >>%Bcheckeroutput%
 echo %bnull% =TRACERT: >>%Bcheckeroutput%
-tracert %ip2% >>%Bcheckeroutput% >>%Bcheckeroutput%
+tracert %ad% >>%Bcheckeroutput% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bspacer% >>%Bcheckeroutput%
-echo %bnull% =16B PING (final):>>%Bcheckeroutput%
-ping %ip2% /l 16 >>%Bcheckeroutput%
+echo %bnull% =16B PING:>>%Bcheckeroutput%
+ping %ad% /l 16 >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
-echo %bnull% >>%Bcheckeroutput%
+echo %bnull% Real ping is around +1-10ms from the average>>%Bcheckeroutput%
 echo %bnull% Final output; >>%Bcheckeroutput%
 %Bcheckeroutput%
 cls
@@ -220,12 +234,13 @@ goto end
 :javaver
 @echo off
 cls
+title %Blink%
 ping localhost>nul
-color a0
+color %color1%
 ping localhost /n 1 >nul
-color b0
+color %color2%
 ping localhost /n 1 >nul
-color c0
+color %color3%
 ping localhost /n 1 >nul
 color %bcolor%
 ping localhost /n 1 >nul
@@ -253,25 +268,23 @@ echo %Bnull%
 echo %Bspacer%
 ping localhost>nul
 cls
-echo %Bnull% Displaying.
+echo %Bnull% Printing...
 echo %Bnull%
 echo %Bspacer%
 java -version
-ping localhost>nul
-ping localhost>nul
-ping localhost>nul
-ping localhost>nul
+pause
 goto end
 
-:winver
+:system
 @echo off
 cls
+title %Blink%
 ping localhost>nul
-color a0
+color %color1%
 ping localhost /n 1 >nul
-color b0
+color %color2%
 ping localhost /n 1 >nul
-color c0
+color %color3%
 ping localhost /n 1 >nul
 color %bcolor%
 ping localhost /n 1 >nul
@@ -284,20 +297,25 @@ echo %Bspacer%
 ping localhost>nul
 title %Bversion% - %Bwinverversion%
 cls
-echo %Bnull% Windows...
+echo %Bnull% Getting system information...
 echo %Bnull%
 echo %Bspacer%
 ping localhost >nul
-cls
-echo %Bnull% Windows version:
-echo %Bnull%
-echo %Bspacer%
+systeminfo >nul
 ver
-winver
-ping localhost>nul
-ping localhost>nul
-ping localhost>nul
-ping localhost>nul
+echo %Bnull% Outputing information to %Bwinveroutput% >%Bwinveroutput%
+echo %Bnull% >>%Bwinveroutput%
+systeminfo >>%Bwinveroutput%
+echo %Bnull% >>%Bwinveroutput%
+echo %Bnull% >>%Bwinveroutput%
+echo %Bnull% >>%Bwinveroutput%
+echo %Bspacer% >>%Bwinveroutput%
+ipconfig >>%Bwinveroutput%
+echo %Bnull% >>%Bwinveroutput%
+echo %Bnull% >>%Bwinveroutput%
+echo %bnull% Final output; >>%Bwinveroutput%
+%Bwinveroutput%
+pause
 goto end
 
 :timer
@@ -321,20 +339,25 @@ echo %Bspacer%
 ping localhost>nul
 title %Bversion% - %Btimerversion%
 cls
-echo %Bnull% Loading files.
+echo %Bnull% Updating time and loading files...
 echo %Bnull%
 echo %Bspacer%
 ping localhost>nul
 ping localhost>nul
+del %Btimeroutput%
+systeminfo >nul
 cls
-:reload
-ping localhost /n 1 >nul
-cls
-echo %Bnull% %time% ; %date%
-echo %Bnull%
-echo %Bspacer%
-goto reload
-
+echo @echo off >%Btimeroutput%
+echo cls >>%Btimeroutput% >>%Btimeroutput%
+echo color %Btimercolor%  >>%Btimeroutput%
+echo title %Btimerversion% >>%Btimeroutput%
+echo cls >>%Btimeroutput%
+echo time /t >>%Btimeroutput%
+echo ping localhost>>%Btimeroutput%
+echo cls  >>%Btimeroutput%
+echo call %Btimeroutput% >>%Btimeroutput%
+start %Btimeroutput%
+goto end
 
 
 :ECXE
@@ -343,21 +366,15 @@ cls
 endlocal
 
 rem Not working.
-rem npocmaka-bat2exe is being detected by some av.
-rem Please wait until I fix this or I find another method.
+rem Wait until this is fixed.
 rem Use at your own risk.
 echo Read the code.
 echo The application will restart.
-ping localhost>nul
-ping localhost>nul
-ping localhost>nul
-ping localhost>nul
+pause
 goto end
 
-rem Do not try to go ahead.
-rem Be warned.
-
-
+rem Trespassing this line may not be virus-free.
+rem Use at your own risk.
 
 ping localhost>nul
 color a0
@@ -377,16 +394,18 @@ echo %Bspacer%
 ping localhost>nul
 title %Bversion% - %Bbatexecversion%
 cls
-echo %Bnull% Insert:
+echo %Bnull% Insert BatTarget and ExeOutput.
 echo %Bnull%
 echo %Bspacer%
-echo %Bnull% $#BatName.ExeName;
-set /p %bp%=IN:
-set /p %ep%=IN:
+set /p %ae%=%Binput%
+set /p %af%=%Binput%
 cls
-npocmaka-bat2exe.bat %bp%.bat %ep%.exe
+npocmaka-bat2exe.bat %ae%.bat %af%.exe
 del *.DDF
 goto end
+
+rem Dice Roll and Coin
+rem self cmd
 
 
 

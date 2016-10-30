@@ -1,7 +1,7 @@
 del *.DDF
 del *.tmp
-set Bversion=Root b19
-set Bpatch=patch-5f
+set Bversion=Root b20
+set Bpatch=patch-5wa
 set Bstatus=stable
 set Bcolor=f0
 set Bnull=G#
@@ -24,14 +24,15 @@ set Bbatexecversion=ECXE (indev)
 echo off
 cls
 title %Blink%
+ping localhost>nul
 color a0
 ping localhost /n 1 >nul
 color b0
 ping localhost /n 1 >nul
 color c0
 ping localhost /n 1 >nul
-color %Bcolor%
-ping localhost >nul
+color %bcolor%
+ping localhost /n 1 >nul
 cls
 title %bversion%
 echo %Bnull% Loaded %bversion% %Bpatch% %Bstatus%
@@ -82,6 +83,8 @@ color b0
 ping localhost /n 1 >nul
 color c0
 ping localhost /n 1 >nul
+color %bcolor%
+ping localhost /n 1 >nul
 cls
 title %Blink%
 color %Bkeygencolor%
@@ -94,28 +97,11 @@ cls
 echo %Bnull% Processing...
 echo %Bnull%
 echo %Bspacer%
-echo cd
-echo cd Gijon.hmbr
 ping localhost>nul
-echo move /y Gijon.hmbr\rnd localmemory\passwords\rnd
-ping localhost>nul
-echo move /y Gijon.hmbr\print localmemory\print
-ping localhost>nul
-echo localmemory\passwords\rnd localmemory\passwords
-echo cd c:\
 ping localhost >nul
-cls
 echo %Bnull% Printing...
 echo %Bnull%
 echo %Bspacer%
-echo cd
-echo cd Gijon.hmbr
-echo move /y Gijon.hmbr\rnd localmemory\passwords\rnd
-echo move /y Gijon.hmbr\print localmemory\print
-echo localmemory\passwords\rnd localmemory\passwords
-echo cd c:\
-ping localhost >nul
-echo localmemory\print "cmd$1pr0.tmp"
 ping localhost >nul
 echo %Bnull% Output file; %Bkeygenoutput% >%Bkeygenoutput%
 echo %Bnull% >>%Bkeygenoutput%
@@ -140,8 +126,8 @@ echo %Bnull% =%RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%Bkeygenoutput%
 echo %Bnull% >>%Bkeygenoutput%
 echo %Bnull% Final output; >>%Bkeygenoutput%
 ping localhost>nul
-cls
 %Bkeygenoutput%
+cls
 goto end
 
 :checker
@@ -203,25 +189,13 @@ echo %Bnull% Selected [%ip2%]
 echo %Bnull%
 echo %Bspacer%
 echo setlocal
-ping localhost /n 2 >nul
-echo cd Gijon.hmbr
-echo set %ip2%=Gijon.hmbr\%ip%
-ping localhost /n 3 >nul
-echo endlocal
-ping localhost >nul
-echo Gijon.hmbr\ :requestping
 ping localhost >nul
 cls
 echo %Bnull% Pinging.
 echo %Bnull%
 echo %Bspacer%
-echo setlocal
-echo cd Gijon.hmbr
-echo set %ip2%=Gijon.hmbr\%ip%
-echo endlocal
-echo Gijon.hmbr\ :requestping
-echo Gijon.hmbr\ :ping
 ping localhost>nul
+ping localhost >nul
 echo %bnull% Results from pinging task to %ip2%. Printing to %Bcheckeroutput% >%Bcheckeroutput%
 echo %bnull% Testing hosts and tracers... >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
@@ -231,13 +205,8 @@ tracert %ip2% >>%Bcheckeroutput% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
-echo %bnull% >>%Bcheckeroutput%
 echo %bspacer% >>%Bcheckeroutput%
-echo %bnull% >>%Bcheckeroutput%
-echo %bnull% >>%Bcheckeroutput%
-echo %bnull% >>%Bcheckeroutput%
-echo %bspacer% >>%Bcheckeroutput%
-echo %bnull% =16B PING:>>%Bcheckeroutput%
+echo %bnull% =16B PING (final):>>%Bcheckeroutput%
 ping %ip2% /l 16 >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
 echo %bnull% >>%Bcheckeroutput%
@@ -257,6 +226,8 @@ ping localhost /n 1 >nul
 color b0
 ping localhost /n 1 >nul
 color c0
+ping localhost /n 1 >nul
+color %bcolor%
 ping localhost /n 1 >nul
 cls
 title %Blink%
@@ -302,6 +273,8 @@ color b0
 ping localhost /n 1 >nul
 color c0
 ping localhost /n 1 >nul
+color %bcolor%
+ping localhost /n 1 >nul
 cls
 color %Bwinvercolor%
 title %Blink%
@@ -328,7 +301,6 @@ ping localhost>nul
 goto end
 
 :timer
-ping localhost>nul
 @echo off
 cls
 ping localhost>nul
@@ -337,6 +309,8 @@ ping localhost /n 1 >nul
 color b0
 ping localhost /n 1 >nul
 color c0
+ping localhost /n 1 >nul
+color %bcolor%
 ping localhost /n 1 >nul
 cls
 title %Blink%
@@ -391,6 +365,8 @@ ping localhost /n 1 >nul
 color b0
 ping localhost /n 1 >nul
 color c0
+ping localhost /n 1 >nul
+color %bcolor%
 ping localhost /n 1 >nul
 cls
 title %Blink%

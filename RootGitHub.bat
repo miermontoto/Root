@@ -4,26 +4,26 @@ rem Originally made by http://www.github.com/GijonDev
 rem Latest version of this product can be found on http://www.github.com/GijonDev/BasicGijon/releases
 
 tree C:\ /a
-set Bversion=Root v3.3stable
-set Bpatch=patch-6n
+set Bversion=Root v3.3
+set Bpatch=patch-6s
 set Bcolor=f0
 set Bnull=G:\
 set Bspacer=G:\ -----------------------------------
 set Blink=github.com/GijonDev
 set Bkeygencolor=a0
-set Bkeygenversion=Randomizer v3.1.2
+set Bkeygenversion=Randomizer v3.1
 set Bkeygenoutput=G#$dir1%output.txt
 set Bcheckeroutput=G#$dir2%output.txt
 set Btimeroutput=G#$dir3%output.bat
 set Bwinveroutput=G#$dir4%output.txt
 set Bcheckercolor=a0
-set Bcheckerversion=Pinger v3.2.5
-set Bjavaverversion=JavaVer v1.9.1
+set Bcheckerversion=Pinger v3.2
+set Bjavaverversion=JavaVer v1.9
 set Bjavavercolor=b0
 set Bwinvercolor=b0
-set Bwinverversion=System v2.3.2
+set Bwinverversion=System v2.3
 set Btimercolor=f0
-set Btimerversion=Timer II.I
+set Btimerversion=Timer II
 set Bbatexeccolor=c0
 set Bbatexecversion=ECXE (indev)
 set Binput=$#

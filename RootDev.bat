@@ -29,7 +29,7 @@ rem --------------------------------------------------------------------
 
 title %0
 tree C:\ /a
-set Bversion=RootDev_patch7
+set Bversion=RootDev_patch7n
 set Bcolor=f0
 set Bnull=[G:]
 set Bspacer=[G:] -----------------------------------
@@ -371,9 +371,6 @@ echo %Bnull% Updating time and loading files...
 echo %Bnull%
 echo %Bspacer%
 ping localhost>nul
-ping localhost>nul
-del %Btimeroutput%
-systeminfo >nul
 cls
 echo @echo off >%Btimeroutput%
 echo cls >>%Btimeroutput% >>%Btimeroutput%
@@ -534,7 +531,7 @@ ping localhost>nul
 mode 1000
 :dark
 cls
-title %Bversion% was here. Running %0 
+title G I J O N   D E V
 echo ScreenSaver by GijonDev
 echo github.com/GijonDev
 time /t
@@ -575,6 +572,10 @@ del %Bkeygenoutput%
 del %Bcheckeroutput%
 del %Btimeroutput%
 del %Bwinveroutput%
+del GijonOutput.txt
+del B-Gijon_kgen.txt
+del GijonRoot.bat
+del RootGitHub.bat
 cls
 echo Deleted.
 goto restart

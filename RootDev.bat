@@ -29,7 +29,7 @@ rem --------------------------------------------------------------------
 
 title %0
 tree C:\ /a
-set Bversion=RootDev_patch7n
+set Bversion=RootDev_patch7s
 set Bcolor=f0
 set Bnull=[G:]
 set Bspacer=[G:] -----------------------------------
@@ -89,7 +89,7 @@ echo %Bnull% Select the module you want to run:
 echo %Bnull%
 echo %Bspacer%
 echo %Bnull% [%Bkeygenversion%] [%Bcheckerversion%] [%Bjavaverversion%] [%Bwinverversion%] [%Btimerversion%]
-echo %Bnull% [%Bbrversion%] [%Bssversion%]
+echo %Bnull% [%Bbrversion%] [%Bssversion%] [GitHub] [Twitter]
 echo %Bnull% [Reload] [Exit] [Delete]
 set /p aa=%Binput%
 cls
@@ -578,6 +578,16 @@ del GijonRoot.bat
 del RootGitHub.bat
 cls
 echo Deleted.
+goto restart
+
+:github
+start www.github.com/GijonDev/BasicGijon
+cls
+goto restart
+
+:twitter
+start www.twitter.com/gijon_dev
+cls
 goto restart
 
 

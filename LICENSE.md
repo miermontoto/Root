@@ -1,4 +1,6 @@
-   This applies to every piece of software uploaded and/or generated in or before 31/10/2016.
+  Last updated: 31/10/2016
+  
+  This applies to every piece of software uploaded and/or generated in or before 31/10/2016.
    This does not includes any piece of software generated nor created after 31/10/2016.
    Read the end of the file for a copy of the license inlcluded in every file uploaded (not generated) in and after 31/10/2016.
 
@@ -188,13 +190,18 @@ rem  Copyright {2016} {GijonDev}
 
 rem  Licensed under the Apache License, Version 2.0 (the "License");
 rem  you may not use this file except in compliance with the License.
-rem  You may obtain a copy of the License at
-
+rem  You may obtain a copy of the License at:
+rem
 rem      http://www.apache.org/licenses/LICENSE-2.0
+rem
+rem  and an specific copy of the license for this product at:
+rem
+rem  	 https://github.com/GijonDev/BasicGijon/blob/master/LICENSE.md
 rem
 rem  This applies to every file created by this program incluiding the
 rem  program itself and to every piece of code written in this file and
-rem  in the files created by this file.
+rem  in the files created by this file. Read LICENSE.md for more.
+rem
 rem --------------------------------------------------------------------
 
 FINAL WARRANTY:

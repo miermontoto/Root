@@ -1,4 +1,10 @@
-                                 Apache License
+   This applies to every piece of software uploaded and/or generated in or before 31/10/2016.
+   This does not includes any piece of software generated nor created after 31/10/2016.
+   Read the end of the file for a copy of the license inlcluded in every file uploaded (not generated) in and after 31/10/2016.
+
+
+
+Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
 
@@ -173,26 +179,25 @@
       incurred by, or claims asserted against, such Contributor by reason
       of your accepting any such warranty or additional liability.
 
-   END OF TERMS AND CONDITIONS
 
-   APPENDIX: How to apply the Apache License to your work.
+Piece of license included in ROOT below patch-7 (and every file uploaded in or before 31/10/2016):
 
-      To apply the Apache License to your work, attach the following
-      boilerplate notice, with the fields enclosed by brackets "{}"
-      replaced with your own identifying information. (Don't include
-      the brackets!)  The text should be enclosed in the appropriate
-      comment syntax for the file format. We also recommend that a
-      file or class name and description of purpose be included on the
-      same "printed page" as the copyright notice for easier
-      identification within third-party archives.
+rem --------------------------------------------------------------------
+rem
+rem  Copyright {2016} {GijonDev}
 
-   Copyright {yyyy} {name of copyright owner}
+rem  Licensed under the Apache License, Version 2.0 (the "License");
+rem  you may not use this file except in compliance with the License.
+rem  You may obtain a copy of the License at
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+rem      http://www.apache.org/licenses/LICENSE-2.0
+rem
+rem  This applies to every file created by this program incluiding the
+rem  program itself and to every piece of code written in this file and
+rem  in the files created by this file.
+rem --------------------------------------------------------------------
 
-       http://www.apache.org/licenses/LICENSE-2.0
+FINAL WARRANTY:
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,

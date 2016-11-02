@@ -1,11 +1,13 @@
+rem patch-8 date-02/11/2016
+rem
 rem This product is in no way affiliated with Microsoft Corporations nor any other company/corporation.
 rem This license is using Apache License 2.0. Read below.
 rem Made by http://www.github.com/GijonDev
 rem Latest version of this product can be found on http://www.github.com/GijonDev/BasicGijon/releases
 rem More information about the poduct can be found in http://www.github.com/GijonDev/BasicGijon/projects/2
 rem This product has been created and edited using Notepad++ and Windows 7/10.
-
-
+rem
+rem
 rem --------------------------------------------------------------------
 rem
 rem  Copyright {2016} {GijonDev}
@@ -25,14 +27,32 @@ rem  program itself and to every piece of code written in this file and
 rem  in the files created by this file. Read LICENSE.md for more.
 rem
 rem --------------------------------------------------------------------
+cls
 
-
-title %0
-tree C:\ /a
-set Bversion=RootDev_patch7s
+@echo off
+title %0 - Loading modules...
+echo Loading modules...
+ping localhost>nul
+cls
+title %0 - Loading files...
+echo Loading files...
+ping localhost>nul
+ping localhost>nul
+cls
+echo on
+tree C:\WINDOWS /a /f
+@echo off
+cls
+title %0 - Setting variables...
+echo Setting variables...
+ping localhost>nul
+cls
+echo on
+set developer=GijonDev
+set Bversion=RootDev_patch8-beta
 set Bcolor=f0
-set Bnull=[G:]
-set Bspacer=[G:] -----------------------------------
+set Bnull=G@
+set Bspacer=G@ ===================================
 set Blink=github.com/GijonDev
 set Bkeygencolor=a0
 set Bkeygenversion=Randomizer
@@ -57,8 +77,12 @@ set color3=b0
 set Bbrversion=Games Beta
 set Bbrcolor=c0
 set Bssversion=ScreenSaver
-set Bsscolor=0f
-echo off
+set Bsscolor=f1
+set filename=RootDev.bat
+set Bcmdversion=CMD I
+set Bcmdcolor=0f
+@echo off
+ping localhost /n 1 >Nul
 cls
 title %Blink%
 ping localhost>nul
@@ -83,18 +107,22 @@ echo %Bspacer%
 ping localhost >nul
 cls
 
+:menu
+:cls
 :restart
 cls
 echo %Bnull% Select the module you want to run:
 echo %Bnull%
 echo %Bspacer%
-echo %Bnull% [%Bkeygenversion%] [%Bcheckerversion%] [%Bjavaverversion%] [%Bwinverversion%] [%Btimerversion%]
-echo %Bnull% [%Bbrversion%] [%Bssversion%] [GitHub] [Twitter]
-echo %Bnull% [Reload] [Exit] [Delete]
+echo %Bnull% Modules:[%Bkeygenversion%] [%Bcheckerversion%] [%Bjavaverversion%] [%Bwinverversion%] [%Btimerversion%] [%Bcmdversion%]
+echo %Bnull% Misc   :[%Bbrversion%] [%Bssversion%] [GitHub] [Twitter] [License.MD]
+echo %Bnull% Actions:[Reload] [Exit] [Delete] [CLS]
+echo.
 set /p aa=%Binput%
 cls
 goto %aa%
 goto restart
+goto cls
 
 :end
 @echo off
@@ -104,7 +132,8 @@ cls
 echo %Bnull% Module ended. Select:
 echo %Bnull%
 echo %Bspacer%
-echo %Bnull% [Restart] [Reload] [Exit]
+echo %Bnull% Actions: [Menu] [Reload] [Exit]
+echo.
 set /p ab=%Binput%
 goto %ab%
 cls
@@ -201,8 +230,9 @@ cls
 echo %Bnull% Select option:
 echo %Bnull%
 echo %Bspacer%
-echo %Bnull%
-echo %Bnull% [LOLeuw,Google,Microsoft] [Custom]
+echo %Bnull% GenericHosts:[LOLEUW,Microsoft,Google] 
+echo %bnull%             :[CustomHost]
+echo.
 set /p ac=%Binput%
 goto %ac%
 exit
@@ -224,6 +254,7 @@ cls
 echo %Bnull% Input custom URL/IP
 echo %Bnull%
 echo %Bspacer%
+echo.
 set /p ad=%Binput%
 goto final
 
@@ -331,6 +362,7 @@ echo %Bspacer%
 ping localhost >nul
 systeminfo >nul
 ver
+echo Error level: %errorlevel% (%filename%\LICENSE.md)
 echo %Bnull% Outputing information to %Bwinveroutput% >%Bwinveroutput%
 echo %Bnull% >>%Bwinveroutput%
 systeminfo >>%Bwinveroutput%
@@ -387,7 +419,6 @@ goto end
 :ECXE
 @echo off
 cls
-endlocal
 
 rem Not working.
 rem Wait until this is fixed.
@@ -421,8 +452,9 @@ cls
 echo %Bnull% Insert BatTarget and ExeOutput.
 echo %Bnull%
 echo %Bspacer%
-set /p %ae%=%Binput%
-set /p %af%=%Binput%
+echo.
+set /p %ae%=%Binput%battarget=
+set /p %af%=%Binput%exeoutput=
 cls
 npocmaka-bat2exe.bat %ae%.bat %af%.exe
 del *.DDF
@@ -456,8 +488,9 @@ cls
 echo %Bnull% Select game:
 echo %Bnull%
 echo %Bspacer%
-echo %Bnull%
-echo %Bnull% [Coin] [Dice] [Roll] [Help] [End]
+echo %Bnull% Games  :[Coin] [Dice] [Roll] 
+echo %Bnull% Actions:[Help] [End]
+echo.
 set /p ag=%Binput%
 goto %ag%
 exit
@@ -528,41 +561,41 @@ ping localhost>nul
 title %Bversion% - %Bssversion%
 cls
 ping localhost>nul
-mode 1000
 :dark
 cls
-title G I J O N   D E V
-echo ScreenSaver by GijonDev
-echo github.com/GijonDev
+title %Blink%
+echo %BNull% %Bssversion% by %developer%
+echo %BNULL%
+echo %Bspacer%
 time /t
 color a0
 ping localhost >nul
 title G
-color b1
+color b0
 ping localhost >nul
 title G I
-color c2
+color c0
 ping localhost >nul
 title G I J
-color d3
+color d0
 ping localhost >nul
 title G I J O
-color e4
+color e0
 ping localhost >nul
 title G I J O N
-color f5
+color f0
 ping localhost >nul
 title G I J O N   D
-color 06
+color 0f
 ping localhost >nul
 title G I J O N   D E
-color c7
+color c0
 ping localhost >nul
 title G I J O N   D E V
-color a8
+color a0
 ping localhost >nul
 title G I J O N   B A E
-color b9
+color b0
 ping localhost >nul
 goto dark
 
@@ -576,6 +609,7 @@ del GijonOutput.txt
 del B-Gijon_kgen.txt
 del GijonRoot.bat
 del RootGitHub.bat
+del pokemon.bat
 cls
 echo Deleted.
 goto restart
@@ -589,5 +623,63 @@ goto restart
 start www.twitter.com/gijon_dev
 cls
 goto restart
+
+:license.md
+cls
+echo Copyright {2016} {GijonDev}
+echo.
+echo Licensed under the Apache License, Version 2.0 (the "License");
+echo you may not use this file except in compliance with the License.
+echo You may obtain a copy of the License at:
+echo.
+echo     http://www.apache.org/licenses/LICENSE-2.0
+echo .
+echo  and an specific copy of the license for this product at:
+echo.
+echo  	 https://github.com/GijonDev/BasicGijon/blob/master/LICENSE.md
+echo.
+echo  This applies to every file created by this program incluiding the
+echo  program itself and to every piece of code written in this file and
+echo  in the files created by this file. Read LICENSE.md for more.
+echo.
+echo This product is in no way affiliated with Microsoft Corporations nor any other company/corporation.
+echo This license is using Apache License 2.0. Read below.
+echo Made by http://www.github.com/GijonDev
+echo Latest version of this product can be found on http://www.github.com/GijonDev/BasicGijon/releases
+echo More information about the poduct can be found in http://www.github.com/GijonDev/BasicGijon/projects/2
+echo This product has been created and edited using Notepad++ and Windows 7/10.
+pause
+cls
+goto restart
+
+:cmd
+@echo off
+title %Blink%
+ping localhost>nul
+color %color1%
+ping localhost /n 1 >nul
+color %color2%
+ping localhost /n 1 >nul
+color %color3%
+ping localhost /n 1 >nul
+color %bcolor%
+ping localhost /n 1 >nul
+cls
+title %Blink%
+color %Bcmdcolor%
+echo %Bnull% Loaded %Bcmdversion%
+echo %Bnull%
+echo %Bspacer%
+ping localhost>nul
+title %Bversion% - %Bcmdversion%
+cls
+ping localhost>nul
+cls
+:restartcmd
+echo %Bnull% Use a command:
+echo %Bnull%
+echo %Bspacer%
+echo %bnull%:r= windows, paint, goto, calc, rootsettings, 
+
 
 

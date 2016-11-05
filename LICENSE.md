@@ -1,4 +1,6 @@
-  > Last updated: 31/10/2016
+ 
+> First updated: 31/11/2016 
+> Last updated: 05/11/2016
   
   > This applies to every piece of software uploaded and/or generated in or before 31/10/2016.
   > This does not includes any piece of software generated nor created after 31/10/2016.
@@ -182,7 +184,8 @@ Apache License
       of your accepting any such warranty or additional liability.
 
 
-Piece of license included in ROOT below patch-7 (and every file uploaded in or before 31/10/2016):
+Piece of license included in ROOT below patch-7 (and every file uploaded in or before 31/10/2016).
+Piece of license redacted below is only included in patch-8 and higher. patch-7 still includes almost the same license.
 
 ```
 rem --------------------------------------------------------------------
@@ -202,6 +205,8 @@ rem
 rem  This applies to every file created by this program incluiding the
 rem  program itself and to every piece of code written in this file and
 rem  in the files created by this file. Read LICENSE.md for more.
+rem  License can be found both in this file using "license.md" and in the
+rem  master branch of GitHub "LICENSE.MD".
 rem
 rem --------------------------------------------------------------------
 ```

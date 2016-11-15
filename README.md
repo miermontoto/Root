@@ -13,7 +13,7 @@ Feel free to submit a bug using the issue page.
 Apache License 2.0 adapted to my project. A copy of the license can be found [here](https://github.com/GijonDev/BasicGijon/blob/master/LICENSE.md).
 
 ###Social
- - [Twitter = @GijonYT](http://www.twitter.com/GijonYT)
+ - [Twitter = @GijonDev](http://www.twitter.com/GijonDev)
  - [YouTube = underscoreBis](http://www.youtube.com/underscoreBis)
- - [LOL EUW = KIYF Bis](http://euw.op.gg/summoner/userName=KIYF+Bis)
+ - [LOL EUW = Xixón](http://euw.op.gg/summoner/userName=Xixón)
 

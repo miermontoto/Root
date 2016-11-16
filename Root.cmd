@@ -327,6 +327,8 @@ goto end
 
 
 
+
+
 rem Pinger (formerly known as Checker.)
 rem Old and big module. Gives out information about the connection with the selected host.
 rem Can be used to check ping before playing a match in league.
@@ -445,6 +447,8 @@ goto end
 
 
 
+
+
 rem JavaVer
 rem Old module. Not planned to be updated anymore.
 rem Not deprecated.
@@ -507,6 +511,8 @@ cls
 title %name%: Ending...
 ping localhost>nul
 goto end
+
+
 
 
 
@@ -573,6 +579,9 @@ title %name%: Ending...
 ping localhost>nul
 echo %opload% %systemver%.
 goto end
+
+
+
 
 :timer
 @echo off
@@ -721,6 +730,7 @@ echo %menu% Note! If the result equals 0, roll again.
 ping localhost /n 1 >nul
 pause
 goto gamesmenuhelp
+
 
 
 
@@ -1081,7 +1091,7 @@ rem MODULES MODULES MODULES MODULES MODULES MODULES MODULES
 rem This program is made using Notepad++ plus it's is recommended to read with.
 
 rem Editor note: all labels can be accessed from every input zone.
-rem This is in no way an advantage and may break the task. This can be fixing by restarting or trying to use "Reload".
+rem This is in no way an advantage and may break the task. This can be fixing by restarting or inputing "Reload" or %filename%.
 rem I don't care if you do it. For science.
 
 rem Editor note: 1000 lines!

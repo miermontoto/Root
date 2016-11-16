@@ -74,6 +74,9 @@ set menu=%null%:
 set spacer=%null% ------------------------------------
 set link=github.com/GijonDev
 set input=$
+set mdload=Running
+set paload=under patch-%patch%.
+set opload=Generated output from
 rem ROOT
 rem ROOT
 
@@ -96,22 +99,24 @@ set timerver=Timer
 set ssver=ScreenSaver
 set gamesver=Games
 set forkdevver=ForkDev
-ste shutdownver=ShutDown
+set shutdownver=ShutdownTool
+set webloadver=WebLoad
 rem VERSION
 rem VERSION
 
 rem COLOR
 rem COLOR
-set randcolor=a0
+set randcolor=c0
 set pingercolor=a0
-set javavercolor=b0
+set javavercolor=c0
 set systemcolor=b0
 set timercolor=%color%
-set ecxecolor=c0
-set gamescolor=c0
-set sscolor=f1
+set ecxecolor=a0
+set gamescolor=b0
+set sscolor=07
 set forkdevcolor=07
-set shutdowncolor=%color%
+set shutdowncolor=07
+set webloadcolor=0A
 rem COLOR
 rem COLOR
 
@@ -132,6 +137,7 @@ rem FILE:
 rem LOADING... LOADING... LOADING... LOADING...
 rem LOADING... LOADING... LOADING... LOADING...
 @echo off
+color 07
 ping localhost /n 1 >Nul
 cls
 title %link%
@@ -157,11 +163,12 @@ cls
 
 rem singular use
 title %patch%
-echo %null% Loaded %namemix%
+echo %null% %mdload% %namemix% %paload%
 echo %null%
 echo %spacer%
 ping localhost>nul
 cls
+title %name%
 echo %null% %username% signed in.
 echo %null%
 echo %spacer%
@@ -185,15 +192,16 @@ rem COMMANDS & MENU
 :restart
 :end
 @echo off
-title %name% Menu
+title %name% - Menu
 color %color%
 echo %null% Input an action:
 echo %null%
 echo %spacer%
 echo.
 echo %menu% %randver% , %pingerver% , %javaverver% , %systemver% , %timerver% , %forkdevver%
-echo %menu% %gamesver% , %ssver% , GitHub , Twitter , License
+echo %menu% %gamesver% , %ssver%
 echo.
+echo %menu% GitHub , Twitter , License.
 echo %menu% Reload , Delete , CLS , Exit.
 echo.
 set /p aa=%input%
@@ -254,6 +262,7 @@ rem These keys may be used for passwords.
 :genkey
 :randomizer
 @echo off
+color 07
 ping localhost /n 1 >Nul
 cls
 title %link%
@@ -278,7 +287,7 @@ ping localhost /n 1 >nul
 cls
 title %name% - %randver%
 color %randcolor%
-echo %null% Loaded %randver%
+echo %null% %mdload% %randver% %paload%
 echo %null%
 echo %spacer%
 ping localhost>nul
@@ -313,7 +322,7 @@ echo %null% END >>%output1%
 cls
 title %name%: Ending...
 ping localhost>nul
-echo Generated output from %randver%.
+echo %opload% %randver%.
 goto end
 
 
@@ -325,6 +334,7 @@ rem Creates an output.
 :checker
 :pinger
 @echo off
+color 07
 ping localhost /n 1 >Nul
 cls
 title %link%
@@ -350,7 +360,7 @@ cls
 title %link%
 color %pingercolor%
 title %name% - %pingerver%
-echo %null% Loaded %pingerver%
+echo %null% %mdload% %pingerver% %paload%
 echo %null%
 echo %spacer%
 ping localhost>nul
@@ -359,7 +369,8 @@ title %name% - %pingerver% Menu
 echo %null% Select host:
 echo %null%
 echo %spacer%
-echo %null% Hosts} [LOLEUW] [Google] [Ubuntu] [Custom]
+echo.
+echo %menu% LOLEUW , Google , Ubuntu , Custom
 echo.
 set /p ac=%input%
 goto %ac%
@@ -429,7 +440,7 @@ echo %null% END >>%output2%
 cls
 title %name%: Ending...
 ping localhost>nul
-echo Created output from %pingerver%.
+echo %opload% %pingerver%.
 goto end
 
 
@@ -439,6 +450,7 @@ rem Old module. Not planned to be updated anymore.
 rem Not deprecated.
 :javaver
 @echo off
+color 07
 ping localhost /n 1 >Nul
 cls
 title %link%
@@ -463,7 +475,7 @@ ping localhost /n 1 >nul
 cls
 color %javavercolor%
 title %name% - %javaverver%
-echo %null% Loaded %javaverver%
+echo %null% %mdload% %javaverver% %paload%
 echo %null%
 echo %spacer%
 ping localhost>nul
@@ -485,11 +497,15 @@ echo %spacer%
 ping localhost>nul
 cls
 title %name% - %javaverver%
-echo %null% Printing...
+echo %null% Java version:
 echo %null%
 echo %spacer%
+echo.
 java -version
 pause
+cls
+title %name%: Ending...
+ping localhost>nul
 goto end
 
 
@@ -500,6 +516,7 @@ rem Big module. As big as old! <3
 :system
 :winver
 @echo off
+color 07
 ping localhost /n 1 >Nul
 cls
 title %link%
@@ -524,7 +541,7 @@ ping localhost /n 1 >nul
 cls
 color %systemcolor%
 title %name% - %systemver%
-echo %null% Loaded %systemver%
+echo %null% %mdload% %systemver% %paload%
 echo %null%
 echo %spacer%
 ping localhost>nul
@@ -554,11 +571,12 @@ echo %null% Final string.  >>%output3%
 cls
 title %name%: Ending...
 ping localhost>nul
-echo Created output from %systemver%.
+echo %opload% %systemver%.
 goto end
 
 :timer
 @echo off
+color 07
 ping localhost /n 1 >Nul
 cls
 title %link%
@@ -583,7 +601,7 @@ ping localhost /n 1 >nul
 cls
 color %timercolor%
 title %name% - %timerver%
-echo %null% Loaded %timerver%
+echo %null% %mdload% %timerver% %paload%
 echo %null%
 echo %spacer%
 ping localhost>nul
@@ -612,6 +630,7 @@ rem Games is a large command that consists of some random minigames like roll th
 rem It includes a guide.
 :games
 @echo off
+color 07
 ping localhost /n 1 >Nul
 cls
 title %link%
@@ -636,7 +655,7 @@ ping localhost /n 1 >nul
 cls
 title %name% - %gamesver%
 color %gamescolor%
-echo %null% Loaded %gamesver%
+echo %null% %mdload% %gamesver% %paload%
 echo %null%
 echo %spacer%
 ping localhost>nul
@@ -672,6 +691,7 @@ echo The result is %dice%!
 goto gamesmenu
 
 :roll
+cls
 set /a "roll=%random% %% 101"
 if roll==0 goto roll
 title %name% - %gamesver%: Roll!
@@ -707,8 +727,10 @@ goto gamesmenuhelp
 rem ScreenSaver.
 rem Simple. It changes colour (not randomly) and title.
 rem Can be set to "fullscreen" even out of Windows10.
+:ss
 :screensaver
 @echo off
+color 07
 ping localhost /n 1 >Nul
 cls
 title %link%
@@ -733,7 +755,7 @@ ping localhost /n 1 >nul
 cls
 title %name% - %ssver%
 color %sscolor%
-echo %null% Loaded %ssver%
+echo %null% %mdload% %ssver% %paload%
 echo %null%
 echo %spacer%
 ping localhost>nul
@@ -744,35 +766,29 @@ mode 1000
 cls
 title %link%
 echo %ssver% by %developer%
-echo.
 time /t
+echo.
+echo %spacer%
+echo Running patch-%patch%
+echo %spacer%
 color a0
-ping localhost >nul
-title G
+ping localhost >nul 
 color b0
-ping localhost >nul
-title G i
+ping localhost >nul  
 color c0
-ping localhost >nul
-title G i j   
+ping localhost >nul   
 color d0
 ping localhost >nul
-title G i j ó
 color e0
 ping localhost >nul
-title G i j ó n   /  X
 color f0
-ping localhost >nul
-title G i j ó n   /   X  i
+ping localhost >nul 
 color 0f
 ping localhost >nul
-title G i j ó n   /   X  i x
 color c0
-ping localhost >nul
-title G i j ó n   /   X  i x ó
+ping localhost >nul  
 color a0
 ping localhost >nul
-title G i j ó n   /   X  i x ó n
 color b0
 ping localhost >nul
 goto dark
@@ -927,6 +943,7 @@ rem Use at your own risk.
 rem Warranties included in the license.
 
 @echo off
+color 07
 ping localhost /n 1 >Nul
 cls
 title %link%
@@ -951,7 +968,7 @@ ping localhost /n 1 >nul
 cls
 title %name% - %ecxever%
 color %ecxecolor%
-echo %null% Loaded %ecxever%
+echo %null% %mdload% %ecxever% %paload%
 echo %null%
 echo %spacer%
 ping localhost>nul
@@ -989,16 +1006,63 @@ if %aj%==Y goto forkend
 goto return
 :forkend
 set /p ak=You are about to run a fork bomb. Are you REALLY sure? (Y/N)
-if %ak%==y goto forkgo
-if %ak%==Y goto forkgo
+if %ak%==y goto fastforkbomb
+if %ak%==Y goto fastforkbomb
 goto return
-:forkgo
 :fastforkbomb
 cls
 echo Running ForkDev(tm)...
 ping localhost>nul
 %0|%0 
 rem This code WILL affect your device's performance and it may even restart it or _destroy it partially_.
+
+
+:shutdown
+:shutdowntool
+@echo off
+color 07
+ping localhost /n 1 >Nul
+cls
+title %link%
+ping localhost>nul
+color %color1%
+cls
+echo %null%
+ping localhost /n 1 >nul
+color %color2%
+cls
+echo %null%
+echo %null%
+ping localhost /n 1 >nul
+color %color3%
+cls
+echo %null%
+echo %null%
+echo %spacer%
+ping localhost /n 1 >nul
+color %color%
+ping localhost /n 1 >nul
+cls
+title %name% - %shutdownver%
+color %shutdowncolor%
+echo %null% %mdload% %shutdownver% %paload%
+echo %null%
+echo %spacer%
+ping localhost>nul
+cls
+:shutdownmenuhelp
+:shutdownmenu
+echo %null% Games Menu
+echo %null%
+echo %spacer%
+echo.
+echo %menu% Coin , Dice , Roll
+echo.
+echo %menu% Help , End
+echo.
+set /p ah=%input%
+goto %ah%
+
 
 
 REM END OF UNSAFE ZONE! END OF UNSAFE ZONE! END OF UNSAFE ZONE! END OF UNSAFE ZONE! END OF UNSAFE ZONE! 

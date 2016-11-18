@@ -10,10 +10,14 @@ No installation needed. Just download it and run.
 Feel free to submit a bug using the issue page.
 
 ##[Status](http://www.github.com/gijondev/basicgijon/projects)
-Follow the status of the projects in the "[Project](http://www.github.com/gijondev/basicgijon/projects)" tab.
+Follow the status of the projects by clicking on the link.
 
-#License 
+##License 
 Apache License 2.0 adapted to my project. A copy of the license can be found [here](https://github.com/GijonDev/BasicGijon/blob/master/LICENSE.md).
+
+###Current projects
+-Root
+-ECXE
 
 
 

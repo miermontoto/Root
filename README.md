@@ -13,7 +13,7 @@ Feel free to submit a bug using the issue page.
 Follow the status of the projects by clicking on the link.
 
 ##License 
-Apache License 2.0 adapted to my project. A copy of the license can be found [here](https://github.com/GijonDev/BasicGijon/blob/master/LICENSE.md).
+Running Apache License 2.0 since 31/10/2016. It can be found [here](https://github.com/GijonDev/BasicGijon/blob/master/LICENSE.md).
 
 
 

@@ -19,6 +19,6 @@ Apache License 2.0 adapted to my project. A copy of the license can be found [he
 
 
 If you need to contact me, you can:
-  [Follow me on Twitter](http://www.twitter.com/GijonDev)
-  [Send me an email](mailto:underscoreBis@gmail.com)
+  - [Follow me on Twitter](http://www.twitter.com/GijonDev)
+  - [Send me an email](mailto:underscoreBis@gmail.com)
 

@@ -15,11 +15,10 @@ Follow the status of the projects by clicking on the link.
 ##License 
 Apache License 2.0 adapted to my project. A copy of the license can be found [here](https://github.com/GijonDev/BasicGijon/blob/master/LICENSE.md).
 
-###Current projects
--Root
--ECXE
 
 
 
+If you need to contact me, you can:
   [Follow me on Twitter](http://www.twitter.com/GijonDev)
+  [Send me an email](mailto:underscoreBis@gmail.com)
 

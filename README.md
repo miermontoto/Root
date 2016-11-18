@@ -12,8 +12,5 @@ Feel free to submit a bug using the issue page.
 #License 
 Apache License 2.0 adapted to my project. A copy of the license can be found [here](https://github.com/GijonDev/BasicGijon/blob/master/LICENSE.md).
 
-###Social
- - [Twitter = @GijonDev](http://www.twitter.com/GijonDev)
- - [YouTube = underscoreBis](http://www.youtube.com/underscoreBis)
- - [LOL EUW = Xixón](http://euw.op.gg/summoner/userName=Xixón)
+ - [Follow me on Twitter](http://www.twitter.com/GijonDev)
 

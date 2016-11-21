@@ -1,18 +1,24 @@
- #License=true
- #License_name=ApacheLicense2.0
+## ROOT license
+### Valid since 31/10/2016
+### Read below for more legal and explaining information
  
  
 > - First updated: 31/11/2016 
 > - Last updated: 21/11/2016
   
-  > This applies to every piece of software uploaded and/or generated in or after 31/10/2016.
+  > This applies to every piece of software uploaded AND/OR generated in AND/OR after 31/10/2016.
   
-  > This does NOT includes any piece of software generated nor created before 31/10/2016.
+  > This does NOT includes any piece of software generated NOR created before 31/10/2016.
   
-  > Read the end of the file for a copy of the license inlcluded in every file uploaded (not generated) in and after 31/10/2016.
+  > THIS license applies to every SINGLE piece of software of ROOT created AND/OR generated in AND/OR after the given date NO MATTER WHEN it was released AND/OR generated NO MATTER what variation it includes AND/OR links.
+  
+  > THIS is the ONLY valid license for ROOT and EVERY piece of software uploaded to the project in AND/OR after 31/10/2016.
+  
+  > *When running ANY piece of software uploaded AND/OR generated in AND/OR after the given date you LEGALLY ACCEPT this license and its meaning.*
 
 
 
+#APACHE LICENSE 2.0 (2004)
 Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -202,29 +208,12 @@ FINAL WARRANTY:
 License is included in and includes ROOT since 31/10/2016 (patch-7 and above).
 
 ###License included in files and desambiguation
-Piece of license redacted below may not be the same license included in the running patch.
-However, this does NOT change anything. Every file created AND generated in AND since 31/10/2016 are licensed under THIS file (http://www,github,com/gijondev/root/license.md
+Every file created AND generated in AND/OR after 31/10/2016 are licensed under [THIS file](http://www.github,com/gijondev/root/license.md) and ONLY under this license. It is the ONLY license valid for this project "ROOT" created and originally created by GijonDev.
 
-```
-rem --------------------------------------------------------------------
-rem
-rem  Copyright {2016} {GijonDev}
+An adapted piece of version is included in every file since patch-7.
+*redacted version of the license may variate depending of the version of the file*
 
-rem  Licensed under the Apache License, Version 2.0 (the "License");
-rem  you may not use this file except in compliance with the License.
-rem  You may obtain a copy of the License at:
-rem
-rem      http://www.apache.org/licenses/LICENSE-2.0
-rem
-rem  and an specific copy of the license for this product at:
-rem
-rem  	 https://github.com/GijonDev/BasicGijon/blob/master/LICENSE.md
-rem
-rem  This applies to every file created by this program incluiding the
-rem  program itself and to every piece of code written in this file and
-rem  in the files created by this file. Read LICENSE.md for more.
-rem  License can be found both in this file using "license.md" and in the
-rem  master branch of GitHub "LICENSE.MD".
-rem
-rem --------------------------------------------------------------------
-```
+
+
+
+*end of file*

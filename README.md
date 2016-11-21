@@ -1,4 +1,9 @@
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/GijonDev/Root/releases/download/patch-10/Root.cmd" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download ntkme/github-buttons on GitHub">Download</a>
+
+
 #Root
+
 
 ##Project
 Running diverse _modules_ under batch since Sep16. 

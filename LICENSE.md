@@ -1,9 +1,14 @@
+ #License=true
+ #License_name=ApacheLicense2.0
+ 
  
 > - First updated: 31/11/2016 
 > - Last updated: 21/11/2016
   
   > This applies to every piece of software uploaded and/or generated in or after 31/10/2016.
-  > This does NOT includes any piece of software generated nor created after 31/10/2016.
+  
+  > This does NOT includes any piece of software generated nor created before 31/10/2016.
+  
   > Read the end of the file for a copy of the license inlcluded in every file uploaded (not generated) in and after 31/10/2016.
 
 
@@ -194,8 +199,11 @@ FINAL WARRANTY:
 
 
 ##Final advice
-License is included in ROOT since 31/10/2016 (patch-7 and above).
-Piece of license redacted below is only included in patch-8-beta and higher.
+License is included in and includes ROOT since 31/10/2016 (patch-7 and above).
+
+###License included in files and desambiguation
+Piece of license redacted below may not be the same license included in the running patch.
+However, this does NOT change anything. Every file created AND generated in AND since 31/10/2016 are licensed under THIS file (http://www,github,com/gijondev/root/license.md
 
 ```
 rem --------------------------------------------------------------------

@@ -6,7 +6,7 @@ Running diverse _modules_ under batch since Sep16.
 
 
 ##Installation
-No installation needed. Just download it and run.
+No installation needed. Just [download](https://github.com/GijonDev/Root/README.md#download) it and run.
 
 #
 

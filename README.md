@@ -19,5 +19,5 @@ Feel free to submit a bug report using the [issue page](https://github.com/Gijon
 ###[License](https://github.com/GijonDev/Root/blob/master/LICENSE.md).
 
 
-(http://www.twitter.com/GijonDev)
+###[Contact](http://www.twitter.com/GijonDev)
 

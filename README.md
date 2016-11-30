@@ -5,12 +5,12 @@
 Running diverse _modules_ under batch since Sep16. 
 
 
-
 ##Installation
 No installation needed. Just download it and run.
 
-##Bug reports
-Feel free to submit a bug report using the [issue page](https://github.com/GijonDev/Root/issues).
+#
+
+###[Issues](https://github.com/GijonDev/Root/issues).
 
 ###[Status](http://www.github.com/gijondev/root/projects).
 

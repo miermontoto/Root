@@ -1,7 +1,24 @@
 @echo off
-title %0 - Loading license...
-echo Loading license...
-@echo off
+rem Root project
+rem Here is where the file starts
+rem Enjoy reading :)
+
+:root
+
+rem BOOT
+set prompt=Gijon@$t$G
+prompt %prompt%
+echo Installing Root...
+ping localhost>nul
+color b0
+ping localhost /n 1 >nul
+color c0
+ping localhost /n 1 >nul
+color a0
+ping localhost /n 1 >nul
+color f0
+ping localhost >nul
+
 
 
 rem LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE
@@ -29,21 +46,21 @@ rem  and an specific copy of the license for this product at:
 rem
 rem  	 https://github.com/GijonDev/BasicGijon/blob/master/LICENSE.md
 rem
-rem  This applies to every file created by this program incluiding the
+rem  This applies to every file created AND/OR by this program incluiding the
 rem  program itself and to every piece of code written in this file and
 rem  in the files created by this file. Read LICENSE.md for more.
-rem  License can be found both in this file using "license.md" and in the
-rem  master branch of GitHub "LICENSE.MD".
+rem  License can be found in master\LICENSE.md at the GitHub project "Root".
+rem
+rem  *******************************************************************************
+rem  *BY RUNNING THIS FILE YOU LEGALLY ACCEPT THE VALID LICENSE FOR THIS FILE FOUND*
+rem  *AT (https://github.com/GijonDev/Root/license.md) AND ALL ITS CONDITIIONS AND *
+rem  *TERMS. CONTINUE AT YOUR OWN RISK! GITHUB IS IN NO WAY AFFILIATED WITH THIS!  *
+rem  *******************************************************************************
 rem
 rem --------------------------------------------------------------------
 rem LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE
 rem LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE-LICENSE
 
-
-@echo off
-title %0 - Setting variables...
-echo Setting variables...
-echo on
 
 
 
@@ -55,7 +72,7 @@ rem FILE
 rem FILE
 set filename=Root.cmd
 set developer=GijonDev
-set patch=10
+set patch=11
 set license=http://www.github.com/GijonDev/BasicGijon/license
 set target=menu
 set name=Root
@@ -69,38 +86,36 @@ set color=f0
 set color1=c0
 set color2=a0
 set color3=b0
-set null=G}
-set menu=%null%:
+set null=G:
 set spacer=%null% ------------------------------------
 set link=github.com/GijonDev
 set input=$
 set mdload=Running
 set paload=under patch-%patch%.
 set opload=Generated output from
+set meload=Menu
+set mpload=%meload%:
+set menu=%mpload% *
+set end=Ending
+set label=label
+set label_output=label_output
+set ftload=f:%stable%
+set "ffload=File code: %stable%"
 rem ROOT
 rem ROOT
 
-rem OUTPUT
-rem OUTPUT
-set output1=%filename%_1.txt
-set output2=%filename%_2.txt
-set output3=%filename%_3.txt
-rem OUTPUT
-rem OUTPUT
 
 rem VERSION
 rem VERSION
-set pingerver=Pinger
-set javaverver=JavaVer
-set randver=Randomizer
-set systemver=System
-set ecxever=ECXE (indev)
-set timerver=Timer
-set ssver=ScreenSaver
-set gamesver=Games
-set forkdevver=ForkDev
-set shutdownver=ShutdownTool
-set webloadver=WebLoad
+set pingerver=Pinger v42
+set javaverver=JavaInfo v43
+set randver=Randomizer v46
+set systemver=SysInfo v36
+set timerver=Timer v25
+set ssver=ScreenSaver v20
+set forkdevver=ForkDev(tm) b5
+set shutdownver=Shutdown v1
+set USBTool=USBTool
 rem VERSION
 rem VERSION
 
@@ -111,17 +126,38 @@ set pingercolor=a0
 set javavercolor=c0
 set systemcolor=b0
 set timercolor=%color%
-set ecxecolor=a0
-set gamescolor=b0
 set sscolor=07
 set forkdevcolor=07
-set shutdowncolor=07
-set webloadcolor=0A
+set shutdowncolor=%color%
 rem COLOR
 rem COLOR
 
+rem NAME
+rem NAME
+set randname=Randomizer
+set pingername=Pinger
+set javavername=JavaInfo
+set systemname=SysInfo
+set timername=Timer
+set gamesname=Games
+set ssname=Shutdown
+set forkdevname=ForkDev(tm)
+set ssname=ScreenSaver
+set winname=Windows
+rem NAME
+rem NAME
 
-rem Deleted compatibility links.
+rem OUTPUT
+set randoutput=%filename%.%randmenu%.ini.txt
+set pingeroutput=%filename%.%pingername%.ini.txt
+set systemoutput=%filename%.%systemname%.ini.txt
+rem OUTPUTLINKS
+rem OUTPUTLINKS
+set output1=%randoutput%
+set output2=%pingeroutput%
+set output3=%systemoutput%
+rem OUTPUTLINKS
+rem OUTPUTLINKS
 
 rem Variables: Variables: Variables: Variables: Variables: Variables: Variables: 
 rem ____________________________________________________________________________
@@ -134,83 +170,53 @@ rem FILE:
 rem FILE:
 rem FILE:
 
-rem LOADING... LOADING... LOADING... LOADING...
-rem LOADING... LOADING... LOADING... LOADING...
-@echo off
-color 07
-ping localhost /n 1 >Nul
-cls
-title %link%
-ping localhost>nul
-color %color1%
-cls
-echo %null%
-ping localhost /n 1 >nul
-color %color2%
-cls
-echo %null%
-echo %null%
-ping localhost /n 1 >nul
-color %color3%
-cls
-echo %null%
-echo %null%
-echo %spacer%
-ping localhost /n 1 >nul
-color %color%
-ping localhost /n 1 >nul
-cls
 
-rem singular use
+
+rem LOG
 title %patch%
-echo %null% %mdload% %namemix% %paload%
-echo %null%
-echo %spacer%
+echo %mdload% %name%.
 ping localhost>nul
+title %ttload%
+echo.
+set /p user=Username:
+ping localhost /n 2 >nul
 cls
-title %name%
-echo %null% %username% signed in.
-echo %null%
-echo %spacer%
+echo Logged as %user%.
 ping localhost >nul
-cls
-rem LOADING... LOADING... LOADING... LOADING...
-rem LOADING... LOADING... LOADING... LOADING...
 
+set ttload=%user%\%name%
 
 rem COMMANDS & MENU
 rem COMMANDS & MENU
 rem COMMANDS & MENU
 rem COMMANDS & MENU
-
-
 
 :menu
-:cls
-:clean
-@cls
+:menulabel
 :restart
-:end
-@echo off
-title %name% - Menu
-color %color%
-echo %null% Input an action:
-echo %null%
-echo %spacer%
-echo.
-echo %menu% %randver% , %pingerver% , %javaverver% , %systemver% , %timerver% , %forkdevver%
-echo %menu% %gamesver% , %ssver%
-echo.
-echo %menu% GitHub , Twitter , License.
-echo %menu% Reload , Delete , CLS , Exit.
-echo.
-set /p aa=%input%
 cls
-goto %aa%
+title %ttload%\%meload%
+color %color%
+echo %mpload% Select an action.
+echo.
+echo %menu% %randname% , %pingername% , %javavername% , %systemname% , %timername% , %forkdevname%
+echo %menu% %ssname% , %winname%
+echo %menu% Reload , Delete , CLS , Exit , GitHub , Twitter
+echo.
+set /p menuinput=%input%
+cls
+goto %menuinput%
 
 
-
-rem Deleted "end".
+:WINDOWSCMD
+:WINDOWS
+echo Installing Windows enviroment...
+echo To go back to %name%, execute "Root.cmd".
+ping localhost >nul
+ping localhost /n 2 >nul
+color 07
+cls
+cmd
 
 
 rem Exit.
@@ -223,13 +229,15 @@ rem Reload.
 start %filename%
 exit
 
+:cls
+cls
+goto menulabel
 
 rem Return.
 rem Used if the user returns a bad answer like "no" in an unsafe program.
 rem Can be accesed out-of-bounds.
 :return
-cls
-title %title%
+title %ttload%
 color %color%
 cls
 echo Bad answer.
@@ -261,69 +269,79 @@ rem These keys may be used for passwords.
 :keygen
 :genkey
 :randomizer
-@echo off
+:rand
 color 07
 ping localhost /n 1 >Nul
 cls
 title %link%
 ping localhost>nul
 color %color1%
-cls
-echo %null%
 ping localhost /n 1 >nul
 color %color2%
-cls
-echo %null%
-echo %null%
 ping localhost /n 1 >nul
 color %color3%
-cls
-echo %null%
-echo %null%
-echo %spacer%
 ping localhost /n 1 >nul
 color %color%
 ping localhost /n 1 >nul
-cls
-title %name% - %randver%
+title %ttload% %randname%
 color %randcolor%
-echo %null% %mdload% %randver% %paload%
-echo %null%
-echo %spacer%
+echo %mdload% %randver% %paload%
 ping localhost>nul
-cls
-title %name% - %randver%: Processing...
-echo %null% Processing...
-echo %null%
-echo %spacer%
+title %ttload% %randname%: Processing...
+echo Processing...
 ping localhost>nul
-cls
-@echo on
-echo %null% Outputing keys to set file "%output1%" >%output1%
-echo %null% >>%output1%
-echo %null% Best key: >>%output1%
-echo %null% %processor_revision%%RANDOM%%errorlevel%%RANDOM%%highestnumanodenumber%%RANDOM%%processor_level%%RANDOM% >>%output1%
+echo %null% Outputing keys to set file "%randoutput%" >%randoutput%
+echo %null% >>%randoutput%
+echo %null% Best key: >>%randoutput%
+echo %null% %processor_revision%%RANDOM%%errorlevel%%RANDOM%%highestnumanodenumber%%RANDOM%%processor_level%%RANDOM% >>%randoutput%
 echo %null% >>%output1%
 echo %null% Generic keys: >>%output1%
-echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%output1%
-echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%output1%
-echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%output1%
-echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%output1%
-echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%output1%
-echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%output1%
-echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%output1%
-echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%output1%
-echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%output1%
-echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%output1%
-echo %null% >>%output1%
-echo %null% END >>%output1%
-%output1%
-@echo off
-cls
-title %name%: Ending...
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+echo %null% >>%randoutput%
+echo %null% END >>%randoutput%
+%randoutput%
+title %ttload% %end%
 ping localhost>nul
-echo %opload% %randver%.
-goto end
+goto 
 
 
 
@@ -335,7 +353,6 @@ rem Can be used to check ping before playing a match in league.
 rem Creates an output.
 :checker
 :pinger
-@echo off
 color 07
 ping localhost /n 1 >Nul
 cls
@@ -343,117 +360,84 @@ title %link%
 ping localhost>nul
 color %color1%
 cls
-echo %null%
 ping localhost /n 1 >nul
 color %color2%
 cls
-echo %null%
-echo %null%
 ping localhost /n 1 >nul
 color %color3%
 cls
-echo %null%
-echo %null%
-echo %spacer%
 ping localhost /n 1 >nul
 color %color%
 ping localhost /n 1 >nul
 cls
 title %link%
 color %pingercolor%
-title %name% - %pingerver%
-echo %null% %mdload% %pingerver% %paload%
-echo %null%
-echo %spacer%
+title %ttload% %pingername%
+echo %mdload% %pingerver% %paload%
 ping localhost>nul
-cls
-title %name% - %pingerver% Menu
-echo %null% Select host:
-echo %null%
-echo %spacer%
 echo.
-echo %menu% LOLEUW , Google , Ubuntu , Custom
-echo.
-set /p ac=%input%
-goto %ac%
-
-:loleuw
-set ad=prod.euw1.lol.riotgames.com
-goto ping
-
-:microsoft
-set ad=microsoft.com
-goto ping
-
-:google
-set ad=google.com
-goto ping
-
-:ubuntu
-set ad=ubuntu.com
-goto ping
-
-:speedtest
-goto return
-
-:custom
-:customhost
+title %ttload% %pingername%
+set /p pingerinput=Input host:
+if pingerinput==LOLEUW goto loleuw
+if pingerinput==loleuw goto loleuw
+if pingerinput==LoLEUW goto loleuw
+if pingerinput==LoLEUw goto loleuw
+if pingerinput==lolEUW goto loleuw
+set pingertarget=%pingerinput%
+:pingerping
 cls
-title %name% - %pingerver% - Custom Host Selection
-echo %null% Input custom URL/IP
-echo %null%
-echo %spacer%
-echo.
-set /p ad=%input%
-goto ping
-
-:ping
-cls
-title %name% - %pingerver%: Pinging...
-echo %null% Pinging to %ad%...
-echo %null%
-echo %spacer%
-echo %null% Results from pinging task to %ad%. Printing to %output2% >%output2%
-echo %null% Testing hosts and tracers... >>%output2%
-echo %null% >>%output2%
+title %ttload% %pingername%: Pinging...
+echo Pinging to %pingertarget%...
+echo Testing hosts and tracers...
+echo %null% >%output2%
 echo %spacer% >>%output2%
 echo %null% =TRACERT: >>%output2%
-tracert %ad% >>%output2%
+tracert %pingertarget% >>%output2%
 echo %null% >>%output2%
 echo %null% >>%output2%
 echo %null% >>%output2%
 echo %spacer% >>%output2%
 echo %null% =NSLOOKUP (Self DNS): >>%output2%
-nslookup %ad% >>%output2%
+nslookup %pingertarget% >>%output2%
 echo %null% =NSLOOKUP (Google DNS): >>%output2%
-nslookup %ad% 8.8.8.8 >>%output2%
+nslookup %pingertarget% 8.8.8.8 >>%output2%
 echo %null% >>%output2%
 echo %null% >>%output2%
 echo %null% >>%output2%
 echo %spacer% >>%output2%
 echo %null% =16B PING:>>%output2%
-ping %ad% /l 16 >>%output2%
+ping %pingertarget% /l 16 >>%output2%
 echo %null% >>%output2%
 echo %null% >>%output2%
 echo %null% >>%output2%
 echo %null% Real ping = +1~10ms to the average>>%output2%
 echo %null% END >>%output2%
 %output2%
-cls
-title %name%: Ending...
+echo.
+set p pingeranswer=Do you want to load the selected host? (Y/N):
+if pingeranswer==Y goto pingerload
+if pingeranswer==y goto pingerload
+
+:PINGEREND
+title %ttload% %end%
 ping localhost>nul
-echo %opload% %pingerver%.
-goto end
+goto menulabel
+
+:PINGERLOAD
+ping localhost >nul
+echo Loading host...
+start www.%pingertarget%
+goto pingerend
+
+:loleuw
+set pingertarget=prod.euw1.lol.riotgames.com
+goto %pingerping%
 
 
 
-
-
-rem JavaVer
-rem Old module. Not planned to be updated anymore.
-rem Not deprecated.
+rem JavaInfo
 :javaver
-@echo off
+:javainfo
 color 07
 ping localhost /n 1 >Nul
 cls
@@ -461,56 +445,37 @@ title %link%
 ping localhost>nul
 color %color1%
 cls
-echo %null%
 ping localhost /n 1 >nul
 color %color2%
 cls
-echo %null%
-echo %null%
 ping localhost /n 1 >nul
 color %color3%
 cls
-echo %null%
-echo %null%
-echo %spacer%
 ping localhost /n 1 >nul
 color %color%
 ping localhost /n 1 >nul
 cls
 color %javavercolor%
-title %name% - %javaverver%
-echo %null% %mdload% %javaverver% %paload%
-echo %null%
-echo %spacer%
+title %ttload% %javavername%
+echo %mdload% %javaverver% %paload%
 ping localhost>nul
 cls
-title %name% - %javaverver%: Getting version...
-echo %null% Java...
-echo %null%
-echo %spacer%
+title %ttload% %javavername%: Getting version...
+echo Java...
 ping localhost>nul
-cls
-echo %null% Java SE-Runtime...
-echo %null%
-echo %spacer%
+echo Java SE-Runtime...
 ping localhost>nul
-cls
-echo %null% Java VM-HotSpot...
-echo %null%
-echo %spacer%
+echo Java VM-HotSpot...
 ping localhost>nul
-cls
-title %name% - %javaverver%
-echo %null% Java version:
-echo %null%
-echo %spacer%
+title %ttload% %javavername%
+echo Java version:
 echo.
 java -version
 pause
 cls
-title %name%: Ending...
+title %ttload%: %end%
 ping localhost>nul
-goto end
+goto menulabel
 
 
 
@@ -521,7 +486,8 @@ rem Gives out some computer information.
 rem Big module. As big as old! <3
 :system
 :winver
-@echo off
+:systeminfo
+:sysinfo
 color 07
 ping localhost /n 1 >Nul
 cls
@@ -529,41 +495,31 @@ title %link%
 ping localhost>nul
 color %color1%
 cls
-echo %null%
 ping localhost /n 1 >nul
 color %color2%
 cls
-echo %null%
-echo %null%
 ping localhost /n 1 >nul
 color %color3%
 cls
-echo %null%
-echo %null%
-echo %spacer%
 ping localhost /n 1 >nul
 color %color%
 ping localhost /n 1 >nul
 cls
 color %systemcolor%
-title %name% - %systemver%
-echo %null% %mdload% %systemver% %paload%
-echo %null%
-echo %spacer%
+title %ttload% %systemname%
+echo %mdload% %systemver% %paload%
 ping localhost>nul
 cls
-title %name% - %systemver%: Getting info...
-echo %null% Getting system information...
-echo %null%
-echo %spacer%
+title %ttload% %systemname%: Getting info...
+echo Getting system information...
 ping localhost >nul
 systeminfo >nul
-title %name% - %systemver%
+title %ttload% %systemname%
 ver
 echo Error level: %errorlevel%
 echo Output: %output3%
-echo %null% Outputing information to %output3% >%output3%
-echo %null% >>%output3%
+echo Outputing information to %output3%.
+echo %null% >%output3%
 systeminfo >>%output3%
 echo %null% >>%output3%
 echo %null% >>%output3%
@@ -575,16 +531,14 @@ echo %null% >>%output3%
 echo %null% Final string.  >>%output3%
 %output3%
 cls
-title %name%: Ending...
+title %ttload% %end%
 ping localhost>nul
-echo %opload% %systemver%.
-goto end
+goto menulabel
 
 
 
 
 :timer
-@echo off
 color 07
 ping localhost /n 1 >Nul
 cls
@@ -592,145 +546,32 @@ title %link%
 ping localhost>nul
 color %color1%
 cls
-echo %null%
 ping localhost /n 1 >nul
 color %color2%
 cls
-echo %null%
-echo %null%
 ping localhost /n 1 >nul
 color %color3%
 cls
-echo %null%
-echo %null%
-echo %spacer%
 ping localhost /n 1 >nul
 color %color%
 ping localhost /n 1 >nul
 cls
 color %timercolor%
-title %name% - %timerver%
-echo %null% %mdload% %timerver% %paload%
-echo %null%
-echo %spacer%
+title %ttload% %timername%
+echo %mdload% %timerver% %paload%
 ping localhost>nul
 cls
-title %name% - %timerver%: Updating...
-echo %null% Updating time and loading files...
-echo %null%
-echo %spacer%
+title %ttload% %timername%: Updating...
+echo Updating time and loading files...
 ping localhost>nul
 cls
 :timerestart
-title %name% - %timerver%
+title %timername% %ftload%
 ping localhost /n 1 >nul
 cls
-echo %null% %time% ; %date%
-echo %null%
-echo %spacer%
+echo %time% ; %date%
+echo %ffload%
 goto timerestart
-
-
-
-
-
-rem Games.
-rem Games is a large command that consists of some random minigames like roll the dice or toss the coin.
-rem It includes a guide.
-:games
-@echo off
-color 07
-ping localhost /n 1 >Nul
-cls
-title %link%
-ping localhost>nul
-color %color1%
-cls
-echo %null%
-ping localhost /n 1 >nul
-color %color2%
-cls
-echo %null%
-echo %null%
-ping localhost /n 1 >nul
-color %color3%
-cls
-echo %null%
-echo %null%
-echo %spacer%
-ping localhost /n 1 >nul
-color %color%
-ping localhost /n 1 >nul
-cls
-title %name% - %gamesver%
-color %gamescolor%
-echo %null% %mdload% %gamesver% %paload%
-echo %null%
-echo %spacer%
-ping localhost>nul
-cls
-:gamesmenuhelp
-title %name% - %gamesver% Menu
-:gamesmenu
-echo %null% Games Menu
-echo %null%
-echo %spacer%
-echo.
-echo %menu% Coin , Dice , Roll
-echo.
-echo %menu% Help , End
-echo.
-set /p ag=%input%
-goto %ag%
-
-:coin
-cls
-set /a "coin=%random% %% 3"
-if coin==0 goto coin
-title %name% - %gamesver%: Coin!
-echo The result is %coin%!
-goto gamesmenu
-
-:dice
-cls
-set /a "dice=%random% %% 7"
-if dice==0 goto dice
-title %name% - %gamesver%: Dice!
-echo The result is %dice%!
-goto gamesmenu
-
-:roll
-cls
-set /a "roll=%random% %% 101"
-if roll==0 goto roll
-title %name% - %gamesver%: Roll!
-echo The result is %roll%!
-goto gamesmenu
-
-:help
-cls
-title %name% - %gamesver% Help
-echo %null% Information about the program:
-echo %null%
-echo %spacer%
-ping localhost /n 1 >nul
-echo.
-ping localhost /n 1 >nul
-echo %menu% "Coin" gives you a random result between 1(heads) and 2(tails). AKA toss a coin.
-ping localhost /n 1 >nul
-echo %menu% "Dice" gives you a random result between 1 and 6. AKA roll a dice.
-ping localhost /n 1 >nul
-echo %menu% "Roll" gives you a random result between 1 and 100.
-ping localhost /n 1 >nul
-echo %menu% "End" terminates the module and goes back to the main menu.
-ping localhost /n 1 >nul
-echo.
-ping localhost /n 1 >nul
-echo %menu% Note! If the result equals 0, roll again.
-ping localhost /n 1 >nul
-pause
-goto gamesmenuhelp
-
 
 
 
@@ -739,7 +580,6 @@ rem Simple. It changes colour (not randomly) and title.
 rem Can be set to "fullscreen" even out of Windows10.
 :ss
 :screensaver
-@echo off
 color 07
 ping localhost /n 1 >Nul
 cls
@@ -747,27 +587,19 @@ title %link%
 ping localhost>nul
 color %color1%
 cls
-echo %null%
 ping localhost /n 1 >nul
 color %color2%
 cls
-echo %null%
-echo %null%
 ping localhost /n 1 >nul
 color %color3%
 cls
-echo %null%
-echo %null%
-echo %spacer%
 ping localhost /n 1 >nul
 color %color%
 ping localhost /n 1 >nul
 cls
-title %name% - %ssver%
+title %ttload% %ssname%
 color %sscolor%
-echo %null% %mdload% %ssver% %paload%
-echo %null%
-echo %spacer%
+echo %mdload% %ssver% %paload%
 ping localhost>nul
 cls
 ping localhost>nul
@@ -778,9 +610,8 @@ title %link%
 echo %ssver% by %developer%
 time /t
 echo.
-echo %spacer%
 echo Running patch-%patch%
-echo %spacer%
+echo %ffload%
 color a0
 ping localhost >nul 
 color b0
@@ -810,11 +641,17 @@ rem Deletes every picece of output and/or old versions of the file that could be
 rem Outputs a message to the console.
 rem Can be accessed out-of-bounds.
 :delete
-title %name% Menu: Delete
+title %ttload% Menu: Delete
 cls
-del %output1%
+del %randoutput%
 del %output2%
 del %output3%
+del %systemoutput%
+del %randoutput%
+del %pingeroutput%
+del Root.cmd\rand.txt
+del Root.cmd\pinger.txt
+del Root.cmd\sysinfo.txt
 del Root.cmd_1.txt
 del Root.cmd_2.txt
 del Root.cmd_3.txt
@@ -850,14 +687,13 @@ del GijonStatus.bat
 del RootDev.cmd
 cls
 echo Deleted.
-goto restart
+goto menulabel
 
 
 rem GitHub link.
 rem http://www.github.com/GijonDev/
 :github
 start www.github.com/GijonDev/
-cls
 echo Oppened GitHub.
 goto restart
 
@@ -866,134 +702,9 @@ rem Twitter link.
 rem http://www.twitter.com/GijonDev
 :twitter
 start www.twitter.com/GijonDev
-cls
 echo Oppened Twitter.
 goto restart
 
-
-rem License/License.md
-rem Piece of deprecated license included in patch 7 to 8beta.
-rem To get the newest license make sure to visit github.com/GijonDev/BasicGijon/license.md
-:license.md
-:license
-title %name% Menu: License
-cls
-ping localhost /n 1 >nul
-echo Piece of license included in files from patch-7 to patch-8-beta
-ping localhost /n 1 >nul
-echo Copyright {2016} {GijonDev}
-ping localhost /n 1 >nul
-echo.
-echo Licensed under the Apache License, Version 2.0 (the "License");
-ping localhost /n 1 >nul
-echo you may not use this file except in compliance with the License.
-ping localhost /n 1 >nul
-echo You may obtain a copy of the License at:
-ping localhost /n 1 >nul
-echo.
-echo     http://www.apache.org/licenses/LICENSE-2.0
-ping localhost /n 1 >nul
-echo .
-echo  and an specific copy of the license for this product at:
-ping localhost /n 1 >nul
-echo.
-echo  	 https://github.com/GijonDev/BasicGijon/blob/master/LICENSE.md
-ping localhost /n 1 >nul
-echo.
-echo  This applies to every file created by this program incluiding the
-ping localhost /n 1 >nul
-echo  program itself and to every piece of code written in this file and
-ping localhost /n 1 >nul
-echo  in the files created by this file. Read LICENSE.md for more.
-ping localhost /n 1 >nul
-echo.
-echo This product is in no way affiliated with Microsoft Corporations nor any other company/corporation.
-ping localhost /n 1 >nul
-echo This license is using Apache License 2.0. Read below.
-ping localhost /n 1 >nul
-echo Made by http://www.github.com/GijonDev
-ping localhost /n 1 >nul
-echo Latest version of this product can be found on http://www.github.com/GijonDev/BasicGijon/releases
-ping localhost /n 1 >nul
-echo More information about the poduct can be found in http://www.github.com/GijonDev/BasicGijon/projects/2
-ping localhost /n 1 >nul
-echo This product has been created and edited using Notepad++ and Windows 7/10.
-ping localhost /n 1 >nul
-pause
-cls
-goto restart
-
-
-
-
-
-
-
-
-REM UNSAFE ZONE! UNSAFE ZONE! UNSAFE ZONE! UNSAFE ZONE! UNSAFE ZONE! UNSAFE ZONE! UNSAFE ZONE! 
-
-
-
-rem ECXE
-rem Temporaly deactivated deprecated Bat-Exe converter.
-rem Do not try to use.
-:ECXE
-@echo off
-cls
-
-rem Not working.
-rem Wait until this is fixed.
-rem Use at your own risk.
-echo Read the code.
-echo The application will restart.
-pause
-goto end
-rem Trespassing this line may not be virus-free.
-rem Use at your own risk.
-rem Warranties included in the license.
-
-@echo off
-color 07
-ping localhost /n 1 >Nul
-cls
-title %link%
-ping localhost>nul
-color %color1%
-cls
-echo %null%
-ping localhost /n 1 >nul
-color %color2%
-cls
-echo %null%
-echo %null%
-ping localhost /n 1 >nul
-color %color3%
-cls
-echo %null%
-echo %null%
-echo %spacer%
-ping localhost /n 1 >nul
-color %color%
-ping localhost /n 1 >nul
-cls
-title %name% - %ecxever%
-color %ecxecolor%
-echo %null% %mdload% %ecxever% %paload%
-echo %null%
-echo %spacer%
-ping localhost>nul
-cls
-title %name% - %ecxever%: Waiting input.
-echo %null% Insert BatTarget and ExeOutput.
-echo %null%
-echo %spacer%
-echo.
-set /p %ae%=%input%battarget=
-set /p %af%=%input%exeoutput=
-title %name% - %ecxever%: Generating output files...
-npocmaka-bat2exe.bat %ae%.bat %af%.exe
-del *.DDF
-goto end
 
 
 
@@ -1005,26 +716,31 @@ rem This can harm your computer. Use at your own risk.
 rem FORKDEV(tm) MADE BY GIJONDEV
 rem FORKDEV(tm) APPLIES UNDER THE LICENSE ATTACHED IN THIS FILE:
 :forkdev
-:forkbomb
 color 07
-title ForkDev (tm)GijonDev
+title %forkdevname% %ftload%
 cls
-ping localhost>nul
-set /p aj=You are about to run a fork bomb. Are you sure? (Y/N)
-if %aj%==y goto forkend
-if %aj%==Y goto forkend
-goto return
-:forkend
-set /p ak=You are about to run a fork bomb. Are you REALLY sure? (Y/N)
-if %ak%==y goto fastforkbomb
-if %ak%==Y goto fastforkbomb
-goto return
-:fastforkbomb
+echo goto %label_output% >%output4%
+echo @echo off >>%output4%
+echo cls >>%output4%
+echo title %forkdevname% %ffload% >>%output4%
+echo color 07 >>%output4%
+echo echo Running BombDev
+echo echo %ffload% >>%output4%
+echo exit >>%output4%
+echo echo start %output4% >>%output4%
+echo goto %label_output% >>%output4%
+:forkdevlabel
+@echo off
 cls
-echo Running ForkDev(tm)...
-ping localhost>nul
-%0|%0 
+echo Running %forkdevname%
+echo %ffload%
+start %output4%
+goto forkdevlabel
 rem This code WILL affect your device's performance and it may even restart it or _destroy it partially_.
+
+
+
+
 
 
 :shutdown
@@ -1032,50 +748,29 @@ rem This code WILL affect your device's performance and it may even restart it o
 @echo off
 color 07
 ping localhost /n 1 >Nul
-cls
 title %link%
 ping localhost>nul
 color %color1%
-cls
-echo %null%
 ping localhost /n 1 >nul
 color %color2%
-cls
-echo %null%
-echo %null%
 ping localhost /n 1 >nul
 color %color3%
-cls
-echo %null%
-echo %null%
 echo %spacer%
 ping localhost /n 1 >nul
 color %color%
 ping localhost /n 1 >nul
 cls
-title %name% - %shutdownver%
+title %ttload% %shutdownname%
 color %shutdowncolor%
-echo %null% %mdload% %shutdownver% %paload%
-echo %null%
-echo %spacer%
+echo %mdload% %shutdownver% %paload%
 ping localhost>nul
-cls
 :shutdownmenuhelp
 :shutdownmenu
-echo %null% Games Menu
-echo %null%
-echo %spacer%
-echo.
-echo %menu% Coin , Dice , Roll
-echo.
-echo %menu% Help , End
+echo %shutdownname% %meload%
 echo.
 set /p ah=%input%
 goto %ah%
 
-
-
-REM END OF UNSAFE ZONE! END OF UNSAFE ZONE! END OF UNSAFE ZONE! END OF UNSAFE ZONE! END OF UNSAFE ZONE! 
 
 rem MODULES MODULES MODULES MODULES MODULES MODULES MODULES 
 rem MODULES MODULES MODULES MODULES MODULES MODULES MODULES 

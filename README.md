@@ -20,4 +20,4 @@ No installation needed. Just [download](https://github.com/GijonDev/Root#downloa
 
 
 ###[Contact](http://www.twitter.com/GijonDev)
-*NOTE: It may look inactive. It is not, I'm just busy with another stuff. Another update is prob heading up and almost there.
+*NOTE: It may look inactive. It is not, I'm just busy with another stuff. Another update is prob heading up and almost there.*

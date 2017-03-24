@@ -1,12 +1,15 @@
-#Root
+### Last updated version: patch-11-beta-2
 
 
-##Project
-Running  _"modules"_ using batch-scripts since Sep16. 
+# Root
+
+
+## Project
+Running "modules" using batch-scripts since Sep16. 
 
 
 ##Installation
-No installation needed. Just [download](https://github.com/GijonDev/Root#download) it and run.
+No installation needed. Just [download](https://github.com/GijonDev/Root#download) and run.
 
 
 [Status](http://www.github.com/gijondev/root/projects).
@@ -16,7 +19,7 @@ No installation needed. Just [download](https://github.com/GijonDev/Root#downloa
 [License](https://github.com/GijonDev/Root/blob/master/LICENSE.md).
 
 
-###[Contact](http://www.twitter.com/GijonDev)
+### [Contact](http://www.twitter.com/GijonDev)
 
 
 

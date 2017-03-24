@@ -20,6 +20,7 @@ No installation needed. Just download and run.
 
 ### [Contact](http://www.twitter.com/GijonDev)
 
-<- [GijonDev](http://gijondev.github.io)
-
 *NOTE: It may look inactive. It is not, I'm just busy with another stuff.*
+
+
+### <- [GijonDev](http://gijondev.github.io)

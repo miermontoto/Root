@@ -18,8 +18,6 @@ No installation needed. Just download and run.
 
 ### [License](https://github.com/GijonDev/Root/blob/master/LICENSE)
 
-### [Commands](https://www.github.com/GijonDev/Root/projects/3)
-
 
 
 *NOTE: It may look inactive. It is not, I'm just busy with another stuff.*

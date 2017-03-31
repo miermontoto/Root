@@ -2,17 +2,9 @@
 
 
 # **Root**
-
-
-## Project
 Running "modules" using batch-scripts since Sep16. 
 
 
-## Installation
-No installation needed. Just download and run.
-
-
-### [Status](https://github.com/GijonDev/Root/projects/2)
 
 ### [Downloads](http://www.github.com/GijonDev/Root/releases)
 

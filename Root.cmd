@@ -1,15 +1,21 @@
 rem This product is in no way affiliated with Microsoft Corporations nor any other company/corporation.
-rem This product is licensed under GPL GNU v3
+rem This product is licensed under CC-BY-SA-4.0. A copy of this license may be found in the project's repo.
 
 @echo off
-if NOT EXIST C:\WINDOWS\system32 goto skipwin
-if NOT %OS%==Windows_NT goto skipwin
+
+rem LoL files loaction
+if EXIST "%programfiles%\League of Legends\lol.launcher.exe" set LeagueLocated=32
+if EXIST "%programfiles% (x86)\League of Legends\lol.launcher.exe" (set LeagueLocated=64) ELSE (set LeagueLocated=custom)
+
 cls
 color 07
-set stable=%random%
-prompt Root_OOB$$
+set /a id=%random% %% 10000
+set r=Root.cmd
+prompt Root$g
 title Root [...]
 echo Installing Root...
+if NOT [%1]==[] (set parameter1=enabled) ELSE (set parameter1=disabled)
+if %parameter1%==enabled (echo Parameter stroke)
 ping localhost /n 1 >nul
 color b0
 ping localhost /n 1 >nul
@@ -18,89 +24,85 @@ ping localhost /n 1 >nul
 color a0
 ping localhost /n 1 >nul
 
-set filename=Root.cmd
-set patch=13
+set patch=14
 set name=Root
 set color1=c0
 set color2=a0
 set color3=b0
-set color=f0
 set spacer============================================================================
 set run=Running
 set opload=Generated output from
-set "codesx=Session key: %stable%"
-set cmd=%name%#$
-set scmd=%name%:settings#$
-set "title=%name% [%stable%]"
+set cmd=%name%:
+set "title=%name% [%id%]"
 set "titleo=%title%"
+set "titler=%title%"
 set debug=false
-set randoutput=Randomizer#%stable%.txt
-set pingeroutput=Pinger#%stable%.txt
-set systemoutput=SysInfo#%stable%.txt
-set flushoutput=Flush#%stable%.txt
-set ssd=0
-set negatived=0
+set randoutput=Randomizer#%id%.txt
+set pingeroutput=Pinger#%id%.txt
+set systemoutput=SysInfo#%id%.txt
+set flushoutput=Flush#%id%.txt
 
 rem List of runnable modules
 rem ------------------------
-set reload=1
-set rl=1
-set cls=1
-set clear=1
-set dev=1
-set day=1
-set undev=1
-set win=1
-set windows=1
-set setx=1
-set shell=1
-set gay=1
-set keygen=1
-set randomizer=1
-set rand=1
-set checker=1
-set pinger=1
-set javaver=1
-set javainfo=1
-set system=1
-set sysinfo=1
-set ss=1
-set screensaver=1
-set delete=1
-set del=1
-set sd=1
-set selfdestruct=1
-set flush=1
-set off=1
-set sessions=1
-set eof=1
-set settings=1
-set bnw=1
-rem Secondary movements
-set ##back=1
-set ##color=1
-set ##title=1
+set #reload=1
+set #rl=1
+set #cls=1
+set #rel=1
+set #clear=1
+set #dev=1
+set #day=1
+set #undev=1
+set #win=1
+set #windows=1
+set #keygen=1
+set #randomizer=1
+set #rand=1
+set #checker=1
+set #pinger=1
+set #javaver=1
+set #javainfo=1
+set #system=1
+set #sysinfo=1
+set #ss=1
+set #screensaver=1
+set #delete=1
+set #del=1
+set #sd=1
+set #selfdestruct=1
+set #flush=1
+set #off=1
+set #sessions=1
+set #eof=1
+set #bnw=1
+set #color=1
+set #title=1
+set #rsessions=1
 
+rem Use commands without "#"
+rem Also "reset" and "back" inside color/title settings.
+
+rem Open this file with a parameter to go to the module if vaild.
+rem EX: Root.cmd rand will execute Root.cmd, login and then rand automatically.
+
+rem -------------
+
+rem Color detection
+if NOT EXIST %userprofile%\RootSessionsFile.ini goto ftr
+:ll
 color %color%
+
 cls
-echo Root's log-in interface:
-echo.
-echo.
-set /p user=User    :
-if %user%==rl goto reload
-ping localhost /n 1 >nul
-echo Key     :%stable%
-echo.
-echo Logged in.
-echo %user%:%stable% 	:[%date% , %time%][r%patch%] >>%userprofile%\RootSessionFiles.ini
+echo Logged in using id %id%
+if %parameter1%==enabled (echo [Pre-Loaded command: "%1"])
+echo [%date% , %time%][r%patch%] Logged in. (%id%)>>%userprofile%\RootSessionsFile.ini
 title %title%
-ping localhost /n 3 >nul
+ping localhost >nul
 :menu
 cls
 title %title%
 color %color%
 echo %spacer%
-echo =      Ver: patch-%patch%               :           License: GPL GNU v3        =
+echo =          Ver: patch-%patch%             :       License: CC-BY-SA-4.0        =
 echo %spacer% 
 echo.
 echo.
@@ -118,53 +120,77 @@ echo %spacer%
 echo =           github.com/GijonDev      :         gijondev.github.io         =
 echo %spacer%
 echo.
+if %parameter1%==enabled goto %1
 :msgdebug
+echo.
 title %title%
 color %color%
 set /p mi=%cmd%
-if DEFINED %mi% (goto %mi%) ELSE (echo Incorrect parameter.)
+echo.
+if DEFINED #%mi% (goto %mi%) ELSE (echo Incorrect parameter.)
 goto msgdebug
 
-:settings
-set /p ms=%scmd%
-if DEFINED ##%ms% (goto ##%ms%) ELSE (echo Incorrect parameter.)
-goto settings
-:##color
-set /P color=Root:settings:color#$
+:color
+set /P cas=Root(Color):
+if %cas%==back goto msgdebug
+echo [%date% , %time%][r%patch%] Set color theme. (%cas%)>>%userprofile%\RootSessionsFile.ini
+if %cas%==reset goto cmod_reset
+setx color %cas%
+set color=%cas%
+goto ndetect
+:cmod_reset
+setx color "f0"
+set color=f0
+goto cmod_wh
+:ndetect
 color %color%
-goto settings
-:##title
-set /p titled=Root:settings:title#$
-set title=%titled%                                                                              -%titleo%			
+goto msgdebug
+:title
+set /p titled=Root(Title):
+if %titled%==back goto msgdebug
+if %titled%==reset goto titler
+set title=%titled%			
 title %title%		
-goto settings
-:##back
-echo.
+goto msgdebug
+:titler
+set title=%titler%
+title %title%
 goto msgdebug
 
 :reload
 :rl
-echo Detected incorrect/reload parameter. Reloading...
-ping localhost >nul
-title %0
-call %0
+:rel
+cls
+start %r%
+ping localhost /n 1 >nul
+exit
 
 :off
 goto eof
 
 :bnw
-if %negatived%==0 goto bl
-if %negatived%==1 goto wh
-exit
+if %color%==f0 goto bl
+if %color%==0f (goto wh) ELSE (echo You cannot Black and White because you have a modded color theme.)
+goto msgdebug
 :bl
-set negatived=1
-set color=0f
+set cas=0f
+setx color %cas%
+set color=%cas%
 goto msgdebug
 :wh
-set negatived=0
-set color=f0
+set cas=f0
+setx color %cas%
+set color=%cas%
 goto msgdebug
 
+:sessions
+start %userprofile%\RootSessionsFile.ini
+goto msgdebug
+
+:rsessions
+del /Q /f %userprofile%\RootSessionsFile.ini
+echo Deleted sessions file. A new one will be generated in the next login.
+goto msgdebug
 :cls
 :clear
 goto menu
@@ -195,30 +221,15 @@ goto msgdebug
 :win
 :WINDOWS
 echo Installing Windows enviroment...
-echo To go back to %name%, execute "%filename%".
-echo %spacer%
-echo.
+if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat & del %public%\WinRoot.bat
 ping localhost /n 3 >nul
-color 07
-title %0
-cmd
-
-:SETX
-:Shell
-echo %run% SETX/Shell.
-ping localhost /n 3 >nul
-echo Setting permanent variable...
-echo NOTE: Input "end" to go back
-echo.
-set /P shellname=Variable name:
-set /p shellpass=Variable status:
-if %shellname%==end goto shellend
-if %shellpass%==end goto shellend
-SETX %shellname% %shellpass%
-SETX rEnabled_%shellname% true
-echo Variable set.
-ping localhost /n 3 >nul
-echo.
+echo @echo off >%public%\WinRoot.bat
+echo color 07 >>%public%\WinRoot.bat
+echo title CMD.EXE from %title% >>%public%\WinRoot.bat
+echo prompt >>%public%\WinRoot.bat
+echo cmd >>%public%\WinRoot.bat
+attrib +h %public%\WinRoot.bat
+start %public%\WinRoot.bat
 goto msgdebug
 
 :keygen
@@ -235,7 +246,7 @@ ping localhost /n 1 >nul
 echo %run% Randomizer.
 ping localhost>nul
 echo Generating...
-echo Generated keys from %filename% at [%time% , %date%] >%randoutput%
+echo Generated keys from %r% at [%time% , %date%] >%randoutput%
 echo. >>%randoutput%
 echo ##PC's unique keys: >>%randoutput%
 echo %processor_revision%%RANDOM%%errorlevel%%RANDOM%%highestnumanodenumber%%RANDOM%%processor_level%%RANDOM% >>%randoutput%
@@ -355,7 +366,7 @@ set /p pingerinput=Input host:
 set pingertarget=%pingerinput%
 :pingerping
 echo Pinging to %pingertarget%
-echo Pinging to %pingertarget%  from %filename% >%pingeroutput%
+echo Pinging to %pingertarget%  from %r% >%pingeroutput%
 echo. >>%pingeroutput%
 echo =TRACERT: >>%pingeroutput%
 tracert %pingertarget% >>%pingeroutput%
@@ -450,19 +461,11 @@ goto ssr
 
 :delete
 :del
-echo.
 if EXIST *.txt del *.txt
-if EXIST *.vbs del *.vbs
-if EXIST *.bat del *.bat
-if EXIST C:\Users\Public\bfhosts.exe del C:\Users\Public\bfhosts.exe
-ping localhost /n 1 >nul
+if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat
+if EXIST %public%\WinRoot.bat del %public%\WinRoot.bat
 echo Successfully deleted cache files.
-echo.
 goto msgdebug
-
-
-:offsys
-rem WIP
 
 :selfdestruct
 :sd
@@ -474,17 +477,20 @@ goto msgdebug
 cls
 echo Self-destructing...
 ping localhost >Nul
-del /f /q %userprofile%\RootSessionFiles.ini
+del /f /q %userprofile%\RootSessionsFile.ini
 if EXIST *.txt del *.txt
-if EXIST *.vbs del *.vbs
 if EXIST *.bat del *.bat
+if EXIST *.cmd del *.cmd
 if EXIST C:\Users\Public\bfhosts.exe del C:\Users\Public\bfhosts.exe
 if EXIST C:\Users\Public\ublock_origin.txt del C:\Users\Public\ublock_origin.txt
 if EXIST C:\Users\Public\Showdown.ini del C:\Users\Public\Showdown.ini
 if EXIST Showdown.ini del Showdown.ini
 if EXIST ublock_origin.txt del ublock_origin.txt
 if EXIST bfhosts.exe del bfhosts.exe
+if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat
+if EXIST %public%\WinRoot.bat del %public%\WinRoot.bat
 del /f /q %0
+exit
 
 
 :flush
@@ -527,11 +533,22 @@ echo %name% should be ran in "Windows_NT".
 pause
 goto eof
 
-:sessions
-start %userprofile%\RootSessionFiles.ini
-goto msgdebug
+:ftr
+echo Generated session files on [%time% , %date%] >%userprofile%\RootSessionsFile.ini
+echo Sessions and colors are saved on this file. Do not delete. >>%userprofile%\RootSessionsFile.ini
+echo ----------------- >>%userprofile%\RootSessionsFile.ini
+echo. >>%userprofile%\RootSessionsFile.ini
+echo. >>%userprofile%\RootSessionsFile.ini
+echo. >>%userprofile%\RootSessionsFile.ini
+set cas=f0
+set color=%cas%
+setx color %cas%
+goto ll
 
 :EOF
+if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat
+if EXIST %public%\WinRoot.bat del %public%\WinRoot.bat
+exit
 
 
 

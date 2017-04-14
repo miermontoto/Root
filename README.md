@@ -13,9 +13,9 @@ The list of updated working modules can be found inside the file since patch-12
 
 ### [License](https://github.com/GijonDev/Root/blob/master/LICENSE)
 
-Download [cecho.exe](https://dl.dropboxusercontent.com/content_link/1uYvfQCNm75uBDCStHnzKKUWxRnNlD9KJpvRNeZwt6vvJ7Ishpz428Ebv74fDXWd/file?dl=1) and insert it into your system32 to improve visuals.
+**Download [cecho.exe](https://dl.dropboxusercontent.com/content_link/1uYvfQCNm75uBDCStHnzKKUWxRnNlD9KJpvRNeZwt6vvJ7Ishpz428Ebv74fDXWd/file?dl=1) and insert it into your system32 to improve visuals.** :shipit:
 
-*NOTE: It may look inactive. It is not, I'm just busy with another stuff.*
+~~*NOTE: It may look inactive. It is not, I'm just busy with another stuff.*~~
 
 
 ### <- [GijonDev](http://gijondev.github.io)

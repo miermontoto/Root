@@ -1,35 +1,137 @@
-rem This product is in no way affiliated with Microsoft Corporations nor any other company/corporation.
-rem This product is licensed under CC-BY-SA-4.0. A copy of this license may be found in the project's repo.
-
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                                                                                                                                                             ::
+::                   Root.cmd                                                                                                                                  ::
+::                   by GijonDev                                                                                                                               ::
+::                                                                                                                                                             ::
+::                                                                                                                                                             ::
+::                                                                                                                                                             ::
+::                                                                                                                                                             ::
+::                                                                 dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP                                                           ::      
+::                                                                db dBP   dBP.BP  dBP.BP    dBP                                                               ::
+::                                                               dBBBBK   dBP.BP  dBP.BP    dBP                                                                ::
+::                                                              dBP  BB  dBP.BP  dBP.BP    dBP                                                                 ::
+::                                                             dBP  dB' dBBBBP  dBBBBP    dBP                                                                  ::
+::                                                                                                                                                             ::
+::                                                                                                                                                             ::
+::                                                                                                                                                             ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                                                                                                                                                             ::
+::                   Compatibilities:                                                                                                                          ::
+::                                                                                                                                                             ::
+::                                   - Windows 98      (Compatibility Mode)                                                                                    ::
+::                                   - Windows XP      (Compatibility Mode)                                                                                    ::
+::                                   - Windows 2000/ME (Compatibility Mode)                                                                                    ::
+::                                   - Windows Vista                                                                                                           ::
+::                                   - Windows 7                                                                                                               ::
+::                                   - Windows 8 & 8.1                                                                                                         ::
+::                                   - Windows 10                                                                                                              ::
+::                                                                                                                                                             ::
+::                                   - Not tested on Windows Server                                                                                            ::
+::                                                                                                                                                             ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                                                                                                                                                             ::
+::                   About                                                                                                                                     ::
+::                                                                                                                                                             ::
+::                   This file is a recopilation of diverse features of the "batch" coding language which is                                                   ::
+::                   included by default on every single Windows machine. This language used to be very useful                                                 ::
+::                   when Windows first came up until Windows XP, but then the programs themselves began                                                       ::
+::                   to adquire more value and usefullness. Today batch can still be pretty useful for some                                                    ::
+::                   nerdy tasks; this is the purpose of this file: to automate all those tasks and make them                                                  ::
+::                   easier to realize for the regular and advanced user even if this file requires some                                                       ::
+::                   knowledge of batch.                                                                                                                       ::
+::                                                                                                                                                             ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                                                                                                                                                             ::
+::                   Developer                                                                                                                                 ::
+::                                                                                                                                                             ::
+::                   The developer, GijonDev, created this file for fun having some really basic experience on                                                 ::
+::                   the programing itself but he has used this program to learn and understand how programming                                                ::
+::                   in general works. You may visit his github page where you can find all his projects.                                                      ::
+::                                                                                                                                                             ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                                                                                                                                                             ::
+::                   Developing                                                                                                                                ::
+::                                                                                                                                                             ::
+::                   The file has been created and developed using Notepad++. For the creation of this file,                                                   ::
+::                   some sources like stackoverflow and others have been consulted. You may ocassionally                                                      ::
+::                   find on the internet similar strings to those presented but every single line has been                                                    ::
+::                   manually written and adapted especially for this file. This projects has been being                                                       ::
+::                   developed since September 2016, starting out with the patch-1.                                                                            ::
+::                                                                                                                                                             ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                                                                                                                                                             ::
+::                   License                                                                                                                                   ::
+::                                                                                                                                                             ::
+::                   The project actual is licensed under "CC-BY-SA-4.0". You can find a copy of the license in                                                ::
+::                   the project official repository as well as in the official creative commons webpage. Please                                               ::
+::                   note that the license may actually vary depending on the version.                                                                         ::
+::                                                                                                                                                             ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                                                                                                                                                             ::
+::                   External media                                                                                                                            ::
+::                                                                                                                                                             ::
+::                   - Twitter              (http://www.twitter.com/GijonDev)                                                                                  ::
+::                   - GitHub               (http://www.github.com/GijonDev)                                                                                   ::
+::                   - YouTube              (http://www.youtube.com/underscoreBis)                                                                             ::
+::                   - GitHubPages          (http://gijondev.github.io)                                                                                        ::
+::                                                                                                                                                             ::
+::                   - Project license      (https://github.com/GijonDev/Root/blob/master/LICENSE)                                                             ::
+::                   - Project repository   (https://github.com/GijonDev/Root)                                                                                 :: 
+::                   - Project downloads    (https://github.com/GijonDev/Root/releases)                                                                        ::
+::                   - Project page         (https://gijondev.github.io/Root/)                                                                                 ::
+::                                                                                                                                                             ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                                                                                                                                                             ::
+::                   Supporters                                                                                                                                ::
+::                                                                                                                                                             ::
+::                   The people that have contributed in any helpful way to this project are:                                                                  ::
+::                                                                                                                                                             ::
+::                                   - http://www.twitter.com/HiImYeh_                                                                                         ::
+::                                   - http://www.twitter.com/isramg64                                                                                         ::
+::                                   - http://www.twitter.com/Xx_byJony1_xX                                                                                    ::
+::                                   - http://www.github.com/npocmaka                                                                                          ::
+::                                   - http://stackoverflow.com/users/2128947/magoo                                                                            ::
+::                                                                                                                                                             ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                                                                                                                                                             ::
+::                                                               NOTES                                                                                         ::
+::                                                                                                                                                             ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: This file is capable of displaying special strings when cecho.exe is detected / enabled                                                                     ::
 :: To download cecho.exe: https://dl.dropboxusercontent.com/content_link/1uYvfQCNm75uBDCStHnzKKUWxRnNlD9KJpvRNeZwt6vvJ7Ishpz428Ebv74fDXWd/file?dl=1            ::
 :: To install cecho.exe in order to work with Root you can put it in "C:\Windows\System32" or indicate the cecho.exe path to Root using "install_cecho".       ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: SysInfo/System module runs strings obtained from different npocmaka's files. You can check npocmaka github here - https://github.com/npocmaka               ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: Symbols and artwork have been copied from http://patorjk.com/software/taag/ and http://www.alt-codes.net/                                                   ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::                  
+::                                                                                                                                          (designed on patch16)
+
+
+
 
 
 @echo off
+::
 color 07
-cls
-echo Installing Root...
+echo Installing Root... [ฑฑฑฑฑ]
 ::
 ::
 rem Session installation
 set /a id=%random% %% 10000
 set r=Root.cmd
 prompt Root$g
-title Root [...]
+title Root [þþþ]
 ::
 rem Variables installation
-set patch=15
+set patch=16
 set name=Root
 set c1=c0
 set c2=a0
 set c3=b0
-set spacer============================================================================
 set run=Running
 set opload=Generated output from
-set cmd=%name%:
+set cmd=%name%ฏ
 set "title=%name% [%id%]"
 set "titleo=%title%"
 set "titler=%title%"
@@ -39,6 +141,9 @@ set pingeroutput=Pinger#%id%.txt
 set systemoutput=SysInfo#%id%.txt
 set flushoutput=Flush#%id%.txt
 ::
+cls
+echo Installing Root... [ฒฑฑฑฑ]
+ping localhost /n 1 >nul
 rem Modulables
 rem (List of runnable modules)
 set #reload=1
@@ -74,21 +179,31 @@ set #rsessions=1
 set #detect=1
 set #install_cecho=1
 set #cecho=1
+set #sys=1
+set #id=1
+set #load=1
 ::
+cls
+echo Installing Root... [ฒฒฑฑฑ]
+ping localhost /n 1 >nul
 rem Use commands without "#"
 rem Also "reset" and "back" inside color/title settings.
 ::
 rem Open this file with a parameter to go to the module (if vaild)
 rem EX: Root.cmd rand will execute Root.cmd, login and then rand automatically.
 rem -------------
+cls
+echo Installing Root... [ฒฒฒฑฑ]
+ping localhost /n 1 >nul
 ::
 ::
 rem Parameter detection
 if NOT [%1]==[] (set parameter1=enabled) ELSE (set parameter1=disabled)
 if [%2]==[-silent] (set silent=true) ELSE (set silent=false)
 ::
-rem XP detection - inherited from gWiris
+rem XP detection - inherited from gWiris (Compatibility mode)
 if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
+if %clip%==1 set "title=%title% [Compatibility]"
 ::
 rem cecho.exe detection
 if DEFINED cecho_path goto cskip
@@ -102,19 +217,19 @@ if EXIST "%programfiles% (x86)\League of Legends\lol.launcher.exe" (set LeagueLo
 ::
 if NOT EXIST %userprofile%\RootSessionsFile.inf goto NN
 :OO
+cls
+echo Installing Root... [ฒฒฒฒฑ]
+ping localhost /n 1 >nul
 ::
-::
-title %title%
 if %parameter1%==enabled title %title% "%1" %2
-::if %clip%==1 (echo Enabled XP compatibility mode)
 echo [%date% , %time%][r%patch%] Logged in. (%id%) >>%userprofile%\RootSessionsFile.inf
+cls
+echo Installing Root... [ฒฒฒฒฒ]
+title %title%
+if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
 ping localhost /n 2 >nul
-if NOT DEFINED cecho_path (echo DONE) ELSE (%cecho_path% {8a}DONE{#})
-ping localhost /n 3 >nul
 color %color%
 cls
-echo Logged in using id %id%
-ping localhost /n 2 >nul
 
 
 
@@ -123,38 +238,41 @@ cls
 title %title%
 if %silent%==true goto %1
 color %color%
-echo %spacer%
-echo =          Ver: patch-%patch%             :       License: CC-BY-SA-4.0        =
-echo %spacer% 
+echo ษออออออออออออออออออออออออออออออออออออออออออออหออออออออออออออออออออออออออออออออออออออออออออป
+echo บ               Ver: patch-16                บ           License: CC-BY-SA-4.0            บ
+echo ฬออออออออออออออออออออออออออออออออออออออออออออสออออออออออออออออออออออออออออออออออออออออออออน 
+echo บ                                                                                         บ  
+echo บ                                                                                         บ  
+echo บ                                                                                         บ
+echo บ                                                                                         บ
+echo บ                                                                                         บ
+echo บ                              dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP                          บ
+echo บ                             db dBP   dBP.BP  dBP.BP    dBP                              บ
+echo บ                            dBBBBK   dBP.BP  dBP.BP    dBP                               บ
+echo บ                           dBP  BB  dBP.BP  dBP.BP    dBP                                บ
+echo บ                          dBP  dB' dBBBBP  dBBBBP    dBP                                 บ
+echo บ                                                                                         บ
+echo บ                                                                                         บ
+echo บ                                                                                         บ
+echo บ                                                                                         บ
+echo บ                                                                                         บ
+echo ฬออออออออออออออออออออออออออออออออออออออออออออหออออออออออออออออออออออออออออออออออออออออออออน
+echo บ            github.com/GijonDev             บ             gijondev.github.io             บ
+echo ศออออออออออออออออออออออออออออออออออออออออออออสออออออออออออออออออออออออออออออออออออออออออออผ
 echo.
-echo.
-echo.                   
-echo                                      d8P        (tm) patch-%patch%
-echo                                   d888888P
-echo         88bd88b d8888b   d8888b    ?88'
-echo        88P'    d8P' ?88 d8P' ?88   88P  
-echo       d88      88b  d88 88b  d88  88b  
-echo      d88'      `?8888P' `?8888P' ?8b  
-echo.
-echo.
-echo.
-echo %spacer%
-echo =           github.com/GijonDev      :         gijondev.github.io         =
-echo %spacer%
-echo.
-:joinM
+:source
 if %silent%==true taskkill /im cmd.exe
 echo.
 title %title%
 color %color%
 set /p mi=%cmd%
 echo.
-if DEFINED #%mi% (goto %mi%) ELSE (echo Incorrect parameter.)
-goto joinM
+if DEFINED #%mi% (goto %mi%) ELSE (echo Invalid location.)
+goto source
 
 :color
 set /P cas=Root(Color):
-if %cas%==back goto joinM
+if %cas%==back goto source
 echo [%date% , %time%][r%patch%] Set color theme. (%cas%)>>%userprofile%\RootSessionsFile.inf
 if %cas%==reset goto color_rest
 setx color %cas%
@@ -165,80 +283,90 @@ setx color "f0"
 set color=f0
 :color_reload
 color %color%
-goto joinM
+goto source
 
 :title
 set /p titled=Root(Title):
-if %titled%==back goto joinM
+if %titled%==back goto source
 if %titled%==reset goto title_reset
 set title=%titled%			
 title %title%		
-goto joinM
+goto source
 :title_reset
 set title=%titler%
 title %title%
-goto joinM
+goto source
 
 :reload
 :rl
 :rel
-cls
+start %r%
+exit
+start %r%
+exit
 start %r%
 exit
 
+:load
+call %r%
+
 :off
 goto eof
+
+:id
+echo id = %id%
+goto source
 
 :install_cecho
 set /P "ces=Insert cecho.exe path="
 if NOT %ces%==reset goto install_cecho_keep
 setx cecho_path ""
 set "cecho_path="
-goto joinM
+goto source
 :install_cecho_keep
 setx cecho_path %ces%
 set cecho_path=%ces%
 %ces% {0a}Enabled cecho.exe
 echo.
 pause
-goto joinM
+goto source
 
 
 :bnw
 if %color%==f0 goto bl
 if %color%==0f (goto wh) ELSE (echo You cannot Black and White because you have a modded color theme.)
-goto joinM
+goto source
 :bl
 set cas=0f
 setx color %cas%
 set color=%cas%
-goto joinM
+goto source
 :wh
 set cas=f0
 setx color %cas%
 set color=%cas%
-goto joinM
+goto source
 
 :sessions
 start %userprofile%\RootSessionsFile.inf
-goto joinM
+goto source
 
 :rsessions
 echo Are you really sure you want to delete your sessions file?
 echo This will delete your settings (color and logins)
 set /p ryses=Input "Y" to delete the sessions file:
 if %ryses%==Y (goto ryY) ELSE (echo Negative answer. Returning to menu...)
-goto joinM
+goto source
 del /Q /f %userprofile%\RootSessionsFile.inf
 echo Deleted sessions file. A new one will be generated in the next login.
-goto joinM
+goto source
 
 :cecho
 if NOT DEFINED %cecho_path% goto cecho_keep
 echo Wasn't able to detect cecho.exe
 echo For this module to run you need cecho.exe
 echo Specify cecho.exe's path using "install_cecho"
-goto joinM
+goto source
 :cecho_keep
 %cecho_path% {00}00 {10}10 {20}20 {30}30 {40}40 {50}50 {60}60 {70}70 {80}80 {90}90 {A0}A0 {B0}B0 {C0}80 {D0}90 {E0}A0 {F0}B0{\n}
 %cecho_path% {01}01 {11}11 {21}21 {31}31 {41}41 {51}51 {61}61 {71}71 {81}81 {91}91 {A1}A1 {B1}B1 {C1}81 {D1}91 {E1}A1 {F1}B1{\n}
@@ -255,14 +383,14 @@ goto joinM
 %cecho_path% {0C}0C {1C}1C {2C}2C {3C}3C {4C}4C {5C}5C {6C}6C {7C}7C {8C}8C {9C}9C {AC}AC {BC}BC {CC}8C {DC}9C {EC}AC {FC}BC{\n}
 %cecho_path% {0D}0D {1D}1D {2D}2D {3D}3D {4D}4D {5D}5D {6D}6D {7D}7D {8D}8D {9D}9D {AD}AD {BD}BD {CD}8D {DD}9D {ED}AD {FD}BD{\n}
 %cecho_path% {0E}0E {1E}1E {2E}2E {3E}3E {4E}4E {5E}5E {6E}6E {7E}7E {8E}8E {9E}9E {AE}AE {BE}BE {CE}8E {DE}9E {EE}AE {FE}BE{\n}
-%cecho_path% {0F}0F {1F}1F {2F}2F {3F}3F {4F}4F {5F}5F {6F}6F {7F}7F {8F}8F {9F}9F {AF}AF {BF}BF {CF}8F {DF}9F {EF}AF {FF}BF{\n}
+%cecho_path% {0F}0F {1F}1F {2F}2F {3F}3F {4F}4F {5F}5F {6F}6F {7F}7F {8F}8F {9F}9F {AF}AF {BF}BF {CF}8F {DF}9F {EF}AF {FF}BF{\n}{#}
 pause
 goto menu
 
 :detect
 set /p de=Input:
 if DEFINED %de% (echo Confirmation: true) ELSE (echo Confirmation: false)
-goto joinM
+goto source
 
 :cls
 :clear
@@ -270,17 +398,20 @@ goto menu
 
 :win
 :windows
-echo Installing Windows enviroment...
+if DEFINED cecho_path (%cecho_path% {8f}Installing Windows enviroment...{#}) ELSE (echo Installing Windows enviroment...)
 if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat & del %public%\WinRoot.bat
 ping localhost /n 3 >nul
 echo @echo off >%public%\WinRoot.bat
 echo color 07 >>%public%\WinRoot.bat
-echo title CMD.EXE from %title% >>%public%\WinRoot.bat
-echo prompt >>%public%\WinRoot.bat
+echo title cmd.exe - %r%>>%public%\WinRoot.bat
+echo prompt>>%public%\WinRoot.bat
+echo cd C:\ >>%public%\WinRoot.bat
 echo cmd >>%public%\WinRoot.bat
 attrib +h %public%\WinRoot.bat
+echo  Launched process with id %id%
 start %public%\WinRoot.bat
-goto joinM
+echo.
+goto source
 
 :keygen
 :randomizer
@@ -293,7 +424,7 @@ color %c3%
 ping localhost /n 1 >nul
 color %color%
 ping localhost /n 1 >nul
-echo %run% Randomizer.
+if DEFINED cecho_path (%cecho_path% {8f}%run% Randomizer{\n}) ELSE (echo %run% Randomizer)
 ping localhost /n 2 >nul
 echo Generating...
 echo Generated keys from %r% at [%time% , %date%] >%randoutput%
@@ -396,7 +527,7 @@ echo -end of the file- >>%randoutput%
 echo Successfully generated and opened keys.
 start %randoutput%
 echo.
-goto joinM
+goto source
 
 
 :checker
@@ -409,7 +540,7 @@ color %c3%
 ping localhost /n 1 >nul
 color %color%
 ping localhost /n 1 >nul
-echo %run% Pinger.
+if DEFINED cecho_path (%cecho_path% {8f}%run% Pinger{\n}) ELSE (echo %run% Pinger)
 ping localhost>nul
 set /p pingerinput=Input host:
 set pingertarget=%pingerinput%
@@ -434,7 +565,7 @@ echo -end of the file- >>%pingeroutput%
 start %pingeroutput%
 echo.
 ping localhost>nul
-goto joinM
+goto source
 
 :javaver
 :javainfo
@@ -446,17 +577,18 @@ color %c3%
 ping localhost /n 1 >nul
 color %color%
 ping localhost /n 1 >nul
-echo %run% JavaVer.
+if DEFINED cecho_path (%cecho_path% {8f}%run% JavaVer{\n}) ELSE (echo %run% JavaVer)
 ping localhost>nul
 echo Java...
 ping localhost >nul
 java -version
 echo.
 pause
-goto joinM
+goto source
 
 :system
 :sysinfo
+:sys
 color %c1%
 ping localhost /n 1 >nul
 color %c2%
@@ -465,11 +597,30 @@ color %c3%
 ping localhost /n 1 >nul
 color %color%
 ping localhost /n 1 >nul
-echo %run% SysInfo.
-ver
-echo Current error level: %errorlevel%
-echo Outputing information to %systemoutput%
-systeminfo >%systemoutput%
+if DEFINED cecho_path (%cecho_path% {8f}%run% SysInfo{\n}) ELSE (echo %run% SysInfo)
+if EXIST %systemoutput% del -f -q %systemoutput%
+if NOT EXIST C:\WINDOWS\system32\RazerCoinstaller.dll goto sys_send
+if DEFINED cecho_path (%cecho_path% {8c}Detected Razer dlls{\n}{8f}) ELSE (echo WARNING!1 Detected Razer dlls)
+:sys_send
+echo Working...
+:: code by npocmaka
+start "" /w dxdiag /t %systemoutput%
+:: code by npocmaka
+systeminfo >>%systemoutput%
+echo. >>%systemoutput%
+echo. >>%systemoutput%
+echo. >>%systemoutput%
+echo %spacer% >>%systemoutput%
+ver >>%systemoutput%
+:: code by npocmaka
+for /r "%SystemRoot%\Microsoft.NET\Framework\" %%# in ("*csc.exe") do (
+    set "l="
+    for /f "skip=1 tokens=2 delims=k" %%$ in ('"%%# #"') do (if not defined l set l=%%$)
+	)
+echo current .NET version = %l% >>%systemoutput% >>%systemoutput%
+:: code by npocmaka
+echo. >>%systemoutput%
+echo %spacer% >>%systemoutput%
 echo. >>%systemoutput%
 echo. >>%systemoutput%
 echo. >>%systemoutput%
@@ -482,8 +633,9 @@ echo. >>%systemoutput%
 echo. >>%systemoutput%
 echo -end of the file- >>%systemoutput%
 start %systemoutput%
+if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
 echo.
-goto joinM
+goto source
 
 
 :ss
@@ -512,23 +664,24 @@ if EXIST *.txt del *.txt
 if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat
 if EXIST %public%\WinRoot.bat del %public%\WinRoot.bat
 echo Successfully deleted cache files.
-goto joinM
+goto source
 
 :selfdestruct
 :sd
 set /P er=Are you sure you want to self-destruct Root? Input "Y" to confirm:
-if %er%==Y (GOTO SDS) ELSE (echo Negative answer. Returning to menu...)
+if %er%==Y (GOTO SDS)
+if DEFINED cecho_path (%cecho_path% {8c}Negative answer. Returning to menu...) ELSE (echo Negative answer. Returning to menu...)
 ping localhost >nul
-goto joinM
+echo.
+goto source
 :sds
 cls
-echo Self-destructing... (id %id%)
+echo Self-destructing...
 ping localhost >Nul
 del /f /q %userprofile%\RootSessionsFile.inf
-if EXIST %userprofile%\RootSessionsFile.ini del /f /q %userprofile%\RootSessionsFile.ini
+if EXIST %userprofile%\RootSessionsFile.inf del /f /q %userprofile%\RootSessionsFile.inf
 if EXIST %userprofile%\RootSessionFiles.ini del /f /q %userprofile%\RootSessionFiles.ini
 if EXIST *.txt del *.txt
-if EXIST *.bat del *.bat
 if EXIST C:\Users\Public\bfhosts.exe del C:\Users\Public\bfhosts.exe
 if EXIST C:\Users\Public\ublock_origin.txt del C:\Users\Public\ublock_origin.txt
 if EXIST C:\Users\Public\Showdown.ini del C:\Users\Public\Showdown.ini
@@ -537,12 +690,14 @@ if EXIST ublock_origin.txt del ublock_origin.txt
 if EXIST bfhosts.exe del bfhosts.exe
 if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat
 if EXIST %public%\WinRoot.bat del %public%\WinRoot.bat
+if DEFINED color setx color ""
+if DEFINED cecho_path setx cecho_path ""
+echo done! (%date%) >>%temp%\sd.tmp
 del /f /q %0
 exit
 
 
 :flush
-ping localhost>nul
 color %c1%
 ping localhost /n 1 >nul
 color %c2%
@@ -551,17 +706,12 @@ color %c3%
 ping localhost /n 1 >nul
 color %color%
 ping localhost /n 1 >nul
-echo %run% Flush.
+if DEFINED cecho_path (%cecho_path% {8f}%run% Flush{\n}) ELSE (echo %run% Flush)
 ping localhost>nul
-echo WARNING! You may need to power-cycle your device/router/ethernet cable
-echo Working...
+if DEFINED cecho_path (%cecho_path% {8c}WARNING! You may need to power-cycle your device/router/ethernet cable.) ELSE (echo WARNING! You may need to power-cycle your device/router/ethernet cable.)
+if DEFINED cecho_path (%cecho_path% {8f}Working...) ELSE (echo Working...)
 ipconfig /flushdns 
 ipconfig /registerdns
-echo.
-ipconfig /release
-ipconfig /release6
-ipconfig /displaydns
-cls
 echo Flush reports >%flushoutput%
 echo WARNING! You may need to power-cycle your device/router/ethernet cable. >>%flushoutput%
 echo. >>%flushoutput%
@@ -570,7 +720,7 @@ ipconfig /release6 >>%flushoutput%
 ipconfig /displaydns >>%flushoutput%
 start %flushoutput%
 echo.
-goto joinM
+goto source
 
 
 :NN
@@ -590,6 +740,10 @@ if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat
 if EXIST %public%\WinRoot.bat del %public%\WinRoot.bat
 exit
 
+
+::::::
+::::
+::::::
 
 
 

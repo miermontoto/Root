@@ -214,6 +214,8 @@ rem LoL files loaction
 if EXIST "%programfiles%\League of Legends\lol.launcher.exe" set LeagueLocated=32
 if EXIST "%programfiles% (x86)\League of Legends\lol.launcher.exe" (set LeagueLocated=64) ELSE (set LeagueLocated=custom)
 ::
+rem Windows 10 / Menu compatibility (from patch17)
+for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j
 ::
 if NOT EXIST %userprofile%\RootSessionsFile.inf goto NN
 :OO
@@ -238,6 +240,7 @@ cls
 title %title%
 if %silent%==true goto %1
 color %color%
+if NOT "%version%" == "10.0" goto menuold
 echo ษออออออออออออออออออออออออออออออออออออออออออออหออออออออออออออออออออออออออออออออออออออออออออป
 echo บ               Ver: patch-16                บ           License: CC-BY-SA-4.0            บ
 echo ฬออออออออออออออออออออออออออออออออออออออออออออสออออออออออออออออออออออออออออออออออออออออออออน 
@@ -259,6 +262,30 @@ echo บ                                                                          
 echo ฬออออออออออออออออออออออออออออออออออออออออออออหออออออออออออออออออออออออออออออออออออออออออออน
 echo บ            github.com/GijonDev             บ             gijondev.github.io             บ
 echo ศออออออออออออออออออออออออออออออออออออออออออออสออออออออออออออออออออออออออออออออออออออออออออผ
+goto cmenu
+:menuold
+echo -----------------------------------------------------------------------------------
+echo :            Ver: patch-17               :         License: CC-BY-SA-4.0          :
+echo -----------------------------------------------------------------------------------
+echo.
+echo.
+echo.
+echo.
+echo.                   
+echo                            dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP                          
+echo                           db dBP   dBP.BP  dBP.BP    dBP                              
+echo                          dBBBBK   dBP.BP  dBP.BP    dBP                               
+echo                         dBP  BB  dBP.BP  dBP.BP    dBP                                
+echo                        dBP  dB' dBBBBP  dBBBBP    dBP
+echo.
+echo.
+echo.
+echo.
+echo.
+echo -----------------------------------------------------------------------------------
+echo :             github.com/GijonDev        :           gijondev.github.io           :
+echo -----------------------------------------------------------------------------------
+:cmenu
 echo.
 :source
 if %silent%==true taskkill /im cmd.exe

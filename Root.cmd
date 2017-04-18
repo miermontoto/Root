@@ -110,11 +110,12 @@
 
 
 
-
+:sof
 @echo off
 ::
 color 07
 echo Installing Root... [ฑฑฑฑฑ]
+ping localhost /n 1 >nul
 ::
 ::
 rem Session installation
@@ -124,7 +125,7 @@ prompt Root$g
 title Root [þþþ]
 ::
 rem Variables installation
-set patch=16
+set patch=17
 set name=Root
 set c1=c0
 set c2=a0
@@ -138,12 +139,15 @@ set "titler=%title%"
 set debug=false
 set randoutput=Randomizer#%id%.txt
 set pingeroutput=Pinger#%id%.txt
-set systemoutput=SysInfo#%id%.txt
+set sysoutput=SysInfo#%id%.txt
 set flushoutput=Flush#%id%.txt
+set javaveroutput=JavaInfo#%id%.txt
+if NOT DEFINED looped set looped=0
 ::
 cls
 echo Installing Root... [ฒฑฑฑฑ]
 ping localhost /n 1 >nul
+::
 rem Modulables
 rem (List of runnable modules)
 set #reload=1
@@ -156,7 +160,6 @@ set #windows=1
 set #keygen=1
 set #randomizer=1
 set #rand=1
-set #checker=1
 set #pinger=1
 set #javaver=1
 set #javainfo=1
@@ -181,21 +184,24 @@ set #install_cecho=1
 set #cecho=1
 set #sys=1
 set #id=1
-set #load=1
+set #crash=1
+set #test=1
+set #loop=1
 ::
 cls
 echo Installing Root... [ฒฒฑฑฑ]
 ping localhost /n 1 >nul
+::
 rem Use commands without "#"
 rem Also "reset" and "back" inside color/title settings.
 ::
 rem Open this file with a parameter to go to the module (if vaild)
 rem EX: Root.cmd rand will execute Root.cmd, login and then rand automatically.
 rem -------------
+::
 cls
 echo Installing Root... [ฒฒฒฑฑ]
 ping localhost /n 1 >nul
-::
 ::
 rem Parameter detection
 if NOT [%1]==[] (set parameter1=enabled) ELSE (set parameter1=disabled)
@@ -214,15 +220,21 @@ rem LoL files loaction
 if EXIST "%programfiles%\League of Legends\lol.launcher.exe" set LeagueLocated=32
 if EXIST "%programfiles% (x86)\League of Legends\lol.launcher.exe" (set LeagueLocated=64) ELSE (set LeagueLocated=custom)
 ::
-rem Windows 10 / Menu compatibility (from patch17)
-for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j
-::
+rem First-time detection
 if NOT EXIST %userprofile%\RootSessionsFile.inf goto NN
 :OO
+::
+rem Windows 10 / Menu compatibility
+for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j
+::
+rem Self-destruct detector
+if EXIST %temp%\sd.tmp del /f /q %temp%\sd.tmp
+::
 cls
 echo Installing Root... [ฒฒฒฒฑ]
 ping localhost /n 1 >nul
 ::
+rem Log-in and final detections
 if %parameter1%==enabled title %title% "%1" %2
 echo [%date% , %time%][r%patch%] Logged in. (%id%) >>%userprofile%\RootSessionsFile.inf
 cls
@@ -232,74 +244,80 @@ if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
 ping localhost /n 2 >nul
 color %color%
 cls
+if %looped%==1 goto sof
 
 
 
 :menu
 cls
-title %title%
 if %silent%==true goto %1
 color %color%
+title %title%
+::set version=asd (force-enable old menu)
 if NOT "%version%" == "10.0" goto menuold
-echo ษออออออออออออออออออออออออออออออออออออออออออออหออออออออออออออออออออออออออออออออออออออออออออป
-echo บ               Ver: patch-16                บ           License: CC-BY-SA-4.0            บ
-echo ฬออออออออออออออออออออออออออออออออออออออออออออสออออออออออออออออออออออออออออออออออออออออออออน 
-echo บ                                                                                         บ  
-echo บ                                                                                         บ  
-echo บ                                                                                         บ
-echo บ                                                                                         บ
-echo บ                                                                                         บ
-echo บ                              dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP                          บ
-echo บ                             db dBP   dBP.BP  dBP.BP    dBP                              บ
-echo บ                            dBBBBK   dBP.BP  dBP.BP    dBP                               บ
-echo บ                           dBP  BB  dBP.BP  dBP.BP    dBP                                บ
-echo บ                          dBP  dB' dBBBBP  dBBBBP    dBP                                 บ
-echo บ                                                                                         บ
-echo บ                                                                                         บ
-echo บ                                                                                         บ
-echo บ                                                                                         บ
-echo บ                                                                                         บ
-echo ฬออออออออออออออออออออออออออออออออออออออออออออหออออออออออออออออออออออออออออออออออออออออออออน
-echo บ            github.com/GijonDev             บ             gijondev.github.io             บ
-echo ศออออออออออออออออออออออออออออออออออออออออออออสออออออออออออออออออออออออออออออออออออออออออออผ
+echo ษออออออออออออออออออออออออออออออออออออออออออออออหออออออออออออออออออออออออออออออออออออออออออออออป
+echo บ                Ver: patch-17                 บ            License: CC-BY-SA-4.0             บ
+echo ฬออออออออออออออออออออออออออออออออออออออออออออออสออออออออออออออออออออออออออออออออออออออออออออออน 
+echo บ                                                                                             บ  
+echo บ                                                                                             บ  
+echo บ                                                                                             บ
+echo บ                                                                                             บ
+echo บ                                                                                             บ
+echo บ                                  dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP                          บ
+echo บ                                 db dBP   dBP.BP  dBP.BP    dBP                              บ
+echo บ                                dBBBBK   dBP.BP  dBP.BP    dBP                               บ
+echo บ                               dBP  BB  dBP.BP  dBP.BP    dBP                                บ
+echo บ                              dBP  dB' dBBBBP  dBBBBP    dBP                                 บ
+echo บ                                                                                             บ
+echo บ                                                                                             บ
+echo บ                                                                                             บ
+echo บ                                                                                             บ
+echo บ                                                                                             บ
+echo ฬออออออออออออออออออออออออออออออออออออออออออออออหออออออออออออออออออออออออออออออออออออออออออออออน
+echo บ             github.com/GijonDev              บ              gijondev.github.io              บ
+echo ศออออออออออออออออออออออออออออออออออออออออออออออสออออออออออออออออออออออออออออออออออออออออออออออผ
 goto cmenu
 :menuold
-echo -------------------------------------------------------------------------------
-echo :           Ver: patch-17              :        License: CC-BY-SA-4.0         :
-echo -------------------------------------------------------------------------------
+echo -----------------------------------------------------------------------------------
+echo :            Ver: patch-17               :         License: CC-BY-SA-4.0          :
+echo -----------------------------------------------------------------------------------
 echo.
 echo.
 echo.
 echo.
-echo.
-echo                            dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP
-echo                           db dBP   dBP.BP  dBP.BP    dBP
-echo                          dBBBBK   dBP.BP  dBP.BP    dBP
-echo                         dBP  BB  dBP.BP  dBP.BP    dBP
+echo.                   
+echo                            dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP                          
+echo                           db dBP   dBP.BP  dBP.BP    dBP                              
+echo                          dBBBBK   dBP.BP  dBP.BP    dBP                               
+echo                         dBP  BB  dBP.BP  dBP.BP    dBP                                
 echo                        dBP  dB' dBBBBP  dBBBBP    dBP
 echo.
 echo.
 echo.
 echo.
 echo.
-echo -------------------------------------------------------------------------------
-echo :            github.com/GijonDev       :          gijondev.github.io          :
-echo -------------------------------------------------------------------------------
+echo -----------------------------------------------------------------------------------
+echo :             github.com/GijonDev        :           gijondev.github.io           :
+echo -----------------------------------------------------------------------------------
 :cmenu
 echo.
 :source
 if %silent%==true taskkill /im cmd.exe
 echo.
-title %title%
 color %color%
+title %title%
 set /p mi=%cmd%
 echo.
 if DEFINED #%mi% (goto %mi%) ELSE (echo Invalid location.)
 goto source
 
+:sourced
+echo Successfully cancelled action!
+goto source
+
 :color
-set /P cas=Root(Color):
-if %cas%==back goto source
+set /P cas=Root - colorฏ
+if %cas%==back goto sourced
 echo [%date% , %time%][r%patch%] Set color theme. (%cas%)>>%userprofile%\RootSessionsFile.inf
 if %cas%==reset goto color_rest
 setx color %cas%
@@ -312,12 +330,17 @@ set color=f0
 color %color%
 goto source
 
+:loop
+set looped=1
+goto sof
+
 :title
-set /p titled=Root(Title):
-if %titled%==back goto source
-if %titled%==reset goto title_reset
-set title=%titled%			
+set /p titled=Root - titleฏ
+if "%titled%" == "back" goto sourced
+if "%titled%" == "reset" goto title_reset
+set "title=%titled%"		
 title %title%		
+setx titled "%title%"
 goto source
 :title_reset
 set title=%titler%
@@ -344,6 +367,26 @@ goto eof
 echo id = %id%
 goto source
 
+:test
+echo Disabled! (no tests going on right now)
+goto source
+
+:crash
+if %id% LEQ 3333 (goto crash_rem)
+if %id% GEQ 6666 (goto crash_call) ELSE (goto crash_if)
+exit
+::all code by npocmaka
+:crash_rem
+title Let Jesus take the wheel - rem
+set "h=/?"&call rem  %%h%%
+:crash_call
+title Let Jesus take the wheel - call
+(call :: & :: )
+:crash_if
+title Let Jesus take the wheel - if
+set "h=/?"&& call for %%h%%
+::all code by npocmaka
+
 :install_cecho
 set /P "ces=Insert cecho.exe path="
 if NOT %ces%==reset goto install_cecho_keep
@@ -357,7 +400,6 @@ set cecho_path=%ces%
 echo.
 pause
 goto source
-
 
 :bnw
 if %color%==f0 goto bl
@@ -425,17 +467,17 @@ goto menu
 
 :win
 :windows
-if DEFINED cecho_path (%cecho_path% {8f}Installing Windows enviroment...{#}) ELSE (echo Installing Windows enviroment...)
+if DEFINED cecho_path (%cecho_path% {8f}Installing Windows enviroment...{#}{\n}) ELSE (echo Installing Windows enviroment...)
 if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat & del %public%\WinRoot.bat
 ping localhost /n 3 >nul
 echo @echo off >%public%\WinRoot.bat
 echo color 07 >>%public%\WinRoot.bat
 echo title cmd.exe - %r%>>%public%\WinRoot.bat
-echo prompt>>%public%\WinRoot.bat
+echo prompt >>%public%\WinRoot.bat
 echo cd C:\ >>%public%\WinRoot.bat
 echo cmd >>%public%\WinRoot.bat
 attrib +h %public%\WinRoot.bat
-echo  Launched process with id %id%
+if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
 start %public%\WinRoot.bat
 echo.
 goto source
@@ -463,6 +505,7 @@ echo %processor_revision%%RANDOM%%errorlevel%%RANDOM%%highestnumanodenumber%%RAN
 echo. >>%randoutput%
 echo. >>%randoutput%
 echo ##Default randomized keys: >>%randoutput%
+echo. >>%randoutput%
 echo ####[1-5] >>%randoutput%
 echo %RANDOM% >>%randoutput%
 echo %RANDOM% >>%randoutput%
@@ -480,6 +523,7 @@ echo %RANDOM% >>%randoutput%
 echo %RANDOM% >>%randoutput%
 echo %RANDOM% >>%randoutput%
 echo %RANDOM% >>%randoutput%
+%randoutput%
 echo ####[2-10] >>%randoutput%
 echo %RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM% >>%randoutput%
@@ -497,6 +541,7 @@ echo %RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM% >>%randoutput%
+%randoutput%
 echo ####[3-15] >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM% >>%randoutput%
@@ -514,6 +559,7 @@ echo %RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+%randoutput%
 echo ####[4-20] >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
@@ -531,6 +577,7 @@ echo %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
+%randoutput%
 echo ####[5-25] >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM%%random% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM%%random% >>%randoutput%
@@ -551,13 +598,11 @@ echo %RANDOM%%RANDOM%%RANDOM%%RANDOM%%random% >>%randoutput%
 echo. >>%randoutput%
 echo. >>%randoutput%
 echo -end of the file- >>%randoutput%
-echo Successfully generated and opened keys.
+if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
 start %randoutput%
 echo.
 goto source
 
-
-:checker
 :pinger
 color %c1%
 ping localhost /n 1 >nul
@@ -569,29 +614,29 @@ color %color%
 ping localhost /n 1 >nul
 if DEFINED cecho_path (%cecho_path% {8f}%run% Pinger{\n}) ELSE (echo %run% Pinger)
 ping localhost>nul
-set /p pingerinput=Input host:
-set pingertarget=%pingerinput%
-:pingerping
-echo Pinging to %pingertarget%
-echo Pinging to %pingertarget%  from %r% >%pingeroutput%
+set /p ping=Input host:
+if %ping%==back goto sourced
+echo Pinging to %ping%...
+echo.
+echo Pinging to %ping%  from %r% >%pingeroutput%
 echo. >>%pingeroutput%
-echo =TRACERT: >>%pingeroutput%
-tracert %pingertarget% >>%pingeroutput%
-echo. >>%pingeroutput%
-echo. >>%pingeroutput%
-echo =NSLOOKUP (Self DNS): >>%pingeroutput%
-nslookup %pingertarget% >>%pingeroutput%
-echo =NSLOOKUP (Google DNS): >>%pingeroutput%
-nslookup %pingertarget% 8.8.8.8 >>%pingeroutput%
+echo tracert %ping% >>%pingeroutput%
+tracert %ping% >>%pingeroutput%
 echo. >>%pingeroutput%
 echo. >>%pingeroutput%
-echo =16B PING:>>%pingeroutput%
-ping %pingertarget% /l 16 >>%pingeroutput%
+echo nslookup %ping%: >>%pingeroutput%
+nslookup %ping% >>%pingeroutput%
+echo. >>%pingeroutput%
+echo nslookup %ping% (Google DNS): >>%pingeroutput%
+nslookup %ping% 8.8.8.8 >>%pingeroutput%
+echo. >>%pingeroutput%
+echo. >>%pingeroutput%
+echo ping %ping%:>>%pingeroutput%
+ping %ping% /l 16 >>%pingeroutput%
 echo. >>%pingeroutput%
 echo -end of the file- >>%pingeroutput%
 start %pingeroutput%
-echo.
-ping localhost>nul
+if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
 goto source
 
 :javaver
@@ -606,9 +651,8 @@ color %color%
 ping localhost /n 1 >nul
 if DEFINED cecho_path (%cecho_path% {8f}%run% JavaVer{\n}) ELSE (echo %run% JavaVer)
 ping localhost>nul
-echo Java...
-ping localhost >nul
-java -version
+java -version | echo >%javaveroutput%
+start %javaveroutput%
 echo.
 pause
 goto source
@@ -625,41 +669,41 @@ ping localhost /n 1 >nul
 color %color%
 ping localhost /n 1 >nul
 if DEFINED cecho_path (%cecho_path% {8f}%run% SysInfo{\n}) ELSE (echo %run% SysInfo)
-if EXIST %systemoutput% del -f -q %systemoutput%
+if EXIST %sysoutput% del -f -q %sysoutput%
 if NOT EXIST C:\WINDOWS\system32\RazerCoinstaller.dll goto sys_send
 if DEFINED cecho_path (%cecho_path% {8c}Detected Razer dlls{\n}{8f}) ELSE (echo WARNING!1 Detected Razer dlls)
 :sys_send
 echo Working...
 :: code by npocmaka
-start "" /w dxdiag /t %systemoutput%
+start "" /w dxdiag /t %sysoutput%
 :: code by npocmaka
-systeminfo >>%systemoutput%
-echo. >>%systemoutput%
-echo. >>%systemoutput%
-echo. >>%systemoutput%
-echo %spacer% >>%systemoutput%
-ver >>%systemoutput%
+systeminfo >>%sysoutput%
+echo. >>%sysoutput%
+echo. >>%sysoutput%
+echo. >>%sysoutput%
+echo %spacer% >>%sysoutput%
+ver >>%sysoutput%
 :: code by npocmaka
 for /r "%SystemRoot%\Microsoft.NET\Framework\" %%# in ("*csc.exe") do (
     set "l="
     for /f "skip=1 tokens=2 delims=k" %%$ in ('"%%# #"') do (if not defined l set l=%%$)
 	)
-echo current .NET version = %l% >>%systemoutput% >>%systemoutput%
+echo current .NET version = %l% >>%sysoutput% >>%sysoutput%
 :: code by npocmaka
-echo. >>%systemoutput%
-echo %spacer% >>%systemoutput%
-echo. >>%systemoutput%
-echo. >>%systemoutput%
-echo. >>%systemoutput%
-tasklist /v >>%systemoutput%
-echo. >>%systemoutput%
-echo. >>%systemoutput%
-echo. >>%systemoutput%
-ipconfig /all >>%systemoutput%
-echo. >>%systemoutput%
-echo. >>%systemoutput%
-echo -end of the file- >>%systemoutput%
-start %systemoutput%
+echo. >>%sysoutput%
+echo %spacer% >>%sysoutput%
+echo. >>%sysoutput%
+echo. >>%sysoutput%
+echo. >>%sysoutput%
+tasklist /v >>%sysoutput%
+echo. >>%sysoutput%
+echo. >>%sysoutput%
+echo. >>%sysoutput%
+ipconfig /all >>%sysoutput%
+echo. >>%sysoutput%
+echo. >>%sysoutput%
+echo -end of the file- >>%sysoutput%
+start %sysoutput%
 if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
 echo.
 goto source
@@ -696,7 +740,7 @@ goto source
 :selfdestruct
 :sd
 set /P er=Are you sure you want to self-destruct Root? Input "Y" to confirm:
-if %er%==Y (GOTO SDS)
+if %er%==Y goto sds
 if DEFINED cecho_path (%cecho_path% {8c}Negative answer. Returning to menu...) ELSE (echo Negative answer. Returning to menu...)
 ping localhost >nul
 echo.
@@ -704,17 +748,10 @@ goto source
 :sds
 cls
 echo Self-destructing...
-ping localhost >Nul
-del /f /q %userprofile%\RootSessionsFile.inf
+ping localhost /n 3 >Nul
 if EXIST %userprofile%\RootSessionsFile.inf del /f /q %userprofile%\RootSessionsFile.inf
 if EXIST %userprofile%\RootSessionFiles.ini del /f /q %userprofile%\RootSessionFiles.ini
 if EXIST *.txt del *.txt
-if EXIST C:\Users\Public\bfhosts.exe del C:\Users\Public\bfhosts.exe
-if EXIST C:\Users\Public\ublock_origin.txt del C:\Users\Public\ublock_origin.txt
-if EXIST C:\Users\Public\Showdown.ini del C:\Users\Public\Showdown.ini
-if EXIST Showdown.ini del Showdown.ini
-if EXIST ublock_origin.txt del ublock_origin.txt
-if EXIST bfhosts.exe del bfhosts.exe
 if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat
 if EXIST %public%\WinRoot.bat del %public%\WinRoot.bat
 if DEFINED color setx color ""
@@ -746,7 +783,7 @@ ipconfig /release >>%flushoutput%
 ipconfig /release6 >>%flushoutput%
 ipconfig /displaydns >>%flushoutput%
 start %flushoutput%
-echo.
+if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
 goto source
 
 
@@ -766,11 +803,6 @@ goto OO
 if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat
 if EXIST %public%\WinRoot.bat del %public%\WinRoot.bat
 exit
-
-
-::::::
-::::
-::::::
 
 
 

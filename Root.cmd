@@ -264,27 +264,27 @@ echo บ            github.com/GijonDev             บ             gijondev.github.
 echo ศออออออออออออออออออออออออออออออออออออออออออออสออออออออออออออออออออออออออออออออออออออออออออผ
 goto cmenu
 :menuold
-echo -----------------------------------------------------------------------------------
-echo :            Ver: patch-17               :         License: CC-BY-SA-4.0          :
-echo -----------------------------------------------------------------------------------
+echo -------------------------------------------------------------------------------
+echo :           Ver: patch-17              :        License: CC-BY-SA-4.0         :
+echo -------------------------------------------------------------------------------
 echo.
 echo.
 echo.
 echo.
-echo.                   
-echo                            dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP                          
-echo                           db dBP   dBP.BP  dBP.BP    dBP                              
-echo                          dBBBBK   dBP.BP  dBP.BP    dBP                               
-echo                         dBP  BB  dBP.BP  dBP.BP    dBP                                
+echo.
+echo                            dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP
+echo                           db dBP   dBP.BP  dBP.BP    dBP
+echo                          dBBBBK   dBP.BP  dBP.BP    dBP
+echo                         dBP  BB  dBP.BP  dBP.BP    dBP
 echo                        dBP  dB' dBBBBP  dBBBBP    dBP
 echo.
 echo.
 echo.
 echo.
 echo.
-echo -----------------------------------------------------------------------------------
-echo :             github.com/GijonDev        :           gijondev.github.io           :
-echo -----------------------------------------------------------------------------------
+echo -------------------------------------------------------------------------------
+echo :            github.com/GijonDev       :          gijondev.github.io          :
+echo -------------------------------------------------------------------------------
 :cmenu
 echo.
 :source

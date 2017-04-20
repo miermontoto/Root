@@ -25,6 +25,8 @@ cecho.exe is a little tool created by Thomas Polaert that allows the color chang
 This pack adds a bunch of useful commands to Windows' CMD.
 **Download [rktools.exe](https://download.microsoft.com/download/8/e/c/8ec3a7d8-05b4-440a-a71e-ca3ee25fe057/rktools.exe) and insert it into your system32.**
 
+**Read more [here](https://www.microsoft.com/en-us/download/details.aspx?id=17657&751be11f-ede8-5a0c-058c-2ee190a24fa6=True)**
+
 *(NOTE!: Root is not using this function yet)* 
 
 

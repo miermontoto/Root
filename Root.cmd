@@ -91,7 +91,18 @@
 ::                                   - http://www.twitter.com/Xx_byJony1_xX                                                                                    ::
 ::                                   - http://www.github.com/npocmaka                                                                                          ::
 ::                                   - http://stackoverflow.com/users/2128947/magoo                                                                            ::
+::                                   - http://stackoverflow.com/users/385907/barlop                                                                            ::
 ::                                                                                                                                                             ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                                                                                                                                                             ::
+::                   Extras                                                                                                                                    ::
+::                                                                                                                                                             ::
+::                   There are some few bonus stuff that you can do with this file!                                                                            ::
+::                                                                                                                                                             ::
+::                                   - Color: you can change the window's color with a valid color code. This setting will save through sessions.              ::
+::                                   - Title: you can set your own session title. This setting won't save through sessions.                                    ::
+::                                   - Diccionary: you can check your log-ins using "sessions" and delete them by using "sessions_delete".                           ::
+::                                                                                                                                                             ::              
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::                                                                                                                                                             ::
 ::                                                               NOTES                                                                                         ::
@@ -119,13 +130,13 @@ ping localhost /n 1 >nul
 ::
 ::
 rem Session installation
+title Root [þþþ]
 set /a id=%random% %% 10000
 set r=Root.cmd
 prompt Root$g
-title Root [þþþ]
 ::
 rem Variables installation
-set patch=17
+set patch=18
 set name=Root
 set c1=c0
 set c2=a0
@@ -140,8 +151,7 @@ set debug=false
 set randoutput=Randomizer#%id%.txt
 set pingeroutput=Pinger#%id%.txt
 set sysoutput=SysInfo#%id%.txt
-set flushoutput=Flush#%id%.txt
-set javaveroutput=JavaInfo#%id%.txt
+::set javaveroutput=JavaInfo#%id%.txt - tempdisabled
 if NOT DEFINED looped set looped=0
 ::
 cls
@@ -156,7 +166,6 @@ set #cls=1
 set #rel=1
 set #clear=1
 set #win=1
-set #windows=1
 set #keygen=1
 set #randomizer=1
 set #rand=1
@@ -171,14 +180,13 @@ set #delete=1
 set #del=1
 set #sd=1
 set #selfdestruct=1
-set #flush=1
 set #off=1
 set #sessions=1
 set #eof=1
 set #bnw=1
 set #color=1
 set #title=1
-set #rsessions=1
+set #sessions_delete=1
 set #detect=1
 set #install_cecho=1
 set #cecho=1
@@ -187,13 +195,22 @@ set #id=1
 set #crash=1
 set #test=1
 set #loop=1
+set #eof=1
+set #cmd=1
+set #style=1
+set #sessions_remove=1
+set #sessions_backup=1
+set #sessions_restore=1
+set #sessions_save=1
+set #list=1
+set #mods=1
 ::
 cls
 echo Installing Root... [ฒฒฑฑฑ]
 ping localhost /n 1 >nul
 ::
 rem Use commands without "#"
-rem Also "reset" and "back" inside color/title settings.
+rem Also "reset" and "back" inside color/title/menu settings.
 ::
 rem Open this file with a parameter to go to the module (if vaild)
 rem EX: Root.cmd rand will execute Root.cmd, login and then rand automatically.
@@ -220,7 +237,7 @@ rem LoL files loaction
 if EXIST "%programfiles%\League of Legends\lol.launcher.exe" set LeagueLocated=32
 if EXIST "%programfiles% (x86)\League of Legends\lol.launcher.exe" (set LeagueLocated=64) ELSE (set LeagueLocated=custom)
 ::
-rem First-time detection
+rem Diccionary detection
 if NOT EXIST %userprofile%\RootSessionsFile.inf goto NN
 :OO
 ::
@@ -230,6 +247,8 @@ for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j
 rem Self-destruct detector
 if EXIST %temp%\sd.tmp del /f /q %temp%\sd.tmp
 ::
+rem Future enviroment detector (thanks to barlop)
+set uvar=HKCU\Environment
 cls
 echo Installing Root... [ฒฒฒฒฑ]
 ping localhost /n 1 >nul
@@ -247,16 +266,21 @@ cls
 if %looped%==1 goto sof
 
 
-
 :menu
 cls
+rem Silent parameter detection
 if %silent%==true goto %1
-color %color%
+rem Color detection
+if DEFINED color (color %color%) ELSE (color f0)
 title %title%
-::set version=asd (force-enable old menu)
-if NOT "%version%" == "10.0" goto menuold
+rem Menu mode & compatibilities detections
+if DEFINED mstyle (goto --%mstyle%)
+if NOT "%version%" == "10.0" (goto --old) ELSE (goto --new)
+exit
+:--new
+if NOT "%version%" == "10.0" (goto --old)
 echo ษออออออออออออออออออออออออออออออออออออออออออออออหออออออออออออออออออออออออออออออออออออออออออออออป
-echo บ                Ver: patch-17                 บ            License: CC-BY-SA-4.0             บ
+echo บ                Ver: patch-18                 บ            License: CC-BY-SA-4.0             บ
 echo ฬออออออออออออออออออออออออออออออออออออออออออออออสออออออออออออออออออออออออออออออออออออออออออออออน 
 echo บ                                                                                             บ  
 echo บ                                                                                             บ  
@@ -277,9 +301,9 @@ echo ฬออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออ
 echo บ             github.com/GijonDev              บ              gijondev.github.io              บ
 echo ศออออออออออออออออออออออออออออออออออออออออออออออสออออออออออออออออออออออออออออออออออออออออออออออผ
 goto cmenu
-:menuold
+:--old
 echo -----------------------------------------------------------------------------------
-echo :            Ver: patch-17               :         License: CC-BY-SA-4.0          :
+echo :            Ver: patch-18               :         License: CC-BY-SA-4.0          :
 echo -----------------------------------------------------------------------------------
 echo.
 echo.
@@ -299,6 +323,62 @@ echo.
 echo -----------------------------------------------------------------------------------
 echo :             github.com/GijonDev        :           gijondev.github.io           :
 echo -----------------------------------------------------------------------------------
+goto cmenu
+:--simple
+echo.
+echo                            dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP                          
+echo                           db dBP   dBP.BP  dBP.BP    dBP                              
+echo                          dBBBBK   dBP.BP  dBP.BP    dBP                               
+echo                         dBP  BB  dBP.BP  dBP.BP    dBP                                
+echo                        dBP  dB' dBBBBP  dBBBBP    dBP
+echo.
+goto cmenu
+:--minimalistic
+echo Root (tm)    [%id%]
+goto cmenu
+:--plain
+if NOT "%version%" == "10.0" (goto --old)
+echo ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+echo บ                                                                                             บ
+echo บ                                  dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP                          บ
+echo บ                                 db dBP   dBP.BP  dBP.BP    dBP                              บ
+echo บ                                dBBBBK   dBP.BP  dBP.BP    dBP                               บ
+echo บ                               dBP  BB  dBP.BP  dBP.BP    dBP                                บ
+echo บ                              dBP  dB' dBBBBP  dBBBBP    dBP                                 บ
+echo บ                                                                                             บ
+echo ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+goto cmenu
+:--breaking
+if NOT "%version%" == "10.0" (goto --old)
+echo ษอออออออออออออออออออป
+echo บ                   บ
+echo บ        dBBBBBb    บ                         d8P 
+echo บ       db dBP      บ    88bd88b d8888b   d8888b?88'
+echo บ      dBBBBK       บ   d8P' ?88 d8P' ?88   88P      
+echo บ     dBP  BB       บ   88b  d88 88b  d88  88b
+echo บ    dBP  dB'       บ   `?8888P' `?8888P' ?8b                                        
+echo บ                   บ  
+echo ศอออออออออออออออออออผ
+goto cmenu
+:--beta
+echo ================================================================================
+echo =     Ver: patch-18 :     License: CC-BY-SA-4.0    : GijonDev/Root/releases    =
+echo ================================================================================
+echo.
+echo.
+echo.                   
+echo                                      d8P        (tm)
+echo                                   d888888P
+echo         88bd88b d8888b   d8888b    ?88'
+echo        88P'    d8P' ?88 d8P' ?88   88P  
+echo       d88      88b  d88 88b  d88  88b  
+echo      d88'      `?8888P' `?8888P' ?8b  
+echo.
+echo.
+echo.
+echo ===============================================================================
+echo =         github.com/GijonDev          :          twitter.com/GijonDev        =
+echo ===============================================================================
 :cmenu
 echo.
 :source
@@ -306,6 +386,7 @@ if %silent%==true taskkill /im cmd.exe
 echo.
 color %color%
 title %title%
+if %parameter1%==enabled goto %1
 set /p mi=%cmd%
 echo.
 if DEFINED #%mi% (goto %mi%) ELSE (echo Invalid location.)
@@ -313,6 +394,27 @@ goto source
 
 :sourced
 echo Successfully cancelled action!
+goto source
+
+
+:style
+echo Valid layouts: new, old, simple, minimalistic, plain, breaking, beta, reset
+set /P mas=Root - styleฏ
+if %mas%==new set mstyle=new & setx mstyle new
+if %mas%==old set mstyle=old & setx mstyle old
+if %mas%==simple set mstyle=simple & setx mstyle simple
+if %mas%==minimalistic set mstyle=minimalistic & setx mstyle minimalistic
+if %mas%==beta set mstyle=beta & setx mstyle beta
+if %mas%==reset reg delete %uvar% /f /v color & set "mstyle="
+if %mas%==plain set mstyle=plain & setx mstyle plain
+if %mas%==breaking set mstyle=breaking & setx mstyle breaking
+echo [%date% , %time%][r%patch%] Set menu style (%mas%)>>%userprofile%\RootSessionsFile.inf
+if %mas%==back goto source
+goto menu
+
+:list
+:mods
+echo (Reload,rel,rl), (cls,clear), (win,cmd), (rand,randomizer,keygen), (pinger), (javaver,javainfo), (sys,sysinfo,system), (ss,screensaver), (delete,del), (sd,selfdestruct), (sessions-sessions_remove,sessions_delete-sessions_backup-sessions_restore), (eof,off), (color-title-style-bnw), (test-loop-crash), (id-detect), (cecho-install_cecho), (list,mods)
 goto source
 
 :color
@@ -324,8 +426,9 @@ setx color %cas%
 set color=%cas%
 goto color_reload
 :color_rest
-setx color "f0"
+reg delete %uvar% /f /v color
 set color=f0
+goto color_reload
 :color_reload
 color %color%
 goto source
@@ -352,16 +455,9 @@ goto source
 :rel
 start %r%
 exit
-start %r%
-exit
-start %r%
-exit
 
 :load
 call %r%
-
-:off
-goto eof
 
 :id
 echo id = %id%
@@ -374,16 +470,15 @@ goto source
 :crash
 if %id% LEQ 3333 (goto crash_rem)
 if %id% GEQ 6666 (goto crash_call) ELSE (goto crash_if)
-exit
 ::all code by npocmaka
 :crash_rem
-title Let Jesus take the wheel - rem
+title remCrasher
 set "h=/?"&call rem  %%h%%
 :crash_call
-title Let Jesus take the wheel - call
+title callCrasher
 (call :: & :: )
 :crash_if
-title Let Jesus take the wheel - if
+title ifCrasher
 set "h=/?"&& call for %%h%%
 ::all code by npocmaka
 
@@ -420,7 +515,8 @@ goto source
 start %userprofile%\RootSessionsFile.inf
 goto source
 
-:rsessions
+:sessions_delete
+:sessions_remove
 echo Are you really sure you want to delete your sessions file?
 echo This will delete your settings (color and logins)
 set /p ryses=Input "Y" to delete the sessions file:
@@ -428,6 +524,27 @@ if %ryses%==Y (goto ryY) ELSE (echo Negative answer. Returning to menu...)
 goto source
 del /Q /f %userprofile%\RootSessionsFile.inf
 echo Deleted sessions file. A new one will be generated in the next login.
+goto source
+
+:sessions_backup
+:sessions_save
+echo Saving sessions file to avoid self-destruct...
+if EXIST %temp%\root.node.tmp del /f /q %temp%\root.node.tmp
+echo [%date% , %time%][r%patch%] Saved sessions backup. >>%userprofile%\RootSessionsFile.inf
+copy /y %userprofile%\RootSessionsFile.inf /b %temp%
+ren %temp%\RootSessionsFile.inf root.node.tmp
+echo Saved.
+goto source
+
+:sessions_restore
+echo Restoring sessions file...
+if EXIST %temp%\root.node.tmp (goto moveYES) ELSE (echo Couldn't find a valid diccionary back-up.)
+goto source
+:moveYES
+ren %temp%\root.node.tmp RootSessionsFile.inf
+move /y %temp%\RootSessionsFile.inf %userprofile%\
+echo [%date% , %time%][r%patch%] Restored sessions file. >>%userprofile%\RootSessionsFile.inf
+echo Restored.
 goto source
 
 :cecho
@@ -466,8 +583,8 @@ goto source
 goto menu
 
 :win
-:windows
-if DEFINED cecho_path (%cecho_path% {8f}Installing Windows enviroment...{#}{\n}) ELSE (echo Installing Windows enviroment...)
+:cmd
+if DEFINED cecho_path (%cecho_path% {8f}Injecting cmd.exe...{#}{\n}) ELSE (echo Injecting cmd.exe...)
 if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat & del %public%\WinRoot.bat
 ping localhost /n 3 >nul
 echo @echo off >%public%\WinRoot.bat
@@ -523,7 +640,7 @@ echo %RANDOM% >>%randoutput%
 echo %RANDOM% >>%randoutput%
 echo %RANDOM% >>%randoutput%
 echo %RANDOM% >>%randoutput%
-%randoutput%
+echo. >>%randoutput%
 echo ####[2-10] >>%randoutput%
 echo %RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM% >>%randoutput%
@@ -541,7 +658,7 @@ echo %RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM% >>%randoutput%
-%randoutput%
+echo. >>%randoutput%
 echo ####[3-15] >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM% >>%randoutput%
@@ -559,7 +676,7 @@ echo %RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM% >>%randoutput%
-%randoutput%
+echo. >>%randoutput%
 echo ####[4-20] >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
@@ -577,7 +694,7 @@ echo %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM% >>%randoutput%
-%randoutput%
+echo. >>%randoutput%
 echo ####[5-25] >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM%%random% >>%randoutput%
 echo %RANDOM%%RANDOM%%RANDOM%%RANDOM%%random% >>%randoutput%
@@ -652,9 +769,7 @@ ping localhost /n 1 >nul
 if DEFINED cecho_path (%cecho_path% {8f}%run% JavaVer{\n}) ELSE (echo %run% JavaVer)
 ping localhost>nul
 java -version | echo >%javaveroutput%
-start %javaveroutput%
-echo.
-pause
+if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
 goto source
 
 :system
@@ -683,13 +798,6 @@ echo. >>%sysoutput%
 echo. >>%sysoutput%
 echo %spacer% >>%sysoutput%
 ver >>%sysoutput%
-:: code by npocmaka
-for /r "%SystemRoot%\Microsoft.NET\Framework\" %%# in ("*csc.exe") do (
-    set "l="
-    for /f "skip=1 tokens=2 delims=k" %%$ in ('"%%# #"') do (if not defined l set l=%%$)
-	)
-echo current .NET version = %l% >>%sysoutput% >>%sysoutput%
-:: code by npocmaka
 echo. >>%sysoutput%
 echo %spacer% >>%sysoutput%
 echo. >>%sysoutput%
@@ -731,6 +839,15 @@ goto ssr
 
 :delete
 :del
+echo Checking for cache files...
+ping localhost /n 1 >nul
+set delcheck=0
+if EXIST *.txt set delcheck=1
+if EXIST %public%\WinRoot.bat set /a delcheck=%delcheck% ++ 1
+if %delcheck% GEQ 1 goto delkeep
+echo Couldn't find any output files.
+goto source
+:delkeep
 if EXIST *.txt del *.txt
 if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat
 if EXIST %public%\WinRoot.bat del %public%\WinRoot.bat
@@ -748,43 +865,17 @@ goto source
 :sds
 cls
 echo Self-destructing...
-ping localhost /n 3 >Nul
+ping localhost /n 2 >Nul
 if EXIST %userprofile%\RootSessionsFile.inf del /f /q %userprofile%\RootSessionsFile.inf
 if EXIST %userprofile%\RootSessionFiles.ini del /f /q %userprofile%\RootSessionFiles.ini
 if EXIST *.txt del *.txt
 if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat
 if EXIST %public%\WinRoot.bat del %public%\WinRoot.bat
-if DEFINED color setx color ""
-if DEFINED cecho_path setx cecho_path ""
+reg delete %uvar% /f /v color
+reg delete %uvar% /f /v cecho_path
 echo done! (%date%) >>%temp%\sd.tmp
 del /f /q %0
 exit
-
-
-:flush
-color %c1%
-ping localhost /n 1 >nul
-color %c2%
-ping localhost /n 1 >nul
-color %c3%
-ping localhost /n 1 >nul
-color %color%
-ping localhost /n 1 >nul
-if DEFINED cecho_path (%cecho_path% {8f}%run% Flush{\n}) ELSE (echo %run% Flush)
-ping localhost>nul
-if DEFINED cecho_path (%cecho_path% {8c}WARNING! You may need to power-cycle your device/router/ethernet cable.) ELSE (echo WARNING! You may need to power-cycle your device/router/ethernet cable.)
-if DEFINED cecho_path (%cecho_path% {8f}Working...) ELSE (echo Working...)
-ipconfig /flushdns 
-ipconfig /registerdns
-echo Flush reports >%flushoutput%
-echo WARNING! You may need to power-cycle your device/router/ethernet cable. >>%flushoutput%
-echo. >>%flushoutput%
-ipconfig /release >>%flushoutput%
-ipconfig /release6 >>%flushoutput%
-ipconfig /displaydns >>%flushoutput%
-start %flushoutput%
-if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
-goto source
 
 
 :NN
@@ -794,11 +885,9 @@ echo ----------------- >>%userprofile%\RootSessionsFile.inf
 echo. >>%userprofile%\RootSessionsFile.inf
 echo. >>%userprofile%\RootSessionsFile.inf
 echo. >>%userprofile%\RootSessionsFile.inf
-set cas=f0
-set color=%cas%
-setx color %cas%
 goto OO
 
+:off
 :EOF
 if EXIST %public%\WinRoot.bat attrib -h %public%\WinRoot.bat
 if EXIST %public%\WinRoot.bat del %public%\WinRoot.bat

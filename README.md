@@ -11,7 +11,7 @@ Do `list`or `mods` for a list of valid outputs (since patch-18!)
 **Or download latest version [here](https://github.com/GijonDev/Root/releases/download/patch-18/Root.cmd)**
 
 ## [License](https://github.com/GijonDev/Root/blob/master/LICENSE)
-Root is currently using [Creative Commons' free license "CC-BY-SA-4.0"](https://creativecommons.org/licenses/by-sa/4.0/). 
+Root is currently using Creative Commons' free license "[CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/)". 
 
 ## Utilities
 

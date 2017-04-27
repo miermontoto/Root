@@ -1,4 +1,4 @@
-### **Last updated version: BATCH: patch-19 (26/04/2017) / C: patch-hybc1 (27/04/2017)
+### **Last updated version: patch-hybc1 (27/04/2017)
 
 
 # **Root**

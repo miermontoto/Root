@@ -124,160 +124,61 @@
 #include <conio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <windows.h>
 //MASTER-ROOT C CLASS
+
+
+#define uvar HKCU\Environment
 
 int main(void)
 {
+	
+	int ptch=2;
+	
+	
+	
 	system("@echo off");
-	system("color 07");
-	system("echo Installing Root... [.....]");
-	system("ping localhost /n 1 >nul");
-	system("title Where do you want to go today?");
-//	system("set /a id=%random% %% 10000 & set r=Root.cmd");
-	system("prompt Root$g");
-	system("mode con: cols=120 lines=30");
-	system("set patch=XX");     //real patch = C1
-	system("set name=Root");
-	system("set c1=c0");
-	system("set c2=a0");
-	system("set c3=b0");
-//	system("set cmd=%name%¯");
-//	system("set title=%name% [%id%]");
-//	system("set titler=%title%");
-	system("set randoutput=rand.Root.txt");
-	system("set pingeroutput=pinger.Root.txt");
-	system("set sysoutput=sys.Root.txt");
-	system("if NOT DEFINED looped set looped=0");
-// ROOT DEFINER
-//system("set "!@##Root=1""); temp disabled due to symbols
-// ROOT DEFINER
+		system("title hybRoot");
+	printf("Installing hybRoot [.....]");
 	system("cls");
-	system("echo Installing Root... [X....]");
-	system("ping localhost /n 1 >nul");
-	system("set #reload=1");
-	system("set #rl=1");
-	system("set #cls=1");
-	system("set #rel=1");
-	system("set #clear=1");
-	system("set #win=1");
-	system("set #keygen=1");
-	system("set #randomizer=1");
-	system("set #rand=1");
-	system("set #pinger=1");
-	system("set #javaver=1");
-	system("set #javainfo=1");
-	system("set #system=1");
-	system("set #sysinfo=1");
-	system("set #delete=1");
-	system("set #del=1");
-	system("set #sd=1");
-	system("set #selfdestruct=1");
-	system("set #off=1");
-	system("set #sessions=1");
-	system("set #eof=1");
-	system("set #bnw=1");
-	system("set #color=1");
-	system("set #title=1");
-	system("set #sessions_delete=1");
-	system("set #detect=1");
-	system("set #install_cecho=1");
-	system("set #cecho=1");
-	system("set #sys=1");
-	system("set #id=1");
-	system("set #crash=1");
-	system("set #test=1");
-	system("set #loop=1");
-	system("set #cmd=1");
-	system("set #style=1");
-	system("set #sessions_remove=1");
-	system("set #sessions_backup=1");
-	system("set #sessions_restore=1");
-	system("set #sessions_save=1");
-	system("set #list=1");
-	system("set #mods=1");
-	system("set #reset=1");
+	printf("Installing hybRoot [X....]");
+	sleep(1);
 	system("cls");
-	system("echo Installing Root... [XX...]");
-	system("ping localhost /n 1 >nul");
+	printf("Installing hybRoot [XX...]");
+	sleep(1);
 	system("cls");
-	system("echo Installing Root... [XXX..]");
-	system("ping localhost /n 1 >nul");
-	system("if NOT [%1]==[] (set parameter1=enabled) ELSE (set parameter1=disabled)");
-	system("if [%1]==[Root] (set parameter1=disabled)");
-	system("if [%2]==[-silent] (set silent=true) ELSE (set silent=false)");
-//	system("if [%userprofile%]==[C:\Documents and Settings\%username%] (set clip=1) ELSE (set clip=0)");
-//	system("if %clip%==1 set title=%title% [Compatibility]");
-//if DEFINED cecho_path goto cskip
-//if EXIST C:\Windows\System32\cecho.exe (setx cecho_path cecho & set cecho_path=cecho)
-//:cskip
-//if DEFINED LeagueLocated goto lelocs
-//if EXIST "%programfiles% (x86)\League of Legends\lol.launcher.exe" (setx LeagueLocated True) ELSE (setx LeagueLocated False)
-//:lelocs
-//
-//system("for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j");
-//	system("if EXIST %temp%\sd.tmp del /f /q %temp%\sd.tmp");
-	system("set uvar=HKCU\Environment");
+	printf("Installing hybRoot [XXX..]");
+	sleep(1);
 	system("cls");
-	system("echo Installing Root... [XXXX.]");
-	system("ping localhost /n 1 >nul");
-//	system("echo [%date% , %time%][r%patch%] Logged in. (%id%) >>%userprofile%\RootSessionsFile.inf");
+	printf("Installing hybRoot [XXXX.]");
+	sleep(1);
 	system("cls");
-	system("echo Installing Root... [XXXXX]");
-//if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
-	system("title RootC [TEMP]");
-	system("ping localhost /n 2 >nul");
-	system("color f0");
+	printf("Installing hybRoot [XXXXX]\n");
+	printf("DONE");
+	sleep(2);
+	
 	system("cls");
-//if %looped%==1 goto rel
-
-
-//:menu
-//if NOT %silent%==true goto smenu
-//if NOT %parameter1%==enabled goto smenu
-//if NOT DEFINED #%1 (goto menu) ELSE (goto %1)
-//:smenu
-	system("cls");
-	system("if DEFINED color (color f0) ELSE (color f0)");
-	system("title RootC [TEMP]");
-//if DEFINED mstyle (goto --%mstyle%)
-	system("echo -----------------------------------------------------------------------------------");
-	system("echo :            Ver: patch-C1               :         License: CC-BY-SA-4.0          :");
-	system("echo -----------------------------------------------------------------------------------");
-	system("echo.");
-	system("echo.");
-	system("echo.");
-	system("echo.");
-	system("echo.");                   
-	system("echo                            dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP");                       
-	system("echo                           db dBP   dBP.BP  dBP.BP    dBP    ");                      
-	system("echo                          dBBBBK   dBP.BP  dBP.BP    dBP     ");                           
-	system("echo                         dBP  BB  dBP.BP  dBP.BP    dBP      ");                          
-	system("echo                        dBP  dB' dBBBBP  dBBBBP    dBP       ");
-	system("echo.");
-	system("echo.");
-	system("echo.");
-	system("echo.");
-	system("echo.");                                           
-	system("echo -----------------------------------------------------------------------------------");
-	system("echo :             github.com/GijonDev        :          twitter.com/GijonDev          :");
-	system("echo -----------------------------------------------------------------------------------");
-	system("echo.");
-//:source
-	system("if %silent%==true taskkill /im cmd.exe");
-	system("echo.");
-	system("color f0");
-	system("title RootC [TEMP]");
-//if NOT %parameter1%==enabled goto noparm
-//if DEFINED #%1 (goto %1) ELSE (echo Invalid parameter location.)
-//:noparm
+	
+	
+	
+	printf(" -------------------------------------------------------------------------------\n");
+	printf(" :           Ver: patch-hybc%i           :         License: CC-BY-SA-4.0        :\n",ptch);
+	printf(" -------------------------------------------------------------------------------\n\n\n\n\n\n");              
+	printf("                          dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP\n");                       
+	printf("                         db dBP   dBP.BP  dBP.BP    dBP    \n");                      
+	printf("                        dBBBBK   dBP.BP  dBP.BP    dBP     \n");                           
+	printf("                       dBP  BB  dBP.BP  dBP.BP    dBP      \n");                          
+	printf("                      dBP  dB' dBBBBP  dBBBBP    dBP       \n\n\n\n\n\n");                                          
+	printf(" -------------------------------------------------------------------------------\n");
+	printf(" :            github.com/GijonDev       :         twitter.com/GijonDev         :\n");
+	printf(" -------------------------------------------------------------------------------\n\n");
 	system("set /p mi=Root:");
-	system("echo.");
-//if DEFINED #%mi% (goto %mi%) ELSE (echo Invalid location.)
-//goto source
-	printf("Thanks for testing RootC\n\nPress any key");
-	getchar();
+	printf("\n");
+	printf("Thanks for testing hybRoot!\n");
+	
+	sleep(3);
 	return(888);
 }
 
-// deleted all text to avoid compilation errors
+// deleted everything* and expected to build everything again from zero to avoid uncompatibility.
 

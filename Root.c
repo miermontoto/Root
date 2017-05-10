@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                                                             //
-//                   Root.cmd                                                                                                                                  //
+//                   Root.c                                                                                                                                    //
 //                   by GijonDev                                                                                                                               //
 //                                                                                                                                                             //
 //                                                                                                                                                             //
@@ -18,27 +18,13 @@
 //                                                                                                                                                             //
 //                   Compatibilities:                                                                                                                          //
 //                                                                                                                                                             //
-//                                   - Windows 98      (Compatibility Mode) (Not tested)                                                                       //
-//                                   - Windows XP      (Compatibility Mode)                                                                                    //
-//                                   - Windows 2000/ME (Compatibility Mode) (Not tested)                                                                       //
-//                                   - Windows Vista                        (Not tested)                                                                       //
-//                                   - Windows 7                                                                                                               //
-//                                   - Windows 8 & 8.1                                                                                                         //
-//                                   - Windows 10       (Best visuals)                                                                                         //
-//                                                                                                                                                             //
-//                                   - Not tested on Windows Server                                                                                            //
+//                                   - Should work on every OS with exe extensions enabled                                                                     //
 //                                                                                                                                                             //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                                                             //
 //                   About                                                                                                                                     //
 //                                                                                                                                                             //
-//                   This file is a recopilation of diverse features of the "batch" coding language which is                                                   //
-//                   included by default on every single Windows machine. This language used to be very useful                                                 //
-//                   when Windows first came up until Windows XP, but then the programs themselves began                                                       //
-//                   to adquire more value and usefullness. Today batch can still be pretty useful for some                                                    //
-//                   nerdy tasks; this is the purpose of this file: to automate all those tasks and make them                                                  //
-//                   easier to realize for the regular and advanced user even if this file requires some                                                       //
-//                   knowledge of batch.                                                                                                                       //
+//                   Transformed version of the original one. This is coded in C instead. Read the original for more.                                          //
 //                                                                                                                                                             //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                                                             //
@@ -52,11 +38,8 @@
 //                                                                                                                                                             //
 //                   Developing                                                                                                                                //
 //                                                                                                                                                             //
-//                   The file has been created and developed using Notepad++. For the creation of this file,                                                   //
-//                   some sources like stackoverflow and others have been consulted. You may ocassionally                                                      //
-//                   find on the internet similar strings to those presented but every single line has been                                                    //
-//                   manually written and adapted especially for this file. This projects has been being                                                       //
-//                   developed since September 2016, starting out with the patch-1.                                                                            //
+//                   The file has been created and developed using Notepad++ for conversion purposes and Dev-C++ for general coding. Read the original for     //
+//                   more.                                                                                                                                     //
 //                                                                                                                                                             //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                                                             //
@@ -93,7 +76,7 @@
 //                                   - http://stackoverflow.com/users/2128947/magoo                                                                            //
 //                                   - http://stackoverflow.com/users/385907/barlop                                                                            //
 //                                                                                                                                                             //
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////:
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                                                             //
 //                   Extras                                                                                                                                    //
 //                                                                                                                                                             //
@@ -103,29 +86,20 @@
 //                                   - Title: you can set your own session title. This setting won't save through sessions.                                    //
 //                                   - dictionary: you can check your log-ins using "sessions" and delete them by using "sessions_delete".                     //
 //                                                                                                                                                             //              
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////:
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                                                             //
 //                                                               NOTES                                                                                         //
 //                                                                                                                                                             //
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////:
-// This file is capable of displaying special strings when cecho.exe is detected / enabled                                                                     //
-// To download cecho.exe: https://dl.dropboxusercontent.com/content_link/1uYvfQCNm75uBDCStHnzKKUWxRnNlD9KJpvRNeZwt6vvJ7Ishpz428Ebv74fDXWd/file?dl=1            //
-// To install cecho.exe in order to work with Root you can put it in "C:\Windows\System32" or indicate the cecho.exe path to Root using "install_cecho".       //
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////:
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SysInfo/System module runs strings obtained from different npocmaka's files. You can check npocmaka github here - https://github.com/npocmaka               //
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////:
-// Symbols and artwork have been copied from http://patorjk.com/software/taag/ , http://www.alt-codes.net/ and https://changaco.oy.lc/unicode-progress-bars/   //
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////:
-// To enable Unicode characters in Notepad++ like the ones in this file goto Encoding>Western Europe>OEM-US                                                    //
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////:                  
-//                                                                                                                                          (designed on patch16)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////            
+
+
 
 #include <stdio.h>
-#include <conio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <windows.h>
-//MASTER-ROOT C CLASS
 
 
 #define uvar HKCU\Environment
@@ -133,36 +107,33 @@
 int main(void)
 {
 	
-	int ptch=2;
+	int ver=3;
+	int flop=0;
 	
 	
 	
 	system("@echo off");
-		system("title hybRoot");
-	printf("Installing hybRoot [.....]");
+	system("title Root");
+	printf("Installing Root [.....]");
 	system("cls");
-	printf("Installing hybRoot [X....]");
-	sleep(1);
+	printf("Installing Root [X....]");
 	system("cls");
-	printf("Installing hybRoot [XX...]");
-	sleep(1);
+	printf("Installing Root [XX...]");
 	system("cls");
-	printf("Installing hybRoot [XXX..]");
-	sleep(1);
+	printf("Installing Root [XXX..]");
 	system("cls");
-	printf("Installing hybRoot [XXXX.]");
-	sleep(1);
+	printf("Installing Root [XXXX.]");
 	system("cls");
-	printf("Installing hybRoot [XXXXX]\n");
+	printf("Installing Root [XXXXX]\n");
 	printf("DONE");
-	sleep(2);
+	sleep(1);
 	
+	menu:
 	system("cls");
-	
 	
 	
 	printf(" -------------------------------------------------------------------------------\n");
-	printf(" :           Ver: patch-hybc%i           :         License: CC-BY-SA-4.0        :\n",ptch);
+	printf(" :           Ver: patch-%ic             :         License: CC-BY-SA-4.0        :\n",ver);
 	printf(" -------------------------------------------------------------------------------\n\n\n\n\n\n");              
 	printf("                          dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP\n");                       
 	printf("                         db dBP   dBP.BP  dBP.BP    dBP    \n");                      
@@ -171,14 +142,52 @@ int main(void)
 	printf("                      dBP  dB' dBBBBP  dBBBBP    dBP       \n\n\n\n\n\n");                                          
 	printf(" -------------------------------------------------------------------------------\n");
 	printf(" :            github.com/GijonDev       :         twitter.com/GijonDev         :\n");
-	printf(" -------------------------------------------------------------------------------\n\n");
-	system("set /p mi=Root:");
-	printf("\n");
-	printf("Thanks for testing hybRoot!\n");
+	printf(" -------------------------------------------------------------------------------");
 	
-	sleep(3);
+	
+	int sit;
+	rel:
+	printf("\n\nRoot:");
+	scanf("%i",&sit);
+	printf("\n");
+	
+	switch(sit)
+	{
+		//case 101: goto rand;
+		//	break;
+		case 0: goto off;
+			break;
+		case 888: goto reload;
+			break;
+		//case 999: goto test;
+		//	break;
+		case 1: goto help;
+			break;
+	}
+	printf("Invalid location. Input [1] for help.");
+	goto rel;
+	
+	
+	off:
+	MessageBox(0,"Thank you for flying Root","Root",MB_OK);
 	return(888);
+	
+	rand:
+	printf("Not ready yet.");
+	getchar();
+	goto rel;
+	
+	reload:
+	system("start Root.exe");
+	return (888);
+
+	help:
+	printf("The following items are currently available:\n[0] Exit\n[1] Help\n[888] Reload");
+	goto rel;
+	
+	
+	
+	
+
+	return(999);
 }
-
-// deleted everything* and expected to build everything again from zero to avoid uncompatibility.
-

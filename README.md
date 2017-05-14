@@ -1,4 +1,4 @@
-### **Last updated version: patch-19 (27/04/2017)
+### Last updated version: patch-19 (27/04/2017)
 
 
 # **Root**

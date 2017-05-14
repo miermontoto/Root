@@ -1,8 +1,8 @@
-### **Last updated version: patch-2c (27/04/2017)
+### **Last updated version: patch-19 (27/04/2017)
 
 
 # **Root**
-Running "modules" using batch-scripts since Sep16 and C since Apr17.
+Running "modules" using batch-scripts since Sep16.
 
 ## Modules
 Do `list`or `mods` for a list of valid outputs (since patch-18!)

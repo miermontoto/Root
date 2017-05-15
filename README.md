@@ -13,7 +13,7 @@ Do `list`or `mods` for a list of valid outputs (since patch-18!)
 ## [License](https://github.com/GijonDev/Root/blob/master/LICENSE)
 Root is currently using Creative Commons' free license "[CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/)". 
 
-**cecho is NOT supported since patch-20**
+### **cecho is NOT supported since patch-20**
 
 
 ### <- [GijonDev](http://gijondev.github.io)

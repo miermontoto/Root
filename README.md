@@ -11,7 +11,7 @@ Do `list`or `mods` for a list of valid outputs (since patch-18!)
 **Or download latest version [here](https://github.com/GijonDev/Root/releases/download/patch-20/Root.cmd)**
 
 ## [License](https://github.com/GijonDev/Root/blob/master/LICENSE)
-Root is currently using [Attribution-NonCommercial-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/)". GitHub is not supporting this license currently.
+Root is currently using [Creative Commons' Attribution-NonCommercial-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). GitHub is not supporting this license currently.
 
 ### **cecho is NOT supported since patch-20**
 

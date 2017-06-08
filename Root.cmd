@@ -16,7 +16,7 @@
 ::                                                                                                                                                             ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::                                                                                                                                                             ::
-::                   Compatibilities:                                                                                                                          ::
+::                   OS Compatibilities:                                                                                                                       ::
 ::                                                                                                                                                             ::
 ::                                   - Windows 98      (Compatibility Mode) (Not tested)                                                                       ::
 ::                                   - Windows XP      (Compatibility Mode)                                                                                    ::
@@ -73,12 +73,12 @@
 ::                   - Twitter              (http://www.twitter.com/GijonDev)                                                                                  ::
 ::                   - GitHub               (http://www.github.com/GijonDev)                                                                                   ::
 ::                   - YouTube              (http://www.youtube.com/underscoreBis)                                                                             ::
-::                   - GitHubPages          (http://twitter.com/GijonDev)                                                                                        ::
+::                   - GitHubPages          (http://twitter.com/GijonDev)                                                                                      ::
 ::                                                                                                                                                             ::
 ::                   - Project license      (https://github.com/GijonDev/Root/blob/master/LICENSE)                                                             ::
 ::                   - Project repository   (https://github.com/GijonDev/Root)                                                                                 :: 
 ::                   - Project downloads    (https://github.com/GijonDev/Root/releases)                                                                        ::
-::                   - Project page         (https://twitter.com/GijonDev/Root/)                                                                                 ::
+::                   - Project page         (https://twitter.com/GijonDev/Root/)                                                                               ::
 ::                                                                                                                                                             ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::                                                                                                                                                             ::
@@ -92,6 +92,7 @@
 ::                                   - http://www.github.com/npocmaka                                                                                          ::
 ::                                   - http://stackoverflow.com/users/2128947/magoo                                                                            ::
 ::                                   - http://stackoverflow.com/users/385907/barlop                                                                            ::
+::                                   - http://stackoverflow.com/users/2946716/visual-magic                                                                     ::
 ::                                                                                                                                                             ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::                                                                                                                                                             ::
@@ -101,44 +102,27 @@
 ::                                                                                                                                                             ::
 ::                                   - Color: you can change the window's color with a valid color code. This setting will save through sessions.              ::
 ::                                   - Title: you can set your own session title. This setting won't save through sessions.                                    ::
-::                                   - dictionary: you can check your log-ins using "sessions" and delete them by using "sessions_delete".                     ::
+::                                   - Dictionary: you can check your log-ins using "sessions".                                                                ::
 ::                                                                                                                                                             ::              
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::                                                                                                                                                             ::
 ::                                                               NOTES                                                                                         ::
 ::                                                                                                                                                             ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: This file is capable of displaying special strings when cecho.exe is detected / enabled                                                                     ::
-:: To download cecho.exe: https://dl.dropboxusercontent.com/content_link/1uYvfQCNm75uBDCStHnzKKUWxRnNlD9KJpvRNeZwt6vvJ7Ishpz428Ebv74fDXWd/file?dl=1            ::
-:: To install cecho.exe in order to work with Root you can put it in "C:\Windows\System32" or indicate the cecho.exe path to Root using "install_cecho".       ::
+:: System module runs strings obtained from different npocmaka's files. You can check npocmaka github here - https://github.com/npocmaka                       ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: SysInfo/System module runs strings obtained from different npocmaka's files. You can check npocmaka github here - https://github.com/npocmaka               ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: Symbols and artwork have been copied from http://patorjk.com/software/taag/ , http://www.alt-codes.net/ and https://changaco.oy.lc/unicode-progress-bars/   ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: To enable Unicode characters in Notepad++ like the ones in this file goto Encoding>Western Europe>OEM-US                                                    ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::                  
+:: Symbols and artwork have been copied from http://patorjk.com/software/taag/ , http://www.alt-codes.net/ and https:#-#changaco.oy.lc/unicode-progress-bars/  ::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::                
 ::                                                                                                                                          (designed on patch16)
 
-
-
-::@master
-
 @echo off
-::
-color 07
+set patch=20
+title %patch%
 echo Installing Root... [ฐฐฐฐฐ]
-ping localhost /n 1 >nul
-::
-::
-rem Session installation
-title Where do you want to go today?
+pushd
+color 07
 set /a id=%random% %% 10000 & set r=Root.cmd
 prompt Root$g
-mode con: cols=120 lines=30
-::
-rem Variables installation
-set patch=19
 set name=Root
 set c1=c0
 set c2=a0
@@ -146,49 +130,43 @@ set c3=b0
 set cmd=%name%ฏ
 set "title=%name% [%id%]"
 set "titler=%title%"
-set randoutput=Randomizer#%id%.txt
-set pingeroutput=Pinger#%id%.txt
-set sysoutput=SysInfo#%id%.txt
+set randoutput=rand.Root.txt
+set pingeroutput=pinger.Root.txt
+set sysoutput=sys.Root.txt
+set cmdoutput=%temp%\cmd.Root.bat
+set uvar=HKCU\Environment
+set parmdone=0
 if NOT DEFINED looped set looped=0
-::
-rem :: Root definer ::
-set "!@##Root=1"
-rem :: Root definer ::
-::
 cls
 echo Installing Root... [Ûฐฐฐฐ]
-ping localhost /n 1 >nul
-::
-rem Modulables
-rem (List of runnable modules)
-set #reload=1
+
+SETLOCAL EnableDelayedExpansion
+for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do     rem"') do (
+  set "DEL=%%a")
+
+set !@##Root=!true
+cls
+echo Installing Root... [ÛÛฐฐฐ]
+
+rem Modules (run without #)
 set #rl=1
 set #cls=1
 set #rel=1
 set #clear=1
 set #win=1
-set #keygen=1
 set #randomizer=1
 set #rand=1
 set #pinger=1
 set #javaver=1
-set #javainfo=1
 set #system=1
-set #sysinfo=1
-set #delete=1
 set #del=1
 set #sd=1
-set #selfdestruct=1
 set #off=1
 set #sessions=1
-set #eof=1
 set #bnw=1
 set #color=1
 set #title=1
-set #sessions_delete=1
 set #detect=1
-set #install_cecho=1
-set #cecho=1
 set #sys=1
 set #id=1
 set #crash=1
@@ -196,93 +174,56 @@ set #test=1
 set #loop=1
 set #cmd=1
 set #style=1
-set #sessions_remove=1
-set #sessions_backup=1
-set #sessions_restore=1
-set #sessions_save=1
+set #save=1
+set #restore=1
+set #watch=1
 set #list=1
 set #mods=1
-set #reset=1
-::
-cls
-echo Installing Root... [ÛÛฐฐฐ]
-ping localhost /n 1 >nul
-::
-rem Use commands without "#"
-rem Also "reset" and "back" inside color/title/menu settings.
-::
-rem Open this file with a parameter to go to the module (if vaild)
-rem Use "-silent" as second parameter to accude to the first one, skip menu and close.
-rem EX: Root.cmd rand will execute Root.cmd, login and then "rand" automatically.
-rem EX: Root.cmd sessions -silent will execute Root.cmd, load, open sessions dictionary and close automatically.
 
-rem -------------
-::
 cls
 echo Installing Root... [ÛÛÛฐฐ]
-ping localhost /n 1 >nul
-::
-rem Parameter detection
-if NOT [%1]==[] (set parameter1=enabled) ELSE (set parameter1=disabled)
-if [%1]==[Root] (set parameter1=disabled)
-if [%2]==[-silent] (set silent=true) ELSE (set silent=false)
-::
-rem XP detection - inherited from gWiris (Compatibility mode)
-if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
-if %clip%==1 set "title=%title% [Compatibility]"
-::
-rem cecho.exe detection
-if DEFINED cecho_path goto cskip
-if EXIST C:\Windows\System32\cecho.exe (setx cecho_path cecho & set cecho_path=cecho)
-:cskip
-::
-rem League files loaction
-if DEFINED LeagueLocated goto lelocs
-if EXIST "%programfiles% (x86)\League of Legends\lol.launcher.exe" (setx LeagueLocated True) ELSE (setx LeagueLocated False)
-:lelocs
-::
-rem Windows 10 / Menu compatibility
-for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j
-::
-rem Self-destruct detector
-if EXIST %temp%\sd.tmp del /f /q %temp%\sd.tmp
-::
-rem Future enviroment detector (thanks to barlop)
-set uvar=HKCU\Environment
-::
-rem Color detection (located below to sync with loading phases)
-::
+
+rem Menu styles
+set #-#new=1
+set #-#old=1
+set #-#plain=1
+set #-#breaking=1
+set #-#minimalistic=1
+set #-#beta=1
+set #-#alpha=1
+set #-#bits=1
+set #-#nostalgia=1
+set #-#simple=1
+set #-#blank=1
+
 cls
 echo Installing Root... [ÛÛÛÛฐ]
-ping localhost /n 1 >nul
-::
-rem Log-in and final detections
+if NOT [%1]==[] (set parm=enabled) ELSE (set parm=disabled)
+if [%1]==[Root] (set parm=disabled)
+if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
+if %clip%==1 set "title=%title% [Compatibility]"
+for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j
+if DEFINED cecho_path (del /f /p %cecho_path% & reg delete %uvar% /f /v cecho_path)
 echo [%date% , %time%][r%patch%] Logged in. (%id%) >>%userprofile%\RootSessionsFile.inf
+
 cls
-echo Installing Root... [ÛÛÛÛÛ]
-if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
 title %title%
-ping localhost /n 2 >nul
+echo Installing Root... [ÛÛÛÛÛ] & call :gEcho 8a "DONE"
+ping localhost /n 2 /l 1 >nul
 color %color%
 cls
 if %looped%==1 goto rel
 
 
-:menu
+:MENU
 cls
-rem Silent parameter detection
-if NOT %silent%==true goto smenu
-if NOT %parameter1%==enabled goto smenu
-if NOT DEFINED #%1 (goto menu) ELSE (goto %1)
-:smenu
-rem Color detection
-if DEFINED color (color %color%) ELSE (color f0)
 title %title%
-rem menu style & checks
+if DEFINED color (color %color%) ELSE (color f0)
+mode con: cols=120 lines=30
 if DEFINED mstyle (goto --%mstyle%)
 :--new
 echo ษอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออป
-echo บ                 Ver: patch-19                 บ            License: CC-BY-SA-4.0              บ
+echo บ                 Ver: patch-20                 บ            License: CC-BY-SA-4.0              บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออน 
 echo บ                                                                                               บ  
 echo บ                                                                                               บ  
@@ -302,30 +243,30 @@ echo บ                                                                          
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออน
 echo บ              github.com/GijonDev              บ              twitter.com/GijonDev             บ
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออผ
-goto cmenu
+goto MENUINT
 :--old
-echo -----------------------------------------------------------------------------------
-echo :            Ver: patch-19               :         License: CC-BY-SA-4.0          :
-echo -----------------------------------------------------------------------------------
+echo -------------------------------------------------------------------------------------------------
+echo :                Ver: patch-20                  :             License: CC-BY-SA-4.0             :
+echo -------------------------------------------------------------------------------------------------
 echo.
 echo.
 echo.
 echo.
 echo.                   
-echo                            dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP                          
-echo                           db dBP   dBP.BP  dBP.BP    dBP                              
-echo                          dBBBBK   dBP.BP  dBP.BP    dBP                               
-echo                         dBP  BB  dBP.BP  dBP.BP    dBP                                
-echo                        dBP  dB' dBBBBP  dBBBBP    dBP
+echo                                     dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP                           
+echo                                    db dBP   dBP.BP  dBP.BP    dBP                               
+echo                                   dBBBBK   dBP.BP  dBP.BP    dBP                                
+echo                                  dBP  BB  dBP.BP  dBP.BP    dBP                                 
+echo                                 dBP  dB' dBBBBP  dBBBBP    dBP                                  
 echo.
 echo.
 echo.
 echo.
 echo.
-echo -----------------------------------------------------------------------------------
-echo :             github.com/GijonDev        :          twitter.com/GijonDev          :
-echo -----------------------------------------------------------------------------------
-goto cmenu
+echo -------------------------------------------------------------------------------------------------
+echo :               github.com/GijonDev             :             twitter.com/GijonDev              :
+echo -------------------------------------------------------------------------------------------------
+goto MENUINT
 :--simple
 echo.
 echo                            dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP                          
@@ -334,10 +275,10 @@ echo                          dBBBBK   dBP.BP  dBP.BP    dBP
 echo                         dBP  BB  dBP.BP  dBP.BP    dBP                                
 echo                        dBP  dB' dBBBBP  dBBBBP    dBP
 echo.
-goto cmenu
+goto MENUINT
 :--minimalistic
 echo Root (tm)    [%id%]
-goto cmenu
+goto MENUINT
 :--plain
 echo ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
 echo บ                                                                                               บ
@@ -348,7 +289,7 @@ echo บ                                dBP  BB  dBP.BP  dBP.BP    dBP            
 echo บ                               dBP  dB' dBBBBP  dBBBBP    dBP                                  บ
 echo บ                                                                                               บ
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
-goto cmenu
+goto MENUINT
 :--breaking
 echo ษอออออออออออออออออออป
 echo บ                   บ
@@ -359,10 +300,10 @@ echo บ     dBP  BB       บ   88b  d88 88b  d88  88b
 echo บ    dBP  dB'       บ   `?8888P' `?8888P' ?8b                                        
 echo บ                   บ  
 echo ศอออออออออออออออออออผ
-goto cmenu
+goto MENUINT
 :--beta
 echo ============================================================================
-echo =          Ver: patch-19             :       License: CC-BY-SA-4.0         =
+echo =          Ver: patch-20             :       License: CC-BY-SA-4.0         =
 echo ============================================================================
 echo.
 echo.
@@ -379,75 +320,113 @@ echo.
 echo ============================================================================
 echo =           github.com/GijonDev      :         twitter.com/GijonDev        =
 echo ============================================================================
-goto cmenu
+goto MENUINT
 :--alpha
-echo G# Root patch-19 [%id%]
+echo G# Root patch-20 [%id%]
 echo G#
 echo G# -----------------------------
-goto cmenu
-:cmenu
+goto MENUINT
+:--nostalgia
+echo ษอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออป
+echo บ                 Ver: patch-20                 บ            License: CC-BY-SA-4.0              บ
+echo ฬอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออน 
+echo บ                                                                                               บ  
+echo บ                                                                                               บ  
+echo บ                                                                                               บ
+echo บ                                                                                               บ
+echo บ                                                              d8P                              บ
+echo บ                                                          d888888P                             บ
+echo บ                                 88bd88b d8888b   d8888b    ?88'                               บ
+echo บ                                88P'    d8P' ?88 d8P' ?88   88P                                บ
+echo บ                               d88      88b  d88 88b  d88  88b                                 บ
+echo บ                              d88'      `?8888P' `?8888P' ?8b                                  บ
+echo บ                                                                                               บ
+echo บ                                                                                               บ
+echo บ                                                                                               บ
+echo บ                                                                                               บ
+echo บ                                                                                               บ
+echo ฬอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออน
+echo บ              github.com/GijonDev              บ              twitter.com/GijonDev             บ
+echo ศอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออผ
+goto MENUINT
+:--bits
+echo ษอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออป
+echo บ                 Ver: patch-20                 บ            License: CC-BY-SA-4.0              บ
+echo ฬอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออน 
+echo บ                                                                                               บ  
+echo บ                                                                                               บ  
+echo บ                                                                                               บ
+echo บ                                                                                               บ
+echo บ                                                                                               บ
+echo บ                                   ÛÛÛÛÛÛ   ÛÛÛÛÛ   ÛÛÛÛÛ  ÛÛÛÛÛÛÛ                             บ
+echo บ                                  ÛÛ  ÛÛ   ÛÛ ÛÛ   ÛÛ ÛÛ    ÛÛÛ                                บ
+echo บ                                 ÛÛÛÛÛÛ   ÛÛ ÛÛ   ÛÛ ÛÛ    ÛÛÛ                                 บ
+echo บ                                ÛÛ  ÛÛ   ÛÛ ÛÛ   ÛÛ ÛÛ    ÛÛÛ                                  บ
+echo บ                               ÛÛ   ÛÛ  ÛÛÛÛÛ   ÛÛÛÛÛ    ÛÛÛ                                   บ
+echo บ                                                                                               บ
+echo บ                                                                                               บ
+echo บ                                                                                               บ
+echo บ                                                                                               บ
+echo บ                                                                                               บ
+echo ฬอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออน
+echo บ              github.com/GijonDev              บ              twitter.com/GijonDev             บ
+echo ศอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออผ
+goto MENUINT
+:MENUINT
 echo.
-:source
-if %silent%==true taskkill /im cmd.exe
+:--blank
+:SOURCE
 echo.
 color %color%
 title %title%
-if NOT %parameter1%==enabled goto noparm
-if DEFINED #%1 (goto %1) ELSE (echo Invalid parameter location.)
-:noparm
-set /p mi=%cmd%
-echo.
+if %parmdone%==1 exit
+if DEFINED #%1 (goto %1 & set parmdone=1)
+set /p "mi=%cmd%" & echo.
+if %mi%==void goto source & if "%mi%" == "" goto source
+if %mi%==void goto source & if "%mi%" == "" goto source
 if DEFINED #%mi% (goto %mi%) ELSE (echo Invalid location.)
 goto source
 
 :test
-echo No test going on right now!
-goto source
-
-:sourced
-echo Successfully cancelled action!
-goto source
-
-:do
-set /P eas=Root - cmd.exeฏ
-%eas%
+call :gEcho 10 No tests!
 goto source
 
 :style
-echo Valid layouts: new, old, simple, minimalistic, plain, breaking, beta, alpha
+echo ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+echo บ New, old, simple, minimalistic, plain, breaking, beta, alpha, nostalgia, bits, blank บ
+echo ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 set /P mas=Root - styleฏ
-if %mas%==new set mstyle=new & setx mstyle new
-if %mas%==old set mstyle=old & setx mstyle old
-if %mas%==simple set mstyle=simple & setx mstyle simple
-if %mas%==minimalistic set mstyle=minimalistic & setx mstyle minimalistic
-if %mas%==beta set mstyle=beta & setx mstyle beta
-if %mas%==alpha set mstyle=alpha & setx mstyle alpha
-if %mas%==plain set mstyle=plain & setx mstyle plain
-if %mas%==breaking set mstyle=breaking & setx mstyle breaking
-echo [%date% , %time%][r%patch%] Set menu style (%mas%)>>%userprofile%\RootSessionsFile.inf
-if %mas%==back goto sourced
-goto menu
+set cc=0
+if %mas%==back goto cmenu
+if DEFINED #-#%mas% (set mstyle=%mas% & IF %clip%==0 setx mstyle %mas%) ELSE (echo. & echo Wasn't able to find style. & echo [%date% , %time%][r%patch%] Failed to set menu style.>>%userprofile%\RootSessionsFile.inf & goto source)
+echo [%date% , %time%][r%patch%] Set menu style. (%mas%)>>%userprofile%\RootSessionsFile.inf & goto menu
 
 :list
 :mods
-echo (Reload,rel,rl), (cls,clear), (win,cmd), (rand,randomizer,keygen), (pinger), (javaver,javainfo), (sys,sysinfo,system), (ss,screensaver), (delete,del), (sd,selfdestruct), (sessions-sessions_remove,sessions_delete-sessions_backup-sessions_restore), (eof,off), (color-title-style-bnw), (test-loop-crash), (id-detect), (cecho-install_cecho), (list,mods)
-goto source
+echo ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+echo บ Reload: (rel,rl)     Clear screen:   (clear,cls)             CMD:    (win,cmd)    Randomizer:  (rand,randomizer) บ
+echo บ Pinger: (pinger)     JavaVer:        (javaver)               System: (sys,system) Misc:   (test-loop-crash)      บ 
+echo บ Delete: (del)        Self-destruct:  (sd)                    Help:   (list,mods)  Info:   (id-detect)            บ
+echo บ Exit:   (off)        Settings:       (color-title-style-bnw) Sessions: (sessions-save-watch-restore)             บ
+echo ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ & goto source
+
+:patch
+set /p pgo=Root - patchฏ
+if DEFINED --#%pgo% (start Root.cmd Root %pgo% & EXIT) ELSE (echo That is not a valid time scale! & goto source)
 
 :color
 set /P cas=Root - colorฏ
-if %cas%==back goto sourced
-echo [%date% , %time%][r%patch%] Set color theme. (%cas%)>>%userprofile%\RootSessionsFile.inf
+if %cas%==back goto source
 if %cas%==reset goto color_reset
-setx color %cas%
+IF %clip%==0 setx color %cas%
 set color=%cas%
+echo [%date% , %time%][r%patch%] Set color theme. (%cas%)>>%userprofile%\RootSessionsFile.inf
 goto color_reload
 :color_reset
 reg delete %uvar% /f /v color
 set color=f0
-goto color_reload
 :color_reload
-color %color%
-goto source
+color %color% & goto source
 
 :loop
 set looped=1
@@ -455,7 +434,7 @@ goto rel
 
 :title
 set /p titled=Root - titleฏ
-if "%titled%" == "back" goto sourced
+if "%titled%" == "back" goto source
 if "%titled%" == "reset" goto title_reset
 set "title=%titled%"		
 title %title%		
@@ -465,19 +444,18 @@ set title=%titler%
 title %title%
 goto source
 
-:reload
 :rl
 :rel
-start %r%
-exit
+start %r% & ping localhost >nul & EXIT
 
 :id
-echo Logged in using id %id%
+echo Current session key: %id%
 goto source
 
 :crash
-if %id% LEQ 3333 (goto crash_rem)
-if %id% GEQ 6666 (goto crash_call) ELSE (goto crash_if)
+if %id% LEQ 3333 goto crash_rem
+if %id% GEQ 6666 goto crash_call
+goto crash_if
 ::all code by npocmaka
 :crash_rem
 title remCrasher
@@ -490,33 +468,32 @@ title ifCrasher
 set "h=/?"&& call for %%h%%
 ::all code by npocmaka
 
-:install_cecho
-set /P "ces=Insert cecho.exe path="
-if NOT %ces%==reset goto install_cecho_keep
-echo Successfully disabled cecho.exe
-setx cecho_path "reset"
-reg delete %uvar% /f /v cecho_path
-goto source
-:install_cecho_keep
-setx cecho_path %ces%
-set cecho_path=%ces%
-%ces% {0a}Enabled cecho.exe
-echo.
-pause
-goto source
-
 :bnw
-if %color%==f0 goto bl
-if %color%==0f (goto wh) ELSE (echo You cannot Black and White because you have a modded color theme.)
-goto source
+set "cas="
+if "%color%" == "f0" (goto bl)
+if "%color%" == "0f" (goto wh)
+if "%color%" == "70" (goto blo)
+if "%color%" == "07" (goto who)
+if NOT DEFINED color (goto bl)
+echo You cannot Black and White because you have a modded color theme. & goto source
 :bl
 set cas=0f
-setx color %cas%
+IF %clip%==0 setx color %cas%
 set color=%cas%
 goto source
 :wh
 set cas=f0
-setx color %cas%
+IF %clip%==0 setx color %cas%
+set color=%cas%
+goto source
+:blo
+set cas=07
+IF %clip%==0 setx color %cas%
+set color=%cas%
+goto source
+:who
+set cas=70
+IF %clip%==0 setx color %cas%
 set color=%cas%
 goto source
 
@@ -524,62 +501,26 @@ goto source
 start %userprofile%\RootSessionsFile.inf & echo Launched dictionary
 goto source
 
-:sessions_delete
-:sessions_remove
-echo Are you really sure you want to delete your sessions file?
-set /p ryses=Input "Y" to delete the sessions file:
-if %ryses%==Y (goto ryY) ELSE (echo Negative answer. Returning to menu...)
-goto source
-del /Q /f %userprofile%\RootSessionsFile.inf
-echo Deleted sessions file. A new one will be generated in the next login.
-goto source
-
-:sessions_backup
-:sessions_save
-echo Saving sessions file to avoid self-destruct...
-if EXIST %temp%\root.node.tmp del /f /q %temp%\root.node.tmp
+:save
+echo Saving sessions file...
 echo [%date% , %time%][r%patch%] Saved sessions backup. >>%userprofile%\RootSessionsFile.inf
-copy /y %userprofile%\RootSessionsFile.inf /b %temp%
-ren %temp%\RootSessionsFile.inf root.node.tmp
+type %userprofile%\RootSessionsFile.inf > %temp%\Root.log
 echo Saved.
 goto source
 
-:sessions_restore
-echo Restoring sessions file...
-if EXIST %temp%\root.node.tmp (goto moveYES) ELSE (echo Couldn't find a valid dictionary back-up.)
+:watch
+IF EXIST %temp%\Root.log (ping localhost >nul & echo Detected backup sessions file. & notepad %temp%\Root.log) ELSE (echo Wasn't able to find a valid Root sessions backup file.)
+
 goto source
-:moveYES
-ren %temp%\root.node.tmp RootSessionsFile.inf
-move /y %temp%\RootSessionsFile.inf %userprofile%\
+
+:restore
+echo Restoring sessions file...
+if EXIST %temp%\Root.log (goto restoreLog) ELSE (echo Couldn't find a valid dictionary back-up. & goto source)
+:restoreLog
+type %temp%\Root.log > %userprofile%\RootSessionsFile.inf
 echo [%date% , %time%][r%patch%] Restored sessions file. >>%userprofile%\RootSessionsFile.inf
 echo Restored.
 goto source
-
-:cecho
-if NOT DEFINED %cecho_path% goto cecho_keep
-echo Wasn't able to detect cecho.exe
-echo For this module to run you need cecho.exe
-echo Specify cecho.exe's path using "install_cecho"
-goto source
-:cecho_keep
-%cecho_path% {00}Root  {10}Root  {20}Root  {30}Root  {40}Root  {50}Root  {60}Root  {70}Root  {80}Root  {90}Root  {A0}Root  {B0}Root  {C0}Root  {D0}Root  {E0}Root  {F0}Root {\n}
-%cecho_path% {01}Root  {11}Root  {21}Root  {31}Root  {41}Root  {51}Root  {61}Root  {71}Root  {81}Root  {91}Root  {A1}Root  {B1}Root  {C1}Root  {D1}Root  {E1}Root  {F1}Root {\n}
-%cecho_path% {02}Root  {12}Root  {22}Root  {32}Root  {42}Root  {52}Root  {62}Root  {72}Root  {82}Root  {92}Root  {A2}Root  {B2}Root  {C2}Root  {D2}Root  {E2}Root  {F2}Root {\n}
-%cecho_path% {03}Root  {13}Root  {23}Root  {33}Root  {43}Root  {53}Root  {63}Root  {73}Root  {83}Root  {93}Root  {A3}Root  {B3}Root  {C3}Root  {D3}Root  {E3}Root  {F3}Root {\n}
-%cecho_path% {04}Root  {14}Root  {24}Root  {34}Root  {44}Root  {54}Root  {64}Root  {74}Root  {84}Root  {94}Root  {A4}Root  {B4}Root  {C4}Root  {D4}Root  {E4}Root  {F4}Root {\n}
-%cecho_path% {05}Root  {15}Root  {25}Root  {35}Root  {45}Root  {55}Root  {65}Root  {75}Root  {85}Root  {95}Root  {A5}Root  {B5}Root  {C5}Root  {D5}Root  {E5}Root  {F5}Root {\n}
-%cecho_path% {06}Root  {16}Root  {26}Root  {36}Root  {46}Root  {56}Root  {66}Root  {76}Root  {86}Root  {96}Root  {A6}Root  {B6}Root  {C6}Root  {D6}Root  {E6}Root  {F6}Root {\n}
-%cecho_path% {07}Root  {17}Root  {27}Root  {37}Root  {47}Root  {57}Root  {67}Root  {77}Root  {87}Root  {97}Root  {A7}Root  {B7}Root  {C7}Root  {D7}Root  {E7}Root  {F7}Root {\n}
-%cecho_path% {08}Root  {18}Root  {28}Root  {38}Root  {48}Root  {58}Root  {68}Root  {78}Root  {88}Root  {98}Root  {A8}Root  {B8}Root  {C8}Root  {D8}Root  {E8}Root  {F8}Root {\n}
-%cecho_path% {09}Root  {19}Root  {29}Root  {39}Root  {49}Root  {59}Root  {69}Root  {79}Root  {89}Root  {99}Root  {A9}Root  {B9}Root  {C9}Root  {D9}Root  {E9}Root  {F9}Root {\n}
-%cecho_path% {0A}Root  {1A}Root  {2A}Root  {3A}Root  {4A}Root  {5A}Root  {6A}Root  {7A}Root  {8A}Root  {9A}Root  {AA}Root  {BA}Root  {CA}Root  {DA}Root  {EA}Root  {FA}Root {\n}
-%cecho_path% {0B}Root  {1B}Root  {2B}Root  {3B}Root  {4B}Root  {5B}Root  {6B}Root  {7B}Root  {8B}Root  {9B}Root  {AB}Root  {BB}Root  {CB}Root  {DB}Root  {EB}Root  {FB}Root {\n}
-%cecho_path% {0C}Root  {1C}Root  {2C}Root  {3C}Root  {4C}Root  {5C}Root  {6C}Root  {7C}Root  {8C}Root  {9C}Root  {AC}Root  {BC}Root  {CC}Root  {DC}Root  {EC}Root  {FC}Root {\n}
-%cecho_path% {0D}Root  {1D}Root  {2D}Root  {3D}Root  {4D}Root  {5D}Root  {6D}Root  {7D}Root  {8D}Root  {9D}Root  {AD}Root  {BD}Root  {CD}Root  {DD}Root  {ED}Root  {FD}Root {\n}
-%cecho_path% {0E}Root  {1E}Root  {2E}Root  {3E}Root  {4E}Root  {5E}Root  {6E}Root  {7E}Root  {8E}Root  {9E}Root  {AE}Root  {BE}Root  {CE}Root  {DE}Root  {EE}Root  {FE}Root {\n}
-%cecho_path% {0F}Root  {1F}Root  {2F}Root  {3F}Root  {4F}Root  {5F}Root  {6F}Root  {7F}Root  {8F}Root  {9F}Root  {AF}Root  {BF}Root  {CF}Root  {DF}Root  {EF}Root  {FF}Root {\n}{#}
-pause
-goto menu
 
 :detect
 set /p de=Input:
@@ -592,22 +533,21 @@ goto menu
 
 :win
 :cmd
-if DEFINED cecho_path (%cecho_path% {8f}Injecting cmd.exe...{#}{\n}) ELSE (echo Injecting cmd.exe...)
-if EXIST %public%\Root.bat attrib -h %public%\Root.bat & del %public%\Root.bat
-ping localhost /n 3 >nul
-echo @echo off >%public%\Root.bat
-echo color 07 >>%public%\Root.bat
-echo title cmd.exe - %r%>>%public%\Root.bat
-echo prompt >>%public%\Root.bat
-echo cd C:\ >>%public%\Root.bat
-echo cmd >>%public%\Root.bat
-attrib +h %public%\Root.bat
-if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
-start %public%\Root.bat
+echo Injecting cmd.exe...
+if EXIST %cmdoutput% attrib -h %cmdoutput% & del %cmdoutput%
+ping localhost /n 2 >nul
+echo @echo off >%cmdoutput%
+echo color 07 >>%cmdoutput%
+echo title cmd.exe - %r%>>%cmdoutput%
+echo prompt >>%cmdoutput%
+echo pushd >>%cmdoutput%
+echo cmd >>%cmdoutput%
+attrib +h %cmdoutput%
+call :gEcho 8a "DONE"
+start %cmdoutput%
 echo.
 goto source
 
-:keygen
 :randomizer
 :rand
 color %c1%
@@ -616,9 +556,9 @@ color %c2%
 ping localhost /n 1 >nul
 color %c3%
 ping localhost /n 1 >nul
-color %color%
+if DEFINED color (color %color%) ELSE (color f0)
 ping localhost /n 1 >nul
-if DEFINED cecho_path (%cecho_path% {8f}Running Randomizer{\n}) ELSE (echo Running Randomizer)
+echo Running Randomizer
 ping localhost /n 2 >nul
 echo Generating...
 echo Generated keys from %r% at [%time% , %date%] >%randoutput%
@@ -723,7 +663,7 @@ echo %RANDOM%%RANDOM%%RANDOM%%RANDOM%%random% >>%randoutput%
 echo. >>%randoutput%
 echo. >>%randoutput%
 echo -end of the file- >>%randoutput%
-if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
+call :gEcho 8a "DONE"
 start %randoutput%
 echo.
 goto source
@@ -735,14 +675,14 @@ color %c2%
 ping localhost /n 1 >nul
 color %c3%
 ping localhost /n 1 >nul
-color %color%
+if DEFINED color (color %color%) ELSE (color f0)
 ping localhost /n 1 >nul
-if DEFINED cecho_path (%cecho_path% {8f}Running Pinger{\n}) ELSE (echo Running Pinger)
+echo Running Pinger
 ping localhost>nul
 set /p ping=Input host:
-if %ping%==back goto sourced
-echo Pinging to %ping%...
-echo.
+if %ping%==back goto source
+if %ping%==euw set "ping=prod.euw1.lol.riotgames.com"
+echo Working...
 echo Pinging to %ping%  from %r% >%pingeroutput%
 echo. >>%pingeroutput%
 echo tracert %ping% >>%pingeroutput%
@@ -761,27 +701,26 @@ ping %ping% /l 16 >>%pingeroutput%
 echo. >>%pingeroutput%
 echo -end of the file- >>%pingeroutput%
 start %pingeroutput%
-if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
+call :gEcho 8a "DONE"
 goto source
 
 :javaver
-:javainfo
 color %c1%
 ping localhost /n 1 >nul
 color %c2%
 ping localhost /n 1 >nul
 color %c3%
 ping localhost /n 1 >nul
-color %color%
+if DEFINED color (color %color%) ELSE (color f0)
 ping localhost /n 1 >nul
-if DEFINED cecho_path (%cecho_path% {8f}Running JavaVer{\n}) ELSE (echo Running JavaVer)
-ping localhost>nul
-java -version | echo >%javaveroutput%
-if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
-goto source
+echo Running JavaVer
+ping localhost /n 3 >nul
+echo ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+java -version
+echo ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+call :gEcho 8a "DONE" & goto source
 
 :system
-:sysinfo
 :sys
 color %c1%
 ping localhost /n 1 >nul
@@ -789,18 +728,12 @@ color %c2%
 ping localhost /n 1 >nul
 color %c3%
 ping localhost /n 1 >nul
-color %color%
+if DEFINED color (color %color%) ELSE (color f0)
 ping localhost /n 1 >nul
-if DEFINED cecho_path (%cecho_path% {8f}Running SysInfo{\n}) ELSE (echo Running SysInfo)
-if EXIST %sysoutput% del -f -q %sysoutput%
-if NOT EXIST C:\WINDOWS\system32\RazerCoinstaller.dll goto sys_send
-if DEFINED cecho_path (%cecho_path% {8c}Detected Razer dlls{\n}{8f}) ELSE (echo WARNING!1 Detected Razer dlls)
-:sys_send
+echo Running System
+if EXIST C:\WINDOWS\system32\RazerCoinstaller.dll call :gEcho c "Detected RazerCoinstaller.dll"
 echo Working...
-:: code by npocmaka
-start "" /w dxdiag /t %sysoutput%
-:: code by npocmaka
-systeminfo >>%sysoutput%
+systeminfo >%sysoutput%
 echo. >>%sysoutput%
 echo. >>%sysoutput%
 echo. >>%sysoutput%
@@ -818,64 +751,56 @@ echo. >>%sysoutput%
 ipconfig /all >>%sysoutput%
 echo. >>%sysoutput%
 echo. >>%sysoutput%
+:: code by npocmaka
+start "" /w dxdiag /t %sysoutput%
+:: code by npocmaka
 echo -end of the file- >>%sysoutput%
 start %sysoutput%
-if DEFINED cecho_path (%cecho_path% {8a}DONE{#}) ELSE (echo DONE)
+call :gEcho 8a "DONE"
 echo.
 goto source
 
-:delete
 :del
-echo Checking for cache files...
-ping localhost /n 1 >nul
 set delcheck=0
-if EXIST *.txt set /a delcheck=%delcheck% ++ 1
-if EXIST %public%\Root.bat set /a delcheck=%delcheck% ++ 1
+if EXIST %randoutput% set /a delcheck=%delcheck% ++ 1
+if EXIST %sysoutput% set /a delcheck=%delcheck% ++ 1
+if EXIST %pingeroutput% set /a delcheck=%delcheck% ++ 1
+if EXIST %cmdoutput% set /a delcheck=%delcheck% ++ 1
 if %delcheck% GEQ 1 (goto delkeep) ELSE (echo Couldn't find any output files.)
 goto source
 :delkeep
-if EXIST *.txt del *.txt
-if EXIST %public%\Root.bat attrib -h %public%\Root.bat
-if EXIST %public%\Root.bat del %public%\Root.bat
+if EXIST %randoutput% del /f /q %randoutput%
+if EXIST %sysoutput% del /f /q %sysoutput%
+if EXIST %pingeroutput% del /f /q %pingeroutput%
+if EXIST %cmdoutput% attrib -h %cmdoutput%
+if EXIST %cmdoutput% del /f /q %cmdoutput%
 echo Successfully deleted cache files.
 goto source
 
-:selfdestruct
 :sd
-set /P er=Are you sure you want to self-destruct Root? Input "Y" to confirm:
-if %er%==Y goto sds
-if DEFINED cecho_path (%cecho_path% {8c}Negative answer. Returning to menu...) ELSE (echo Negative answer. Returning to menu...)
+set /P sdAns=Input "Y" to confirm self-destruction:
+if %sdAns%==Y goto sdKeep
+:sdKeep
+cls & color 07
+call :gEcho 07 "Self-destructing... [ ]"
 ping localhost >nul
-echo.
-goto source
-:sds
-cls
-echo Self-destructing...
-if EXIST %userprofile%\RootSessionsFile.inf del /f /q %userprofile%\RootSessionsFile.inf
-if EXIST %userprofile%\RootSessionFiles.ini del /f /q %userprofile%\RootSessionFiles.ini
-if EXIST *.txt del *.txt
-if EXIST %public%\Root.bat attrib -h %public%\Root.bat
-if EXIST %public%\Root.bat del %public%\Root.bat
-reg delete %uvar% /f /v color
-reg delete %uvar% /f /v cecho_path
-echo done >%temp%\sd.tmp
-echo x=msgbox("Thank you for flying Root" ,0+64, "Root") >Root.vbs
-start Root.vbs
-ping localhost /n 1 >Nul
-del /f /q Root.vbs
-del /f /q %0
-exit
+if EXIST %userprofile%\RootSessionsFile.inf del /f /q %userprofile%\RootSessionsFile.inf & if EXIST *.Root.* del /f /q *.Root.* & if EXIST %cmdoutput% (attrib -h %cmdoutput% & del /f /q %cmdoutput%)
+cls & call :gEcho 07 "Self-destructing... [#]" & echo x=msgbox("Self-destruct was successful",0+64, "Root") >sd.Root.vbs & start sd.Root.vbs & ping localhost /n 2 >Nul & del /f /q sd.Root.vbs
+del /f /q Root.cmd & ping localhost /n 1 >Nul & EXIT
 
-:reset
-echo Viva la pasta de dientes!
-goto source
+::code inspired by VisualMagic and npocmaka
+:gEcho
+setlocal enableDelayedExpansion
+set "chkPerms==::"
+if defined !chkPerms! ( 
+	set admin=0 & echo %~2 & endlocal & exit /b
+) else (
+   <nul set /p ".=%DEL%" > "%~2"
+	findstr /v /a:%1 /R "^$" "%~2" nul
+	del "%~2" > nul 2>&1i & set admin=1 & echo. & endlocal & exit /b
+)
 
 :off
-:EOF
-if EXIST %public%\Root.bat attrib -h %public%\Root.bat
-if EXIST %public%\Root.bat del %public%\Root.bat
-echo x=msgbox("Thank you for flying Root" ,0+64, "Root") >Root.vbs
-start Root.vbs
-ping localhost /n 1 >Nul
-del /f /q Root.vbs
-
+if EXIST %cmdoutput% (attrib -h %cmdoutput% & del /f /q %cmdoutput%)
+echo x=msgbox("Thank you for flying Root" ,0+64, "Root") >off.Root.vbs & start off.Root.vbs & ping localhost /n 2 >Nul & del /f /q off.Root.vbs
+exit

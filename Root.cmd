@@ -16,17 +16,14 @@
 ::                                                                                                                                                             ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::                                                                                                                                                             ::
-::                   OS Compatibilities:                                                                                                                       ::
+::                   OS compatibilities:                                                                                                                       ::
 ::                                                                                                                                                             ::
-::                                   - Windows 98      (Compatibility Mode) (Not tested)                                                                       ::
 ::                                   - Windows XP      (Compatibility Mode)                                                                                    ::
-::                                   - Windows 2000/ME (Compatibility Mode) (Not tested)                                                                       ::
-::                                   - Windows Vista                        (Not tested)                                                                       ::
+::                                   - Windows Vista   (Not tested)                                                                                            ::
 ::                                   - Windows 7                                                                                                               ::
 ::                                   - Windows 8 & 8.1                                                                                                         ::
 ::                                   - Windows 10       (Best visuals)                                                                                         ::
 ::                                                                                                                                                             ::
-::                                   - Not tested on Windows Server                                                                                            ::
 ::                                                                                                                                                             ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::                                                                                                                                                             ::
@@ -42,87 +39,37 @@
 ::                                                                                                                                                             ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::                                                                                                                                                             ::
-::                   Developer                                                                                                                                 ::
-::                                                                                                                                                             ::
-::                   The developer, GijonDev, created this file for fun having some really basic experience on                                                 ::
-::                   the programing itself but he has used this program to learn and understand how programming                                                ::
-::                   in general works. You may visit his github page where you can find all his projects.                                                      ::
-::                                                                                                                                                             ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                                                                                                                                                             ::
-::                   Developing                                                                                                                                ::
-::                                                                                                                                                             ::
-::                   The file has been created and developed using Notepad++. For the creation of this file,                                                   ::
-::                   some sources like stackoverflow and others have been consulted. You may ocassionally                                                      ::
-::                   find on the internet similar strings to those presented but every single line has been                                                    ::
-::                   manually written and adapted especially for this file. This projects has been being                                                       ::
-::                   developed since September 2016, starting out with the patch-1.                                                                            ::
-::                                                                                                                                                             ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                                                                                                                                                             ::
 ::                   License                                                                                                                                   ::
 ::                                                                                                                                                             ::
 ::                   The project actual is licensed under "CC-BY-SA-4.0". You can find a copy of the license in                                                ::
 ::                   the project official repository as well as in the official creative commons webpage. Please                                               ::
 ::                   note that the license may actually vary depending on the version.                                                                         ::
 ::                                                                                                                                                             ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                                                                                                                                                             ::
-::                   External media                                                                                                                            ::
-::                                                                                                                                                             ::
-::                   - Twitter              (http://www.twitter.com/GijonDev)                                                                                  ::
-::                   - GitHub               (http://www.github.com/GijonDev)                                                                                   ::
-::                   - YouTube              (http://www.youtube.com/underscoreBis)                                                                             ::
-::                   - GitHubPages          (http://twitter.com/GijonDev)                                                                                      ::
-::                                                                                                                                                             ::
-::                   - Project license      (https://github.com/GijonDev/Root/blob/master/LICENSE)                                                             ::
-::                   - Project repository   (https://github.com/GijonDev/Root)                                                                                 :: 
-::                   - Project downloads    (https://github.com/GijonDev/Root/releases)                                                                        ::
-::                   - Project page         (https://twitter.com/GijonDev/Root/)                                                                               ::
-::                                                                                                                                                             ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                                                                                                                                                             ::
-::                   Supporters                                                                                                                                ::
-::                                                                                                                                                             ::
-::                   The people that have contributed in any helpful way to this project are:                                                                  ::
-::                                                                                                                                                             ::
-::                                   - http://www.twitter.com/HiImYeh_                                                                                         ::
-::                                   - http://www.twitter.com/isramg64                                                                                         ::
-::                                   - http://www.twitter.com/Xx_byJony1_xX                                                                                    ::
-::                                   - http://www.github.com/npocmaka                                                                                          ::
-::                                   - http://stackoverflow.com/users/2128947/magoo                                                                            ::
-::                                   - http://stackoverflow.com/users/385907/barlop                                                                            ::
-::                                   - http://stackoverflow.com/users/2946716/visual-magic                                                                     ::
-::                                                                                                                                                             ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                                                                                                                                                             ::
-::                   Extras                                                                                                                                    ::
-::                                                                                                                                                             ::
-::                   There are some few bonus stuff that you can do with this file!                                                                            ::
-::                                                                                                                                                             ::
-::                                   - Color: you can change the window's color with a valid color code. This setting will save through sessions.              ::
-::                                   - Title: you can set your own session title. This setting won't save through sessions.                                    ::
-::                                   - Dictionary: you can check your log-ins using "sessions".                                                                ::
-::                                                                                                                                                             ::              
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::            
 ::                                                                                                                                                             ::
 ::                                                               NOTES                                                                                         ::
 ::                                                                                                                                                             ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: System module runs strings obtained from different npocmaka's files. You can check npocmaka github here - https://github.com/npocmaka                       ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                                                                                                                                                             ::
 :: Symbols and artwork have been copied from http://patorjk.com/software/taag/ , http://www.alt-codes.net/ and https:#-#changaco.oy.lc/unicode-progress-bars/  ::
+::                                                                                                                                                             ::
+:: Licenses may vary through releases.                                                                                                                         ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::                
-::                                                                                                                                          (designed on patch16)
+::                                                                                                                                           designed on patch-16
 
-@echo off
-set patch=20
-title %patch%
-echo Installing Root... [ฐฐฐฐฐ]
+
+@echo off & color 07
 pushd
-color 07
-set /a id=%random% %% 10000 & set r=Root.cmd
-prompt Root$g
+::pushd utility undefined
+
+cls
+echo Installing Root... [ ]
+
+::general purpose definitions
+setlocal enableDelayedExpansion
+set "patch=21" & title %patch%
+set /a "id=%random% %% 10000" & set "r=Root.cmd"
 set name=Root
 set c1=c0
 set c2=a0
@@ -135,20 +82,23 @@ set pingeroutput=pinger.Root.txt
 set sysoutput=sys.Root.txt
 set cmdoutput=%temp%\cmd.Root.bat
 set uvar=HKCU\Environment
-set parmdone=0
+set "void="
+set "null="
 if NOT DEFINED looped set looped=0
-cls
-echo Installing Root... [Ûฐฐฐฐ]
+if DEFINED %3 set "title=%3"
 
+cls
+echo Installing Root... [ ]
+
+::color check
 SETLOCAL EnableDelayedExpansion
-for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do     rem"') do (
+for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & for %%b in (1) do     rem"') do (
   set "DEL=%%a")
-
-set !@##Root=!true
 cls
-echo Installing Root... [ÛÛฐฐฐ]
+echo Installing Root... [ ]
 
-rem Modules (run without #)
+
+rem Module list dictionary
 set #rl=1
 set #cls=1
 set #rel=1
@@ -170,7 +120,6 @@ set #detect=1
 set #sys=1
 set #id=1
 set #crash=1
-set #test=1
 set #loop=1
 set #cmd=1
 set #style=1
@@ -181,9 +130,9 @@ set #list=1
 set #mods=1
 
 cls
-echo Installing Root... [ÛÛÛฐฐ]
+echo Installing Root... [ ]
 
-rem Menu styles
+rem Menu styles dictionary
 set #-#new=1
 set #-#old=1
 set #-#plain=1
@@ -197,22 +146,33 @@ set #-#simple=1
 set #-#blank=1
 
 cls
-echo Installing Root... [ÛÛÛÛฐ]
+echo Installing Root... [ ]
+
+::argument detection
 if NOT [%1]==[] (set parm=enabled) ELSE (set parm=disabled)
 if [%1]==[Root] (set parm=disabled)
-if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
-if %clip%==1 set "title=%title% [Compatibility]"
-for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j
-if DEFINED cecho_path (del /f /p %cecho_path% & reg delete %uvar% /f /v cecho_path)
-echo [%date% , %time%][r%patch%] Logged in. (%id%) >>%userprofile%\RootSessionsFile.inf
 
 cls
-title %title%
-echo Installing Root... [ÛÛÛÛÛ] & call :gEcho 8a "DONE"
+echo Installing Root... [ ]
+
+::os detection & compatibility mode declaration
+if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
+for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j
+
+cls
+echo Installing Root... [ ]
+
+::session log-in
+echo [%date% , %time%][r%patch%] Logged in. (%id%) >>%userprofile%\RootSessionsFile.inf
+
+::final outputs and loop mode detection
+cls
+echo Installing Root... [#]
+call :gEcho 8a "DONE"
 ping localhost /n 2 /l 1 >nul
 color %color%
 cls
-if %looped%==1 goto rel
+if [%2]==[-loop] goto loop
 
 
 :MENU
@@ -223,7 +183,7 @@ mode con: cols=120 lines=30
 if DEFINED mstyle (goto --%mstyle%)
 :--new
 echo ษอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออป
-echo บ                 Ver: patch-20                 บ            License: CC-BY-SA-4.0              บ
+echo บ                 Ver: patch-%patch%                 บ            License: CC-BY-SA-4.0              บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออน 
 echo บ                                                                                               บ  
 echo บ                                                                                               บ  
@@ -243,10 +203,10 @@ echo บ                                                                          
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออน
 echo บ              github.com/GijonDev              บ              twitter.com/GijonDev             บ
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออผ
-goto MENUINT
+goto ext
 :--old
 echo -------------------------------------------------------------------------------------------------
-echo :                Ver: patch-20                  :             License: CC-BY-SA-4.0             :
+echo :                Ver: patch-%patch%                  :             License: CC-BY-SA-4.0             :
 echo -------------------------------------------------------------------------------------------------
 echo.
 echo.
@@ -266,7 +226,7 @@ echo.
 echo -------------------------------------------------------------------------------------------------
 echo :               github.com/GijonDev             :             twitter.com/GijonDev              :
 echo -------------------------------------------------------------------------------------------------
-goto MENUINT
+goto ext
 :--simple
 echo.
 echo                            dBBBBBb  dBBBBP  dBBBBP  dBBBBBBP                          
@@ -275,10 +235,10 @@ echo                          dBBBBK   dBP.BP  dBP.BP    dBP
 echo                         dBP  BB  dBP.BP  dBP.BP    dBP                                
 echo                        dBP  dB' dBBBBP  dBBBBP    dBP
 echo.
-goto MENUINT
+goto ext
 :--minimalistic
 echo Root (tm)    [%id%]
-goto MENUINT
+goto ext
 :--plain
 echo ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
 echo บ                                                                                               บ
@@ -289,21 +249,21 @@ echo บ                                dBP  BB  dBP.BP  dBP.BP    dBP            
 echo บ                               dBP  dB' dBBBBP  dBBBBP    dBP                                  บ
 echo บ                                                                                               บ
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
-goto MENUINT
+goto ext
 :--breaking
 echo ษอออออออออออออออออออป
 echo บ                   บ
-echo บ        dBBBBBb    บ                         d8P 
-echo บ       db dBP      บ    88bd88b d8888b   d8888b?88'
-echo บ      dBBBBK       บ   d8P' ?88 d8P' ?88   88P      
-echo บ     dBP  BB       บ   88b  d88 88b  d88  88b
+echo บ        dBBBBBb    บ                           d8P 
+echo บ       db dBP      บ      d8888b   d8888b   d8888b?88'
+echo บ      dBBBBK       บ     d8P' ?88 d8P' ?88   88P      
+echo บ     dBP  BB       บ    88b  d88 88b  d88  88b
 echo บ    dBP  dB'       บ   `?8888P' `?8888P' ?8b                                        
 echo บ                   บ  
 echo ศอออออออออออออออออออผ
-goto MENUINT
+goto ext
 :--beta
 echo ============================================================================
-echo =          Ver: patch-20             :       License: CC-BY-SA-4.0         =
+echo =          Ver: patch-%patch%             :       License: CC-BY-SA-4.0         =
 echo ============================================================================
 echo.
 echo.
@@ -320,15 +280,15 @@ echo.
 echo ============================================================================
 echo =           github.com/GijonDev      :         twitter.com/GijonDev        =
 echo ============================================================================
-goto MENUINT
+goto ext
 :--alpha
-echo G# Root patch-20 [%id%]
+echo G# Root patch-%patch% [%id%]
 echo G#
 echo G# -----------------------------
-goto MENUINT
+goto ext
 :--nostalgia
 echo ษอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออป
-echo บ                 Ver: patch-20                 บ            License: CC-BY-SA-4.0              บ
+echo บ                 Ver: patch-%patch%                 บ            License: CC-BY-SA-4.0              บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออน 
 echo บ                                                                                               บ  
 echo บ                                                                                               บ  
@@ -348,10 +308,10 @@ echo บ                                                                          
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออน
 echo บ              github.com/GijonDev              บ              twitter.com/GijonDev             บ
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออผ
-goto MENUINT
+goto ext
 :--bits
 echo ษอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออป
-echo บ                 Ver: patch-20                 บ            License: CC-BY-SA-4.0              บ
+echo บ                 Ver: patch-%patch%                 บ            License: CC-BY-SA-4.0              บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออน 
 echo บ                                                                                               บ  
 echo บ                                                                                               บ  
@@ -371,35 +331,31 @@ echo บ                                                                          
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออน
 echo บ              github.com/GijonDev              บ              twitter.com/GijonDev             บ
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออผ
-goto MENUINT
-:MENUINT
+goto ext
+:ext
 echo.
 :--blank
-:SOURCE
+:int
 echo.
 color %color%
 title %title%
-if %parmdone%==1 exit
 if DEFINED #%1 (goto %1 & set parmdone=1)
-set /p "mi=%cmd%" & echo.
-if %mi%==void goto source & if "%mi%" == "" goto source
-if %mi%==void goto source & if "%mi%" == "" goto source
-if DEFINED #%mi% (goto %mi%) ELSE (echo Invalid location.)
-goto source
-
-:test
-call :gEcho 10 No tests!
-goto source
+set /p "input=%cmd%" & echo.
+if "%input%" == "" (echo. & goto int)
+if DEFINED #%input% (goto %input% & set "input=") ELSE (echo Invalid module. & set "input=")
+goto int
 
 :style
+set /P mas=Rootฏstyleฏ
+if %mas%==back goto cmenu
+if %mas%==help goto style_h
+if DEFINED #-#%mas% (set mstyle=%mas% & IF %clip%==0 setx mstyle %mas%) ELSE (echo. & echo Failed to set %mas% style. & echo [%date% , %time%][r%patch%] Failed to set menu style.>>%userprofile%\RootSessionsFile.inf & echo. & set "mas=" & goto style)
+echo [%date% , %time%][r%patch%] Set menu style. (%mas%)>>%userprofile%\RootSessionsFile.inf & set "mas=" & goto menu
+
+:style_h
 echo ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
 echo บ New, old, simple, minimalistic, plain, breaking, beta, alpha, nostalgia, bits, blank บ
-echo ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
-set /P mas=Root - styleฏ
-set cc=0
-if %mas%==back goto cmenu
-if DEFINED #-#%mas% (set mstyle=%mas% & IF %clip%==0 setx mstyle %mas%) ELSE (echo. & echo Wasn't able to find style. & echo [%date% , %time%][r%patch%] Failed to set menu style.>>%userprofile%\RootSessionsFile.inf & goto source)
-echo [%date% , %time%][r%patch%] Set menu style. (%mas%)>>%userprofile%\RootSessionsFile.inf & goto menu
+echo ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ & goto style
 
 :list
 :mods
@@ -408,15 +364,15 @@ echo บ Reload: (rel,rl)     Clear screen:   (clear,cls)             CMD:    (win
 echo บ Pinger: (pinger)     JavaVer:        (javaver)               System: (sys,system) Misc:   (test-loop-crash)      บ 
 echo บ Delete: (del)        Self-destruct:  (sd)                    Help:   (list,mods)  Info:   (id-detect)            บ
 echo บ Exit:   (off)        Settings:       (color-title-style-bnw) Sessions: (sessions-save-watch-restore)             บ
-echo ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ & goto source
+echo ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ & goto int
 
 :patch
-set /p pgo=Root - patchฏ
-if DEFINED --#%pgo% (start Root.cmd Root %pgo% & EXIT) ELSE (echo That is not a valid time scale! & goto source)
+set /p pgo=Rootฏ patchฏ
+if DEFINED --#%pgo% (start Root.cmd Root %pgo% & EXIT) ELSE (echo That is not a valid time scale & goto int)
 
 :color
-set /P cas=Root - colorฏ
-if %cas%==back goto source
+set /P cas=Rootฏ colorฏ
+if %cas%==back goto int
 if %cas%==reset goto color_reset
 IF %clip%==0 setx color %cas%
 set color=%cas%
@@ -426,31 +382,32 @@ goto color_reload
 reg delete %uvar% /f /v color
 set color=f0
 :color_reload
-color %color% & goto source
+color %color% & goto int
 
 :loop
-set looped=1
-goto rel
+Root.cmd Root -loop
+exit
 
 :title
-set /p titled=Root - titleฏ
-if "%titled%" == "back" goto source
+set /p titled=Rootฏtitleฏ
+if "%titled%" == "#" goto int
 if "%titled%" == "reset" goto title_reset
 set "title=%titled%"		
 title %title%		
-goto source
+goto int
 :title_reset
 set title=%titler%
 title %title%
-goto source
+goto int
 
 :rl
 :rel
-start %r% & ping localhost >nul & EXIT
+:reload
+start %r% Root -none %title% & ping localhost /n 1 >nul & EXIT
 
 :id
 echo Current session key: %id%
-goto source
+goto int
 
 :crash
 if %id% LEQ 3333 goto crash_rem
@@ -469,63 +426,64 @@ set "h=/?"&& call for %%h%%
 ::all code by npocmaka
 
 :bnw
+
 set "cas="
 if "%color%" == "f0" (goto bl)
 if "%color%" == "0f" (goto wh)
 if "%color%" == "70" (goto blo)
 if "%color%" == "07" (goto who)
 if NOT DEFINED color (goto bl)
-echo You cannot Black and White because you have a modded color theme. & goto source
+echo You cannot Black and White because you have a modded color theme. & goto int
 :bl
 set cas=0f
 IF %clip%==0 setx color %cas%
 set color=%cas%
-goto source
+goto int
 :wh
 set cas=f0
 IF %clip%==0 setx color %cas%
 set color=%cas%
-goto source
+goto int
 :blo
 set cas=07
 IF %clip%==0 setx color %cas%
 set color=%cas%
-goto source
+goto int
 :who
 set cas=70
 IF %clip%==0 setx color %cas%
 set color=%cas%
-goto source
+goto int
 
 :sessions
 start %userprofile%\RootSessionsFile.inf & echo Launched dictionary
-goto source
+goto int
 
 :save
 echo Saving sessions file...
 echo [%date% , %time%][r%patch%] Saved sessions backup. >>%userprofile%\RootSessionsFile.inf
 type %userprofile%\RootSessionsFile.inf > %temp%\Root.log
 echo Saved.
-goto source
+goto int
 
 :watch
 IF EXIST %temp%\Root.log (ping localhost >nul & echo Detected backup sessions file. & notepad %temp%\Root.log) ELSE (echo Wasn't able to find a valid Root sessions backup file.)
 
-goto source
+goto int
 
 :restore
 echo Restoring sessions file...
-if EXIST %temp%\Root.log (goto restoreLog) ELSE (echo Couldn't find a valid dictionary back-up. & goto source)
+if EXIST %temp%\Root.log (goto restoreLog) ELSE (echo Couldn't find a valid dictionary back-up. & goto int)
 :restoreLog
 type %temp%\Root.log > %userprofile%\RootSessionsFile.inf
 echo [%date% , %time%][r%patch%] Restored sessions file. >>%userprofile%\RootSessionsFile.inf
 echo Restored.
-goto source
+goto int
 
 :detect
 set /p de=Input:
 if DEFINED %de% (echo Confirmation: true) ELSE (echo Confirmation: false)
-goto source
+goto int
 
 :cls
 :clear
@@ -533,7 +491,6 @@ goto menu
 
 :win
 :cmd
-echo Injecting cmd.exe...
 if EXIST %cmdoutput% attrib -h %cmdoutput% & del %cmdoutput%
 ping localhost /n 2 >nul
 echo @echo off >%cmdoutput%
@@ -543,10 +500,9 @@ echo prompt >>%cmdoutput%
 echo pushd >>%cmdoutput%
 echo cmd >>%cmdoutput%
 attrib +h %cmdoutput%
-call :gEcho 8a "DONE"
 start %cmdoutput%
 echo.
-goto source
+goto int
 
 :randomizer
 :rand
@@ -666,7 +622,7 @@ echo -end of the file- >>%randoutput%
 call :gEcho 8a "DONE"
 start %randoutput%
 echo.
-goto source
+goto int
 
 :pinger
 color %c1%
@@ -680,7 +636,7 @@ ping localhost /n 1 >nul
 echo Running Pinger
 ping localhost>nul
 set /p ping=Input host:
-if %ping%==back goto source
+if %ping%==back goto int
 if %ping%==euw set "ping=prod.euw1.lol.riotgames.com"
 echo Working...
 echo Pinging to %ping%  from %r% >%pingeroutput%
@@ -702,7 +658,7 @@ echo. >>%pingeroutput%
 echo -end of the file- >>%pingeroutput%
 start %pingeroutput%
 call :gEcho 8a "DONE"
-goto source
+goto int
 
 :javaver
 color %c1%
@@ -718,7 +674,7 @@ ping localhost /n 3 >nul
 echo ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออป
 java -version
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
-call :gEcho 8a "DONE" & goto source
+call :gEcho 8a "DONE" & goto int
 
 :system
 :sys
@@ -758,7 +714,7 @@ echo -end of the file- >>%sysoutput%
 start %sysoutput%
 call :gEcho 8a "DONE"
 echo.
-goto source
+goto int
 
 :del
 set delcheck=0
@@ -767,7 +723,7 @@ if EXIST %sysoutput% set /a delcheck=%delcheck% ++ 1
 if EXIST %pingeroutput% set /a delcheck=%delcheck% ++ 1
 if EXIST %cmdoutput% set /a delcheck=%delcheck% ++ 1
 if %delcheck% GEQ 1 (goto delkeep) ELSE (echo Couldn't find any output files.)
-goto source
+goto int
 :delkeep
 if EXIST %randoutput% del /f /q %randoutput%
 if EXIST %sysoutput% del /f /q %sysoutput%
@@ -775,22 +731,25 @@ if EXIST %pingeroutput% del /f /q %pingeroutput%
 if EXIST %cmdoutput% attrib -h %cmdoutput%
 if EXIST %cmdoutput% del /f /q %cmdoutput%
 echo Successfully deleted cache files.
-goto source
+goto int
 
 :sd
+cls
 set /P sdAns=Input "Y" to confirm self-destruction:
+color 07
 if %sdAns%==Y goto sdKeep
+echo Failed to self-destruct.
+ping localhost >nul & goto menu
 :sdKeep
-cls & color 07
 call :gEcho 07 "Self-destructing... [ ]"
-ping localhost >nul
-if EXIST %userprofile%\RootSessionsFile.inf del /f /q %userprofile%\RootSessionsFile.inf & if EXIST *.Root.* del /f /q *.Root.* & if EXIST %cmdoutput% (attrib -h %cmdoutput% & del /f /q %cmdoutput%)
+if EXIST %userprofile%\RootSessionsFile.inf del /f /q %userprofile%\RootSessionsFile.inf
+if EXIST *.Root.* del /f /q *.Root.*
+if EXIST %cmdoutput% (attrib -h %cmdoutput% & del /f /q %cmdoutput%)
 cls & call :gEcho 07 "Self-destructing... [#]" & echo x=msgbox("Self-destruct was successful",0+64, "Root") >sd.Root.vbs & start sd.Root.vbs & ping localhost /n 2 >Nul & del /f /q sd.Root.vbs
 del /f /q Root.cmd & ping localhost /n 1 >Nul & EXIT
 
 ::code inspired by VisualMagic and npocmaka
 :gEcho
-setlocal enableDelayedExpansion
 set "chkPerms==::"
 if defined !chkPerms! ( 
 	set admin=0 & echo %~2 & endlocal & exit /b

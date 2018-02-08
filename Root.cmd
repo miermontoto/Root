@@ -41,7 +41,7 @@
 ::                                                                                                                                                             ::
 ::                   License                                                                                                                                   ::
 ::                                                                                                                                                             ::
-::                   The project actual is licensed under "CC-BY-SA-4.0". You can find a copy of the license in                                                ::
+::                   The project is currently licensed under "CC-BY-SA-4.0". You can find a copy of the license in                                             ::
 ::                   the project official repository as well as in the official creative commons webpage. Please                                               ::
 ::                   note that the license may actually vary depending on the version.                                                                         ::
 ::                                                                                                                                                             ::
@@ -55,50 +55,46 @@
 :: Symbols and artwork have been copied from http://patorjk.com/software/taag/ , http://www.alt-codes.net/ and https:#-#changaco.oy.lc/unicode-progress-bars/  ::
 ::                                                                                                                                                             ::
 :: Licenses may vary through releases.                                                                                                                         ::
+::                                                                                                                                                             ::
+:: Encode as OccidentalEU "OEM-US" if you want to read the file correctly on Notepad++                                                                         ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::                
 ::                                                                                                                                           designed on patch-16
+:upper
 
-
-@echo off & color 07
-pushd
-::pushd utility undefined
-
-cls
-echo Installing Root... [ ]
+@echo off & color 07 & cls & pushd
 
 ::general purpose definitions
+set /a id=%random% %% 10000
 setlocal enableDelayedExpansion
-set "patch=21" & title %patch%
-set /a "id=%random% %% 10000" & set "r=Root.cmd"
+set "patch=21"
+title loading root-%patch%
+set "r=Root.cmd"
 set name=Root
 set c1=c0
 set c2=a0
 set c3=b0
 set cmd=%name%ฏ
-set "title=%name% [%id%]"
+set "title=%name% (dev) [%id%]"
 set "titler=%title%"
-set randoutput=rand.Root.txt
-set pingeroutput=pinger.Root.txt
-set sysoutput=sys.Root.txt
-set cmdoutput=%temp%\cmd.Root.bat
+set "titlec=%titler% [Compatibility]"
+set rootsq=%temp%\Root
+set randoutput=%rootsq%\rand.Root.txt
+set pingeroutput=%rootsq%\pinger.Root.txt
+set sysoutput=%rootsq%\sys.Root.txt
+set cmdoutput=%rootsq%\cmd.Root.bat
+set sessionsfile=%rootsq%\RootSessionsFile.inf
 set uvar=HKCU\Environment
-set "void="
-set "null="
 if NOT DEFINED looped set looped=0
-if DEFINED %3 set "title=%3"
+if "%2" == "-title" title %3
+if NOT DEFINED speed set speed=2
 
-cls
-echo Installing Root... [ ]
-
-::color check
+::admin rights check
 SETLOCAL EnableDelayedExpansion
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & for %%b in (1) do     rem"') do (
   set "DEL=%%a")
-cls
-echo Installing Root... [ ]
 
 
-rem Module list dictionary
+rem Module list dictionary declaration
 set #rl=1
 set #cls=1
 set #rel=1
@@ -128,11 +124,12 @@ set #restore=1
 set #watch=1
 set #list=1
 set #mods=1
+set #forcexp=1
+set #access=1
+set #speed=1
 
-cls
-echo Installing Root... [ ]
 
-rem Menu styles dictionary
+rem Menu styles dictionary declaration
 set #-#new=1
 set #-#old=1
 set #-#plain=1
@@ -144,36 +141,48 @@ set #-#bits=1
 set #-#nostalgia=1
 set #-#simple=1
 set #-#blank=1
+echo Declaring variables... [#]
 
-cls
-echo Installing Root... [ ]
+::try admin execution
+call :gEcho 8e "Checking admin rights... [#]"
+if %admin%==1 echo.
+::if %admin%==1 ( echo. & echo Detected admin rights. & runas /user:%username% %r% )
+::if %errorlevel%==1 (echo Failed to run Root with admin rights: continuing with normal privileges & ping localhost >nul)
 
 ::argument detection
 if NOT [%1]==[] (set parm=enabled) ELSE (set parm=disabled)
 if [%1]==[Root] (set parm=disabled)
 
-cls
-echo Installing Root... [ ]
+::dir establishment
+if NOT EXIST %rootsq% (md %rootsq%)
 
-::os detection & compatibility mode declaration
+::compatibility mode
 if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
 for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j
+echo Detecting OS... [#]
+if [%2] == [-forcexp] set clip=1
+if %clip%==1 (goto xpadck) ELSE (goto noxp)
+:xpadck
+if %admin%==1 (call :gEcho c "WARNING:" & echo Enabled Compatibility mode.) ELSE (echo WARNING: Enabled Compatibility mode.)
+:noxp
+if %clip%==1 set "title=%titlec%"
 
-cls
-echo Installing Root... [ ]
 
-::session log-in
-echo [%date% , %time%][r%patch%] Logged in. (%id%) >>%userprofile%\RootSessionsFile.inf
+::login write
+if EXIST %userprofile%\RootSessionsFile.inf move /y %userprofile%\RootSessionsFile.inf %rootsq%
+if NOT EXIST %sessionsfile% (echo [%date% , %time%][r%patch%] Opened session file. >%sessionsfile%)
+
+::login write
+echo [%date% , %time%][r%patch%] Logged in. (%id%) >>%sessionsfile%
+echo Logging in... [#]
 
 ::final outputs and loop mode detection
-cls
-echo Installing Root... [#]
-call :gEcho 8a "DONE"
-ping localhost /n 2 /l 1 >nul
+if EXIST off.Root.vbs del /f /q off.Root.vbs
+echo Loaded Root [#]
+ping localhost /n %speed% >nul
 color %color%
 cls
 if [%2]==[-loop] goto loop
-
 
 :MENU
 cls
@@ -201,7 +210,7 @@ echo บ                                                                          
 echo บ                                                                                               บ
 echo บ                                                                                               บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออน
-echo บ              github.com/GijonDev              บ              twitter.com/GijonDev             บ
+echo บ              github.com/GijonDev              บ               twitter.com/gij0n               บ
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออผ
 goto ext
 :--old
@@ -224,7 +233,7 @@ echo.
 echo.
 echo.
 echo -------------------------------------------------------------------------------------------------
-echo :               github.com/GijonDev             :             twitter.com/GijonDev              :
+echo :             github.com/GijonDev               :                twitter.com/gij0n              :
 echo -------------------------------------------------------------------------------------------------
 goto ext
 :--simple
@@ -278,7 +287,7 @@ echo.
 echo.
 echo.
 echo ============================================================================
-echo =           github.com/GijonDev      :         twitter.com/GijonDev        =
+echo =          github.com/GijonDev       :          twitter.com/gij0n          =
 echo ============================================================================
 goto ext
 :--alpha
@@ -306,7 +315,7 @@ echo บ                                                                          
 echo บ                                                                                               บ
 echo บ                                                                                               บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออน
-echo บ              github.com/GijonDev              บ              twitter.com/GijonDev             บ
+echo บ              github.com/GijonDev              บ               twitter.com/gij0n               บ
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออผ
 goto ext
 :--bits
@@ -329,28 +338,27 @@ echo บ                                                                          
 echo บ                                                                                               บ
 echo บ                                                                                               บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออน
-echo บ              github.com/GijonDev              บ              twitter.com/GijonDev             บ
+echo บ              github.com/GijonDev              บ               twitter.com/gij0n               บ
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออผ
 goto ext
 :ext
 echo.
 :--blank
 :int
-echo.
 color %color%
 title %title%
 if DEFINED #%1 (goto %1 & set parmdone=1)
-set /p "input=%cmd%" & echo.
+set /p "input=%cmd%"
 if "%input%" == "" (echo. & goto int)
 if DEFINED #%input% (goto %input% & set "input=") ELSE (echo Invalid module. & set "input=")
 goto int
 
 :style
-set /P mas=Rootฏstyleฏ
+set /P mas=%cmd%styleฏ
 if %mas%==back goto cmenu
 if %mas%==help goto style_h
-if DEFINED #-#%mas% (set mstyle=%mas% & IF %clip%==0 setx mstyle %mas%) ELSE (echo. & echo Failed to set %mas% style. & echo [%date% , %time%][r%patch%] Failed to set menu style.>>%userprofile%\RootSessionsFile.inf & echo. & set "mas=" & goto style)
-echo [%date% , %time%][r%patch%] Set menu style. (%mas%)>>%userprofile%\RootSessionsFile.inf & set "mas=" & goto menu
+if DEFINED #-#%mas% (set mstyle=%mas% & IF %clip%==0 setx mstyle %mas%) ELSE (echo. & echo Failed to set %mas% style. & echo [%date% , %time%][r%patch%] Failed to set menu style.>>%sessionsfile% & echo. & set "mas=" & goto style)
+echo [%date% , %time%][r%patch%] Set menu style. (%mas%)>>%sessionsfile% & set "mas=" & goto menu
 
 :style_h
 echo ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
@@ -363,20 +371,29 @@ echo ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
 echo บ Reload: (rel,rl)     Clear screen:   (clear,cls)             CMD:    (win,cmd)    Randomizer:  (rand,randomizer) บ
 echo บ Pinger: (pinger)     JavaVer:        (javaver)               System: (sys,system) Misc:   (test-loop-crash)      บ 
 echo บ Delete: (del)        Self-destruct:  (sd)                    Help:   (list,mods)  Info:   (id-detect)            บ
-echo บ Exit:   (off)        Settings:       (color-title-style-bnw) Sessions: (sessions-save-watch-restore)             บ
+echo บ Exit:   (off)        Settings:       (color-title-style-bnw-speed)                                               บ
+echo บ Force Compatibility Mode: forcexp                            Sessions: (sessions-save-watch-restore)             บ
 echo ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ & goto int
 
-:patch
-set /p pgo=Rootฏ patchฏ
-if DEFINED --#%pgo% (start Root.cmd Root %pgo% & EXIT) ELSE (echo That is not a valid time scale & goto int)
+:speed
+echo Set Root animation speed [0-10]:
+set /p speed=%cmd%speedฏ
+if %speed% GTR 10 (echo Invalid speed value. & set "speed="& goto ext)
+if %clip%==0 (setx speed %speed%)
+goto int
+
+:access
+set /p fac=Force access:
+echo Force-activating %fac%... & goto %fac%
 
 :color
-set /P cas=Rootฏ colorฏ
+if %clip%==1 (call :gEcho c "WARNING:" & echo Compatibility Mode is enabled. Root won't save settings through sessions.)
+set /P cas=%cmd%colorฏ
 if %cas%==back goto int
 if %cas%==reset goto color_reset
 IF %clip%==0 setx color %cas%
 set color=%cas%
-echo [%date% , %time%][r%patch%] Set color theme. (%cas%)>>%userprofile%\RootSessionsFile.inf
+echo [%date% , %time%][r%patch%] Set color theme. (%cas%)>>%sessionsfile%
 goto color_reload
 :color_reset
 reg delete %uvar% /f /v color
@@ -385,7 +402,7 @@ set color=f0
 color %color% & goto int
 
 :loop
-Root.cmd Root -loop
+%r% Root -loop
 exit
 
 :title
@@ -403,10 +420,11 @@ goto int
 :rl
 :rel
 :reload
-start %r% Root -none %title% & ping localhost /n 1 >nul & EXIT
+if %clip%==1 goto upper
+start %r% Root -title %title% & EXIT 
 
 :id
-echo Current session key: %id%
+echo Current session key: & call :gEcho 8a "%id%"
 goto int
 
 :crash
@@ -426,14 +444,13 @@ set "h=/?"&& call for %%h%%
 ::all code by npocmaka
 
 :bnw
-
 set "cas="
 if "%color%" == "f0" (goto bl)
 if "%color%" == "0f" (goto wh)
 if "%color%" == "70" (goto blo)
 if "%color%" == "07" (goto who)
 if NOT DEFINED color (goto bl)
-echo You cannot Black and White because you have a modded color theme. & goto int
+echo ERROR: You cannot Black and White because you have a modded color theme. & goto int
 :bl
 set cas=0f
 IF %clip%==0 setx color %cas%
@@ -456,27 +473,27 @@ set color=%cas%
 goto int
 
 :sessions
-start %userprofile%\RootSessionsFile.inf & echo Launched dictionary
+start %sessionsfile% & echo Launched dictionary
 goto int
 
 :save
 echo Saving sessions file...
-echo [%date% , %time%][r%patch%] Saved sessions backup. >>%userprofile%\RootSessionsFile.inf
-type %userprofile%\RootSessionsFile.inf > %temp%\Root.log
+echo [%date% , %time%][r%patch%] Saved sessions backup. >>%sessionsfile%
+type %sessionsfile% > %rootsq%.log
 echo Saved.
 goto int
 
 :watch
-IF EXIST %temp%\Root.log (ping localhost >nul & echo Detected backup sessions file. & notepad %temp%\Root.log) ELSE (echo Wasn't able to find a valid Root sessions backup file.)
+IF EXIST %rootsq%.log (ping localhost >nul & echo Detected backup sessions file. & notepad %rootsq%.log) ELSE (echo Wasn't able to find a valid Root sessions backup file.)
 
 goto int
 
 :restore
 echo Restoring sessions file...
-if EXIST %temp%\Root.log (goto restoreLog) ELSE (echo Couldn't find a valid dictionary back-up. & goto int)
+if EXIST %rootsq%.log (goto restoreLog) ELSE (echo Couldn't find a valid dictionary back-up. & goto int)
 :restoreLog
-type %temp%\Root.log > %userprofile%\RootSessionsFile.inf
-echo [%date% , %time%][r%patch%] Restored sessions file. >>%userprofile%\RootSessionsFile.inf
+type %rootsq%.log > %sessionsfile%
+echo [%date% , %time%][r%patch%] Restored sessions file. >>%sessionsfile%
 echo Restored.
 goto int
 
@@ -501,8 +518,33 @@ echo pushd >>%cmdoutput%
 echo cmd >>%cmdoutput%
 attrib +h %cmdoutput%
 start %cmdoutput%
-echo.
 goto int
+
+:bomb
+echo warning zone: bomb is a risky module. use at own risk.
+set /p bomb=Input "Y" to confirm
+call %0
+
+:forcexp
+if %clip%==1 (echo Compatibility mode is already enabled. & goto int)
+if %admin%==1 (call :gEcho c "WARNING!:" & echo Enabling Compatibility mode will disable some features. & call :gEcho c "WARNING!:" & echo Enable Compatibilty mode just in case it should be enabled anyways.) ELSE (echo WARNING!: Enabling Compatibility mode will disable some features. & echo WARNING!: Enable Compatibilty mode just in case it should be enabled anyways.)
+set /p fxp=Input "Y" to force-enable compatibility mode:
+if NOT %fxp%==Y goto nfxp
+start %r% Root -forcexp
+exit
+
+
+:startup
+color %c1%
+ping localhost /n 1 >nul
+color %c2%
+ping localhost /n 1 >nul
+color %c3%
+ping localhost /n 1 >nul
+if DEFINED color (color %color%) ELSE (color f0)
+ping localhost /n 1 >nul
+goto %dest%
+set dest=rand & goto startup
 
 :randomizer
 :rand
@@ -514,6 +556,7 @@ color %c3%
 ping localhost /n 1 >nul
 if DEFINED color (color %color%) ELSE (color f0)
 ping localhost /n 1 >nul
+
 echo Running Randomizer
 ping localhost /n 2 >nul
 echo Generating...
@@ -624,6 +667,9 @@ start %randoutput%
 echo.
 goto int
 
+:root
+explorer.exe %rootsq% & goto int
+
 :pinger
 color %c1%
 ping localhost /n 1 >nul
@@ -639,23 +685,22 @@ set /p ping=Input host:
 if %ping%==back goto int
 if %ping%==euw set "ping=prod.euw1.lol.riotgames.com"
 echo Working...
-echo Pinging to %ping%  from %r% >%pingeroutput%
+echo Pinging to %ping% from %r% >%pingeroutput%
 echo. >>%pingeroutput%
-echo tracert %ping% >>%pingeroutput%
+echo "tracert" results:>>%pingeroutput%
 tracert %ping% >>%pingeroutput%
 echo. >>%pingeroutput%
 echo. >>%pingeroutput%
-echo nslookup %ping%: >>%pingeroutput%
+echo "nslookup" results:>>%pingeroutput%
 nslookup %ping% >>%pingeroutput%
 echo. >>%pingeroutput%
-echo nslookup %ping% (Google DNS): >>%pingeroutput%
+echo "nslookup"(Google DNS) results: >>%pingeroutput%
 nslookup %ping% 8.8.8.8 >>%pingeroutput%
 echo. >>%pingeroutput%
 echo. >>%pingeroutput%
-echo ping %ping%:>>%pingeroutput%
+echo "ping" results:>>%pingeroutput%
 ping %ping% /l 16 >>%pingeroutput%
 echo. >>%pingeroutput%
-echo -end of the file- >>%pingeroutput%
 start %pingeroutput%
 call :gEcho 8a "DONE"
 goto int
@@ -671,9 +716,7 @@ if DEFINED color (color %color%) ELSE (color f0)
 ping localhost /n 1 >nul
 echo Running JavaVer
 ping localhost /n 3 >nul
-echo ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออป
 java -version
-echo ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
 call :gEcho 8a "DONE" & goto int
 
 :system
@@ -742,24 +785,28 @@ echo Failed to self-destruct.
 ping localhost >nul & goto menu
 :sdKeep
 call :gEcho 07 "Self-destructing... [ ]"
-if EXIST %userprofile%\RootSessionsFile.inf del /f /q %userprofile%\RootSessionsFile.inf
+if EXIST %sessionsfile% del /f /q %sessionsfile%
 if EXIST *.Root.* del /f /q *.Root.*
 if EXIST %cmdoutput% (attrib -h %cmdoutput% & del /f /q %cmdoutput%)
-cls & call :gEcho 07 "Self-destructing... [#]" & echo x=msgbox("Self-destruct was successful",0+64, "Root") >sd.Root.vbs & start sd.Root.vbs & ping localhost /n 2 >Nul & del /f /q sd.Root.vbs
+cls & call :gEcho 07 "Self-destructing... [#]" & echo x=msgbox("Self-destruct was successful",0+64, "Root") >%rootsq%\sd.Root.vbs & start %rootsq%\sd.Root.vbs & ping localhost /n 2 >Nul & del /f /q %rootsq%\sd.Root.vbs
+if EXIST %sysoutput% del /f /q %sysoutput%
+if EXIST %pingeroutput% del /f /q %pingeroutput%
+if EXIST %randoutput% del /f /q %randoutput%
+rmdir /s /q %rootsq%
 del /f /q Root.cmd & ping localhost /n 1 >Nul & EXIT
 
 ::code inspired by VisualMagic and npocmaka
 :gEcho
 set "chkPerms==::"
 if defined !chkPerms! ( 
-	set admin=0 & echo %~2 & endlocal & exit /b
+	set admin=0 & echo %~2 & exit /b
 ) else (
    <nul set /p ".=%DEL%" > "%~2"
 	findstr /v /a:%1 /R "^$" "%~2" nul
-	del "%~2" > nul 2>&1i & set admin=1 & echo. & endlocal & exit /b
+	del "%~2" > nul 2>&1i & set admin=1 & exit /b
 )
 
 :off
 if EXIST %cmdoutput% (attrib -h %cmdoutput% & del /f /q %cmdoutput%)
-echo x=msgbox("Thank you for flying Root" ,0+64, "Root") >off.Root.vbs & start off.Root.vbs & ping localhost /n 2 >Nul & del /f /q off.Root.vbs
+echo x=msgbox("Thank you for flying Root" ,0+64, "Root") >%rootsq%\off.Root.vbs & start %rootsq%\off.Root.vbs & ping localhost /n 2 >nul & del /f /q %rootsq%\off.Root.vbs
 exit

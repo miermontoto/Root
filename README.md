@@ -5,8 +5,8 @@ General purpose batch file. Running "modules" using batch scripts.
 Do `list`or `mods` for a list of valid outputs. (since patch-18)
 
 ### [Downloads](http://www.github.com/GijonDev/Root/releases)
-**Or download latest version [here](https://github.com/GijonDev/Root/releases/download/patch-21-beta/Root.cmd)**
-### Last updated version: patch-21-beta (10/10/2017)
+**Or download latest version [here](https://github.com/GijonDev/Root/releases/download/patch-21/Root.cmd)**
+### Last updated version: patch-21-beta (8/2/2018)
 
 ## License
 Root is currently using [Creative Commons' Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/). GitHub is not supporting this license currently. I'd like to use No-Derivatives but is just pointless because of forks. You can access the full-text license [here](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode). 

@@ -174,7 +174,7 @@ rem Note that in some cases this won't be needed, it's just to avoid problems.
 
 ::compatibility mode
 echo Detecting OS... [#]
-if %clip%==1 (echo set "clip=" >>%sessions%.log & goto skipos)ec
+if %clip%==1 (echo set "clip=" >>%sessions%.log & goto skipos)
 if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
 :skipos
 if NOT %clip%==1 goto noxp

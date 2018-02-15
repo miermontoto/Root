@@ -174,11 +174,11 @@ rem Note that in some cases this won't be needed, it's just to avoid problems.
 
 ::compatibility mode
 echo Detecting OS... [#]
-if %clip%==1 (echo set "clip=" >>%sessions%.log & goto skipos)
+if %clip%==1 (echo set "clip=" >>%settings%.log & goto skipos)
 if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
 :skipos
 if NOT %clip%==1 goto noxp
-if %clip%==1 echo set "title=%titlec%" >>%sessions%.log
+if %clip%==1 echo set "title=%titlec%" >>%settings%.log
 if %admin%==1 (call :gEcho c "WARNING:" & echo Enabled Compatibility mode.) ELSE (echo WARNING: Enabled Compatibility mode.)
 :noxp
 

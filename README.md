@@ -15,3 +15,5 @@ This project uses some of [npocmaka](http://www.github.com/npocmaka)'s code. You
 I do NOT take credit for any code that doesn't belong to myself. All of his code is credited *in* the file.
 
 ### **cecho is NOT being supported since patch-20**
+
+If you ever remix this file I'd be glad to help you out with any problems you have and will rep you.

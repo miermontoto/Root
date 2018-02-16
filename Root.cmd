@@ -98,7 +98,6 @@ set sessions=%rootsq%\sessions.inf
 if NOT DEFINED looped set looped=0
 if NOT DEFINED speed set speed=2
 if NOT DEFINED color (echo set color=f0 >> %settings%.log)
-if DEFINED clip set clippity=1
 
 
 rem Module list dictionary declaration
@@ -172,16 +171,18 @@ if NOT EXIST %rootsq%\%patch%-Root.cmd (copy /y /v %r% %rootsq% & ren %rootsq%\%
 rem Note that in some cases this won't be needed, it's just to avoid problems.
 
 
+
 ::compatibility mode
-echo Detecting OS... [#]
-if %clip%==1 (echo set "clip=" >>%settings%.log & goto skipos)
 if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
-:skipos
+if %forcxp%==1 set clip=1
 if NOT %clip%==1 goto noxp
+echo set forcxp=0 >>%settings%.log
 if %clip%==1 echo set "title=%titlec%" >>%settings%.log
 if %admin%==1 (call :gEcho c "WARNING:" & echo Enabled Compatibility mode.) ELSE (echo WARNING: Enabled Compatibility mode.)
 :noxp
-
+if %clip%==0 echo set "title=%titler%" >>%settings%.log
+echo Detecting OS... [#]
+pause
 
 ::login write
 if EXIST %userprofile%\sessions.inf move /y %userprofile%\sessions.inf %rootsq%
@@ -440,6 +441,9 @@ goto int
 :force
 set /p fac=Force access:
 echo Force-activating %fac%... & goto %fac%
+
+:chcp
+chcp & goto int
 
 :color
 rem it should now save through sessions. ignore any other messages.
@@ -714,7 +718,9 @@ goto int
 
 :detect
 set /p de=Input:
-if DEFINED %de% (echo Valid: TRUE) ELSE (echo Valid: FALSE)
+if DEFINED %de% (echo Valid: TRUE & set bool=true) ELSE (echo Valid: FALSE & set bool=false)
+if %bool%==false goto int
+echo Current status of %de% is %%de%%.
 goto int
 
 :cls
@@ -746,7 +752,7 @@ if %clip%==1 (echo Compatibility mode is already enabled. & goto int)
 echo WARNING!: Enabling Compatibility mode will disable some features. & echo WARNING!: Enable Compatibilty mode just in case it should be enabled anyways.
 set /p fxp=Input "Y" to force-enable compatibility mode:
 if NOT %fxp%==Y goto nfxp
-echo set clip=1 >>%settings%.log 
+echo set forcxp=1 >>%settings%.log 
 goto rel
 
 :backup

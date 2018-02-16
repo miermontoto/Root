@@ -172,16 +172,16 @@ if NOT EXIST %rootsq%\%patch%-Root.cmd (copy /y /v %r% %rootsq% & ren %rootsq%\%
 rem Note that in some cases this won't be needed, it's just to avoid problems.
 
 
+
 ::compatibility mode
-echo Detecting OS... [#]
-if %clip%==1 (echo set "clip=" >>%settings%.log & goto skipos)
+::if %clip%==1 (echo set "clip=" >>%sessions%.log & goto skipos)
 if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
 :skipos
 if NOT %clip%==1 goto noxp
 if %clip%==1 echo set "title=%titlec%" >>%settings%.log
 if %admin%==1 (call :gEcho c "WARNING:" & echo Enabled Compatibility mode.) ELSE (echo WARNING: Enabled Compatibility mode.)
 :noxp
-
+echo Detecting OS... [#]
 
 ::login write
 if EXIST %userprofile%\sessions.inf move /y %userprofile%\sessions.inf %rootsq%
@@ -440,6 +440,9 @@ goto int
 :force
 set /p fac=Force access:
 echo Force-activating %fac%... & goto %fac%
+
+:chcp
+chcp & goto int
 
 :color
 rem it should now save through sessions. ignore any other messages.
@@ -714,7 +717,9 @@ goto int
 
 :detect
 set /p de=Input:
-if DEFINED %de% (echo Valid: TRUE) ELSE (echo Valid: FALSE)
+if DEFINED %de% (echo Valid: TRUE & set bool=true) ELSE (echo Valid: FALSE & set bool=false)
+if %bool%==false goto int
+echo Current status of %de% is %%de%%.
 goto int
 
 :cls

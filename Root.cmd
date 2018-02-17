@@ -173,8 +173,8 @@ rem Note that in some cases this won't be needed, it's just to avoid problems.
 
 
 ::compatibility mode
-if "%userprofile%" == "C:\Documents and Settings\%username%" set clip=1
-if NOT %clip%==1 goto noxp
+if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
+if NOT "%clip%" == "1" goto noxp
 echo set "title=%titlec%" >>%settings%.log
 if %admin%==1 (call :gEcho c "WARNING:" & echo Enabled Compatibility mode.) ELSE (echo WARNING: Enabled Compatibility mode.)
 :noxp

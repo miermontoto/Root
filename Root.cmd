@@ -173,16 +173,13 @@ rem Note that in some cases this won't be needed, it's just to avoid problems.
 
 
 ::compatibility mode
-if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
-if %forcxp%==1 set clip=1
+if "%userprofile%" == "C:\Documents and Settings\%username%" set clip=1
 if NOT %clip%==1 goto noxp
-echo set forcxp=0 >>%settings%.log
-if %clip%==1 echo set "title=%titlec%" >>%settings%.log
+echo set "title=%titlec%" >>%settings%.log
 if %admin%==1 (call :gEcho c "WARNING:" & echo Enabled Compatibility mode.) ELSE (echo WARNING: Enabled Compatibility mode.)
 :noxp
 if %clip%==0 echo set "title=%titler%" >>%settings%.log
 echo Detecting OS... [#]
-pause
 
 ::login write
 if EXIST %userprofile%\sessions.inf move /y %userprofile%\sessions.inf %rootsq%

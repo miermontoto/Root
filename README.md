@@ -5,7 +5,7 @@ General purpose batch file. Running "modules" using batch scripts.
 Do `list`or `mods` for a list of valid outputs. (since patch-18)
 
 ### [Downloads](http://www.github.com/GijonDev/Root/releases)
-**Or download latest version [here](steam://validate/730)**
+**Or download latest version [here](https://github.com/GijonDev/Root/releases/download/patch-22/Root.cmd)**
 ### Last updated version: [patch-22](https://github.com/GijonDev/Root/blob/master/Root.cmd) (17/2/2018)
 
 ## License

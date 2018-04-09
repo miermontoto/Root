@@ -6,7 +6,7 @@ Do `list`or `mods` for a list of valid outputs. (since patch-18)
 
 ### [Downloads](http://www.github.com/GijonDev/Root/releases)
 **Or download latest version [here](https://github.com/GijonDev/Root/releases/download/patch-22/Root.cmd)**
-### Last updated version: [patch-22](https://github.com/GijonDev/Root/blob/master/Root.cmd) (17/2/2018)
+### Last updated version: [patch-22](https://github.com/GijonDev/Root/blob/master/Root.cmd) (9/4/2018)
 
 ## License
 Root is currently using [Creative Commons' Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/). GitHub is not supporting this license currently. I'd like to use No-Derivatives but is just pointless because of forks. You can access the full-text license [here](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode). 

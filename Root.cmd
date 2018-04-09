@@ -170,17 +170,17 @@ if NOT EXIST %rootsq% (md %rootsq%)
 if NOT EXIST %rootsq%\%patch%-Root.cmd (copy /y /v %r% %rootsq% & ren %rootsq%\%r% %patch%-Root.cmd)
 rem Note that in some cases this won't be needed, it's just to avoid problems.
 
-
+pause
 
 ::compatibility mode
 if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
-if NOT "%clip%" == "1" goto noxp
+if NOT %clip%==1 goto noxp
 echo set "title=%titlec%" >>%settings%.log
 if %admin%==1 (call :gEcho c "WARNING:" & echo Enabled Compatibility mode.) ELSE (echo WARNING: Enabled Compatibility mode.)
 :noxp
 if %clip%==0 echo set "title=%titler%" >>%settings%.log
 echo Detecting OS... [#]
-
+pause
 ::login write
 if EXIST %userprofile%\sessions.inf move /y %userprofile%\sessions.inf %rootsq%
 if EXIST %rootsq%\RootSessionsFile.inf ren %rootsq%\RootSessionsFile.inf sessions.inf

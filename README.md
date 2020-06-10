@@ -11,10 +11,10 @@ Do `help` for a list of valid outputs. (patch-23 onwards)
 ### Last updated version: [patch-22](https://github.com/GijonDev/Root/blob/master/Root.cmd) (9/4/2018)
 
 ## License
-Root is currently using [Creative Commons' Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/). You can access the full-text license [here](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode). 
+Root by Juan Mier is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0
 
 This project uses some of [npocmaka](http://www.github.com/npocmaka)'s code. You can read his project's [license](https://github.com/npocmaka/batch.scripts/blob/master/LICENSE) here.
-I do NOT take credit for any code that doesn't belong to myself. All of his code is credited *in* the file.
+I do NOT take credit for any code that doesn't belong to myself. All of his code is credited *in* the file. n
 
 ### **cecho is NOT supported since patch-20**
 

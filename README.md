@@ -2,7 +2,8 @@
 General purpose batch file. Runs "modules" using batch.
 
 ## Modules
-Do `list`or `mods` for a list of valid outputs. (since patch-18)
+Do `list`or `mods` for a list of valid outputs. (patch-18 to patch-22)
+Do `help` for a list of valid outputs. (patch-23 onwards)
 
 ### [Downloads](http://www.github.com/GijonDev/Root/releases)
 **Or download latest version [here](https://github.com/GijonDev/Root/releases/download/patch-22/Root.cmd)**

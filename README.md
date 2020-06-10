@@ -3,6 +3,7 @@ General purpose batch file. Runs "modules" using batch.
 
 ## Modules
 Do `list`or `mods` for a list of valid outputs. (patch-18 to patch-22)
+
 Do `help` for a list of valid outputs. (patch-23 onwards)
 
 ### [Downloads](http://www.github.com/GijonDev/Root/releases)
@@ -24,4 +25,4 @@ I do NOT take credit for any code that doesn't belong to myself. All of his code
 A: Root is a very basic file that can create randomized numbers, output system information, output java current version, attempt to fix connectivity problems, output information about the connection between you and a host and access cmd.exe without permissions.
 
 ### Q: Why .cmd and not .bat?
-A: https://stackoverflow.com/a/21580423/7049909
+A: https://stackoverflow.com/a/12011048/7049909

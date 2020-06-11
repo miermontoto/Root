@@ -2,7 +2,7 @@
 General purpose batch file. Runs "modules" using batch.
 
 ## Modules
-Do `list`or `mods` for a list of valid outputs. (patch-18 to patch-22)
+Do `list`or `mods` for a list of valid outputs. (patch-18 onwards)
 
 Do `help` for a list of valid outputs. (patch-23 onwards)
 

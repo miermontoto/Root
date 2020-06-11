@@ -7,8 +7,8 @@ Do `list`or `mods` for a list of valid outputs. (patch-18 onwards)
 Do `help` for a list of valid outputs. (patch-23 onwards)
 
 ### [Downloads](http://www.github.com/GijonDev/Root/releases)
-**Or download latest version [here](https://github.com/GijonDev/Root/releases/download/patch-22/Root.cmd)**
-### Last updated version: [patch-22](https://github.com/GijonDev/Root/blob/master/Root.cmd) (9/4/2018)
+**Or download latest version [here](https://github.com/GijonDev/Root/releases/download/patch-23/Root.cmd)**
+### Last updated version: [patch-23](https://github.com/GijonDev/Root/blob/master/Root.cmd) (11/6/2020)
 
 ## License
 Root by Juan Mier is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0

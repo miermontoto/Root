@@ -14,36 +14,41 @@
 ::                                                                                                                                                             ::
 ::                                                                                                                                                             ::
 ::                                                                                                                                                             ::
+::                                                                                                                                                             ::
+::                                                                                                                                                             ::
+::                                                                                                                                                             ::
+::                                                                                                                                                             ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::                                                                                                                                                             ::
 ::                   OS compatibilities:                                                                                                                       ::
 ::                                                                                                                                                             ::
-::                                   - Windows XP      (Compatibility Mode)                                                                                    ::
+::                                   - Windows XP                                                                                                              ::
 ::                                   - Windows Vista   (Not tested)                                                                                            ::
 ::                                   - Windows 7                                                                                                               ::
 ::                                   - Windows 8.X                                                                                                             ::
-::                                   - Windows 10      (Best visuals)                                                                                          ::
+::                                   - Windows 10      (Recommended)                                                                                           ::
 ::                                                                                                                                                             ::
 ::                   Not tested with Windows Server nor Home Basic/Enterprise versions.                                                                        ::
+::                   Microsoft's new Terminal may not be compatible with certain modules.                                                                      ::
+::                   Stick to Windows 10 default terminal with admin rights for better visuals.                                                                ::
+::                   Windows NT only.                                                                                                                          ::
 ::                                                                                                                                                             ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::                                                                                                                                                             ::
 ::                   About                                                                                                                                     ::
 ::                                                                                                                                                             ::
-::                   This file is a recopilation of diverse features of the "batch" coding language which is                                                   ::
-::                   included by default on every single Windows machine. This language used to be very useful                                                 ::
-::                   when Windows first came up until Windows XP, but then the programs themselves began                                                       ::
-::                   to adquire more value and usefullness. Today batch can still be pretty useful for some                                                    ::
-::                   nerdy tasks; this is the purpose of this file: to automate all those tasks and make them                                                  ::
-::                   easier to realize for the regular and advanced user even if this file requires some                                                       ::
-::                   knowledge of batch.                                                                                                                       ::
+::                   This file is a compilation of diverse features of the "batch" coding language which is                                                    ::
+::                   included by default in every single Windows machine. This language used to be very useful                                                 ::
+::                   when Windows first came up; this is no longer the case. Even so, batch can still be pretty                                                ::
+::                   useful for niche tasks;that is the purpose of this file: to automate all those tasks and                                                  ::
+::                   make them easier to perform even with no experience in batch scripts.                                                                     ::
 ::                                                                                                                                                             ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::                                                                                                                                                             ::
 ::                   License                                                                                                                                   ::
 ::                                                                                                                                                             ::
-::                   The project is currently licensed under "CC-BY-SA-4.0". You can find a copy of the license in                                             ::
-::                   the project official repository as well as in the official creative commons webpage.                                                      ::
+::                   Root by Juan Mier is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit                                                ::
+::                   https://creativecommons.org/licenses/by-nc-nd/4.0                                                                                         ::
 ::                                                                                                                                                             ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::            
 ::                                                                                                                                                             ::
@@ -54,7 +59,7 @@
 ::                                                                                                                                                             ::
 :: Artwork from http://patorjk.com/software/taag/ , http://www.alt-codes.net/ and https://changaco.oy.lc/unicode-progress-bars/ has been used.                 ::
 ::                                                                                                                                                             ::
-:: Licenses may vary through releases.                                                                                                                         ::
+:: License may vary through releases.                                                                                                                          ::
 ::                                                                                                                                                             ::
 :: Encode as OccidentalEU "OEM-US" if you want to read the file correctly on Notepad++                                                                         ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::                
@@ -66,43 +71,49 @@
 set rootsq=%temp%\Root
 set settings=%rootsq%\settings
 if EXIST %settings%.log (ren %settings%.log settings.bat & call %settings%.bat & ren %settings%.bat settings.log)
-if EXIST %settings%.bat if EXIST %settings%.bat del /f /q %settings%.bat
 if EXIST %settings%.bat (call %settings%.bat & ren %settings%.bat settings.log)
-setlocal enableDelayedExpansion & echo Loading settings... [#]
+setlocal enableDelayedExpansion
 rem For detection purposes, settings.log needs to be read BEFORE variables are set.
-rem To avoid loading corruption, settings.bat will be sacrificed if both .log and .bat exist at the same time.
-rem enableDelayedExpansion is used for the admin perms checking.
+rem Old settings.bat are admitted and Root will load their content.
+rem enableDelayedExpansion is used for checking admin privileges.
 
-::general purpose definitions
+
 set /a id=%random% %% 10000
-set "patch=22"
+set "patch=23"
 title loading root-%patch%
-set "r=Root.cmd"
+set r=Root.cmd
 set name=Root
 set c1=c0
 set c2=a0
 set c3=b0
 set cmd=%name%ฏ
-set "parmdone=0"
-if "%2" == "-title" title %3
-if NOT DEFINED title (set "title=%name% [%id%]" & echo set "title=%name% [%id%]" >>%settings%.log)
+::general purpose definitions
+
+
+
 set "titler=%name% [%id%]"
 set "titlec=%titler% [Compatibility]"
-if "%titlec%" == "%title%" (set "title=%name% [%id%]" & echo set "title=%name% [%id%]" >>%settings%.log)
+if NOT DEFINED title (set "title=%titler%")
+::title defining
+
 set randoutput=%rootsq%\%id%-rand.Root.txt
 set pingeroutput=%rootsq%\%id%-pinger.Root.txt
 set sysoutput=%rootsq%\%id%-sys.Root.txt
-set cmdoutput=%rootsq%\%id%-cmd.Root.bat
+set cmdoutput=%rootsq%\cmd.Root.bat
 set crashoutput=%rootsq%\%id%-crash.Root.bat
 set sessions=%rootsq%\sessions.inf
+::outputs defining
+
 if NOT DEFINED looped set looped=0
-if NOT DEFINED speed set speed=2
+if NOT DEFINED speed set speed=1
 if NOT DEFINED color (echo set color=f0 >> %settings%.log)
 
 
 rem Module list dictionary declaration
 set #rl=1
 set #cls=1
+set #clearscreen=1
+set #reload=1
 set #rel=1
 set #clear=1
 set #win=1
@@ -110,8 +121,9 @@ set #randomizer=1
 set #rand=1
 set #pinger=1
 set #javaver=1
+set #jv=1
+set #selfdestruct=1
 set #system=1
-set #del=1
 set #sd=1
 set #off=1
 set #sessions=1
@@ -128,16 +140,28 @@ set #style=1
 set #save=1
 set #restore=1
 set #watch=1
-set #list=1
-set #mods=1
+set #help=1
 set #forcexp=1
-set #force=1
+set #forcegoto=1
+set #forceset=1
 set #speed=1
 set #lagit=1
 set #fixit=1
+set #chcp=1
+set #root=1
+set #list=1
+set #mods=1
+set #exit=1
+set #quit=1
+set #wipesettings=1
+set #clearsettings=1
+set #ws=1
+set #cs=1
+set #cc=1
+set #clearcache=1
 
 
-rem Menu styles dictionary dlaration
+rem Menu styles dictionary declaration
 set #-#new=1
 set #-#old=1
 set #-#plain=1
@@ -150,8 +174,16 @@ set #-#nostalgia=1
 set #-#simple=1
 set #-#blank=1
 set #-#3d=1
-echo Declaring variables... [#]
 
+rem Crash avoiding dictionary declaration
+set ##fixs=1
+set ##lags=1
+set ##sjava=1
+set ##srand=1
+set ##ssys=1
+set ##spinger=1
+
+echo Declaring variables... [#]
 
 ::try admin execution
 call :gEcho 8e "Checking admin rights... [#]"
@@ -161,34 +193,29 @@ if %admin%==1 echo.
 
 
 ::argument detection
-if NOT [%1]==[] (set parm=enabled) ELSE (set parm=disabled)
-if [%1]==[Root] (set parm=disabled)
+if "%1" == "-title" (title %2)
+if "%3" == "-title" (title %4)
+if "%1" == "-run" if DEFINED #%2 (set parmdone=1)
+if NOT parmdone==1 if "%3" == "-run" if DEFINED #%4 (set parmdone=1)
+if parmdone==1 if "%3" == "-silent" (set parmsilent=1)
+if NOT parmsilent==1 if parmdone==1 if "%5" == "-silent" (set parmsilent=1)
+
 
 
 ::dir establishment
 if NOT EXIST %rootsq% (md %rootsq%)
 if NOT EXIST %rootsq%\%patch%-Root.cmd (copy /y /v %r% %rootsq% & ren %rootsq%\%r% %patch%-Root.cmd)
-rem Note that in some cases this won't be needed, it's just to avoid problems.
-
-::compatibility mode
-if "%userprofile%" == "C:\Documents and Settings\%username%" (set clip=1) ELSE (set clip=0)
-if NOT %clip%==1 goto noxp
-echo set "title=%titlec%" >>%settings%.log
-if %admin%==1 (call :gEcho c "WARNING:" & echo Enabled Compatibility mode.) ELSE (echo WARNING: Enabled Compatibility mode.)
-:noxp
-if %clip%==0 echo set "title=%titler%" >>%settings%.log
-echo Detecting OS... [#]
 
 
 ::login write
 if EXIST %userprofile%\sessions.inf move /y %userprofile%\sessions.inf %rootsq%
 if EXIST %rootsq%\RootSessionsFile.inf ren %rootsq%\RootSessionsFile.inf sessions.inf
-if NOT EXIST %sessions% (echo Generated session files on [14:07:59,17 , 10/02/2018] >%sessions% & echo ----------------- >>%sessions%)
+if NOT EXIST %sessions% (echo Generated session files on [%time% , %date%] >%sessions% & echo ----------------- >>%sessions%)
 
 ::login output
 echo [%date% , %time%][r%patch%] Logged in. (%id%) >>%sessions%
 echo Logging in... [#]
-rem Note that Root will only save Root settings and info.
+rem will only save Root settings and info.
 
 ::final outputs and loop mode detection
 if EXIST %rootsq%\off.Root.vbs del /f /q %rootsq%\off.Root.vbs
@@ -199,22 +226,22 @@ if EXIST settings.log del /f /q settings.log
 if %errorlevel%==1 goto rel
 echo Loaded Root [#]
 ping localhost /n %speed% >nul
+rem call :conSize 135 30 135 700
+call :conSize 120 35 2 2
 cls
 if [%2]==[-loop] goto loop
 
 :MENU
 cls
-::title %title%
-::if DEFINED color (color %color%) ELSE (color f0)
 if EXIST %settings%.log (ren %settings%.log settings.bat & call %settings%.bat & ren %settings%.bat settings.log)
 if EXIST %settings%.bat (call %settings%.bat & ren %settings%.bat settings.log)
 color %color%
 title %title%
-mode con: cols=120 lines=30
+::mode con: cols=120 lines=30
 if DEFINED mstyle (goto --%mstyle%)
 :--new
 echo ษอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออป
-echo บ                 Ver: patch-%patch%                 บ            License: CC-BY-SA-4.0              บ
+echo บ                 Ver: patch-%patch%                 บ            License: CC BY-NC-ND 4.0           บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออน 
 echo บ                                                                                               บ  
 echo บ                                                                                               บ  
@@ -232,12 +259,12 @@ echo บ                                                                          
 echo บ                                                                                               บ
 echo บ                                                                                               บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออน
-echo บ              github.com/GijonDev              บ               twitter.com/gij0n               บ
+echo บ              github.com/GijonDev              บ               youtube.com/gij0n               บ
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออผ
 goto ext
 :--old
 echo -------------------------------------------------------------------------------------------------
-echo :                Ver: patch-%patch%                  :             License: CC-BY-SA-4.0             :
+echo :                Ver: patch-%patch%                  :             License: CC BY-NC-ND 4.0           :
 echo -------------------------------------------------------------------------------------------------
 echo.
 echo.
@@ -255,7 +282,7 @@ echo.
 echo.
 echo.
 echo -------------------------------------------------------------------------------------------------
-echo :             github.com/GijonDev               :                twitter.com/gij0n              :
+echo :             github.com/GijonDev               :                youtube.com/gij0n              :
 echo -------------------------------------------------------------------------------------------------
 goto ext
 :--simple
@@ -294,7 +321,7 @@ echo ศอออออออออออออออออออผ
 goto ext
 :--beta
 echo ============================================================================
-echo =          Ver: patch-%patch%             :       License: CC-BY-SA-4.0         =
+echo =          Ver: patch-%patch%             :       License: CC BY-NC-ND 4.0           =
 echo ============================================================================
 echo.
 echo.
@@ -309,7 +336,7 @@ echo.
 echo.
 echo.
 echo ============================================================================
-echo =          github.com/GijonDev       :          twitter.com/gij0n          =
+echo =          github.com/GijonDev       :          youtube.com/gij0n          =
 echo ============================================================================
 goto ext
 :--alpha
@@ -319,7 +346,7 @@ echo G# -----------------------------
 goto ext
 :--nostalgia
 echo ษอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออป
-echo บ                 Ver: patch-%patch%                 บ            License: CC-BY-SA-4.0              บ
+echo บ                 Ver: patch-%patch%                 บ            License: CC BY-NC-ND 4.0           บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออน 
 echo บ                                                                                               บ  
 echo บ                                                                                               บ  
@@ -337,12 +364,12 @@ echo บ                                                                          
 echo บ                                                                                               บ
 echo บ                                                                                               บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออน
-echo บ              github.com/GijonDev              บ               twitter.com/gij0n               บ
+echo บ              github.com/GijonDev              บ               youtube.com/gij0n               บ
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออผ
 goto ext
 :--bits
 echo ษอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออป
-echo บ                 Ver: patch-%patch%                 บ            License: CC-BY-SA-4.0              บ
+echo บ                 Ver: patch-%patch%                 บ            License: CC BY-NC-ND 4.0           บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออน 
 echo บ                                                                                               บ  
 echo บ                                                                                               บ  
@@ -360,12 +387,12 @@ echo บ                                                                          
 echo บ                                                                                               บ
 echo บ                                                                                               บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออน
-echo บ              github.com/GijonDev              บ               twitter.com/gij0n               บ
+echo บ              github.com/GijonDev              บ               youtube.com/gij0n               บ
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออผ
 goto ext
 :--3d
 echo ษอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออป
-echo บ                 Ver: patch-%patch%                 บ            License: CC-BY-SA-4.0              บ
+echo บ                 Ver: patch-%patch%                 บ            License: CC BY-NC-ND 4.0           บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออน 
 echo บ                                                                                               บ  
 echo บ                                                                                               บ  
@@ -384,7 +411,7 @@ echo บ                                                                          
 echo บ                                                                                               บ
 echo บ                                                                                               บ
 echo ฬอออออออออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออน
-echo บ              github.com/GijonDev              บ               twitter.com/gij0n               บ
+echo บ              github.com/GijonDev              บ               youtube.com/gij0n               บ
 echo ศอออออออออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออผ
 goto ext 
 :ext
@@ -396,8 +423,7 @@ if EXIST %settings%.bat (call %settings%.bat & ren %settings%.bat settings.log)
 color %color%
 title %title%
 set "input="
-if %parmdone%==1 goto fko
-if DEFINED #%1 (goto %1 & set parmdone=1)
+if parmrun==1 (set parmrun=0 & goto %2)
 :fko
 set /p "input=%cmd%"
 if "%input%" == "" goto int
@@ -405,38 +431,87 @@ if DEFINED #%input% (goto %input% & set "input=") ELSE (echo Invalid module. & s
 goto int
 
 :style
+set "mas="
 set /P mas=%cmd%styleฏ
-if %mas%==back goto cmenu
+if NOT DEFINED mas (echo Failed to set style. & echo [%date% , %time%][r%patch%] Failed to set menu style.>>%sessions% & echo. & goto style)
+if %mas%==back goto int
 if %mas%==help goto style_h
-if [%mas%]==[] (echo Failed to set %mas% style. & echo [%date% , %time%][r%patch%] Failed to set menu style.>>%sessions% & echo. & set "mas=" & goto style)
-if DEFINED #-#%mas% (set mstyle=%mas% & echo set mstyle=%mas%>>%settings%.log) ELSE (echo Failed to set %mas% style. & echo [%date% , %time%][r%patch%] Failed to set menu style.>>%sessions% & echo. & set "mas=" & goto style)
-echo [%date% , %time%][r%patch%] Set menu style. (%mas%)>>%sessions% & set "mas=" & goto menu
+if DEFINED #-#%mas% (set mstyle=%mas% & echo set mstyle=%mas%>>%settings%.log) ELSE (echo Invalid stlye "%mas%". & echo [%date% , %time%][r%patch%] Failed to set menu style.>>%sessions% & echo. & goto style)
+echo [%date% , %time%][r%patch%] Set menu style. (%mas%)>>%sessions% & goto menu
 
 :style_h
 echo ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
 echo บ New, old, simple, minimalistic, plain, breaking, beta, alpha, nostalgia, bits, blank, 3d บ
 echo ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ & goto style
 
+:startup
+color %c1%
+ping localhost /n %speed% >nul
+color %c2%
+ping localhost /n %speed% >nul
+color %c3%
+ping localhost /n %speed% >nul
+color %color%
+if DEFINED ##%dest% (goto %dest%) ELSE (echo Couldn't locate target module. Avoiding crash... & goto int)
+
+:help
 :list
 :mods
-echo ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
-echo บ Reload: (rel,rl)     Clear screen:   (clear,cls)             CMD:    (win,cmd)    Randomizer:  (rand,randomizer) บ
-echo บ Pinger: (pinger)     JavaVer:        (javaver)               System: (sys,system) Misc:   (test-loop-crash)      บ 
-echo บ Delete: (del)        Self-destruct:  (sd)                    Help:   (list,mods)  Info:   (id-detect)            บ
-echo บ Exit:   (off)        Settings:       (color-title-style-bnw-speed)                UseIt:  (lagit-fixit)          บ
-echo บ Force Compatibility Mode: forcexp                            Sessions: (sessions-save-watch-restore)             บ
-echo ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ & goto int
+echo ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+echo บ MODULES                                                                                                           บ
+echo บ Pinger:        (pinger)               ~checks traces and ping to destination                                      บ
+echo บ Randomizer:    (randomizer,rand)      ~generates file with different random numbers with different lengths        บ
+echo บ JavaVer:       (javaver,jv)           ~checks version of Java installed (if any)                                  บ
+echo บ System:        (system,sys,*)         ~generates file with info about current system                              บ
+echo บ CMD:           (win,cmd)              ~opens another cmd completely wiped                                         บ
+echo บ UseIt:         (fixit)                ~refreshes internet connection and DNS (4 windows' router crashes)          บ
+echo บ                (lagit)                ~sends 64k packets to destination (old IPs might suffer)                    บ
+echo บ Others:        (chcp),(calc)                                                                                      บ
+echo บ OPTIONS                                                                                                           บ
+echo บ Sessions:      (sessions)             ~reads history of logins and changes to Root                                บ
+echo บ                (save)                 ~creates a backup for sessions in a temporal folder                         บ
+echo บ                (watch)                ~opens the backup for sessions if previously created                        บ
+echo บ                (restore)              ~restores the backup for sessions and replaces the current one              บ
+echo บ Settings:      (color)                ~changes terminal's colors (uses color /?)                                  บ
+echo บ                (title)                ~changes terminal's title                                                   บ
+echo บ                (style)                ~changes the stlye of the main menu                                         บ
+echo บ                (bnw)                  ~changes from black to white and viceversa if in B or W state only          บ
+echo บ                (speed)                ~changes the speed of some animations throughout the file                   บ
+echo บ                (clearsettings,cs,*)   ~clears all settings previously stored                                      บ
+echo บ Clear cache:   (clearcache,cc)        ~clears temp files                                                          บ
+echo บ Exit:          (exit,quit,off)        ~closes the terminal                                                        บ
+echo บ OTHERS                                                                                                            บ
+echo บ Reload:        (rel,rl)               ~reloads Root                                                               บ
+echo บ Info:          (id)                   ~prints the id of the current session                                       บ
+echo บ                (detect)               ~detects the state of input variable                                        บ
+echo บ Clear screen:  (clear,cls)            ~clears the screen                                                          บ
+echo บ Misc:          (loop)                 ~loops the start animation                                                  บ
+echo บ                (crash)                ~crashes the terminal                                                       บ
+echo บ                (forcegoto),(forceset) ~forcefully attemps to set and goto                                         บ
+echo บ Self-destruct: (selfdestruct,sd)      ~deletes any files generated by Root including itself and closes            บ
+echo ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ & goto int
 
 :speed
-echo Set Root animation speed [0-10]:
+echo Set Root animation speed [0-10] (faster-slower):
 set /p speed=%cmd%speedฏ
-if %speed% GTR 10 (echo Invalid speed value. & set "speed="& goto ext)
+if %speed% GTR 10 (echo Invalid speed value. & set "speed=2"& goto ext)
+if %speed% LSS 0 (echo Invalid speed value. & set "speed=2"& goto ext)
 echo set speed=%speed% >>%settings%.log
 goto int
 
-:force
+:forcegoto
 set /p fac=Force access:
-echo Force-activating %fac%... & goto %fac%
+echo Force-activating %fac%...
+goto %fac% || echo Failed to force-activate & goto int
+
+:forceset
+set /p fas=Force define:
+if %fas%=="" goto int
+if %fas%=="back" goto int
+set /p fat=State:
+if %fat%=="back" goto int
+echo Force-defining %fas% as "%fat%"...
+set %fas%=%fat% && echo Set %fas% as %fat% && goto int || echo Failed to force-define & goto int
 
 :chcp
 chcp & goto int
@@ -475,7 +550,7 @@ goto rel
 :rl
 :rel
 :reload
-start %r% & EXIT
+if "%1"=="-debug" (cls & call debug.bat -rel) ELSE (start %r% & EXIT)
 
 :id
 echo Current session key: %id%
@@ -676,18 +751,20 @@ if %color%==75 (echo set color=57 >>%settings%.log & goto int)
 if %color%==76 (echo set color=67 >>%settings%.log & goto int)
 
 
-:clear
+:clearsettings
+:wipesettings
+:cs
+:ws
 echo Are you sure you want to clear the settings logfile?
 echo This will erase ALL settings (title,color,etc)
 set /p po=Input "Y" to confirm:
 if NOT %po%==Y goto int
-del /f /q %settings%.log
-del /f /q %settings%.bat
-type nul > %settings%.log
+if EXIST %settings%.log del /f /q %settings%.log
+if EXIST %settings%.bat del /f /q %settings%.bat
 goto int
 
 :sessions
-start %sessions% & echo Launched dictionary
+start %sessions% & echo Launched log file:
 goto int
 
 :save
@@ -720,15 +797,16 @@ echo Current status of %de% is %%de%%.
 goto int
 
 :cls
+:clear
+:clearscreen
 goto menu
 
 :win
 :cmd
-if EXIST %rootsq%\*cmd.Root.bat attrib -h *cmd.Root.bat & del /f /q *cmd.Root.bat
+if EXIST %rootsq%\cmd.Root.bat attrib -h cmd.Root.bat & del /f /q cmd.Root.bat
 echo @echo off >%cmdoutput%
 echo color 07 >>%cmdoutput%
-echo title cmd.exe - %r%>>%cmdoutput%
-echo prompt >>%cmdoutput%
+echo title %r% - cmd.exe>>%cmdoutput%
 echo pushd >>%cmdoutput%
 echo cmd >>%cmdoutput%
 start %cmdoutput%
@@ -737,34 +815,18 @@ rem It will only save the last cmd
 
 :bomb
 echo warning zone: bomb is a risky module. use at own risk.
-set /p bomb=Input "Y" to confirm
-call %0 | %0
+set /p bomb=Input "Y" to confirm:
+if NOT "bomb" == "Y" goto int
+::%0|%0
+echo yes & goto int
 rem Use at own risk
 
 
-:forcexp
-if %clip%==1 (echo Compatibility mode is already enabled. & goto int)
-::if %admin%==1 (call :gEcho c "WARNING!:" & echo Enabling Compatibility mode will disable some features. & call :gEcho c "WARNING!:" & echo Enable Compatibilty mode just in case it should be enabled anyways.) ELSE (
-echo WARNING!: Enabling Compatibility mode will disable some features. & echo WARNING!: Enable Compatibilty mode just in case it should be enabled anyways.
-set /p fxp=Input "Y" to force-enable compatibility mode:
-if NOT %fxp%==Y goto nfxp
-echo set forcxp=1 >>%settings%.log 
-goto rel
 
 :backup
-copy /y 
-
-:startup
-color %c1%
-ping localhost /n 1 >nul
-color %c2%
-ping localhost /n 1 >nul
-color %c3%
-ping localhost /n 1 >nul
-if DEFINED color (color %color%) ELSE (color f0)
-ping localhost /n 1 >nul
-goto %dest%
-
+copy /y %0 %rootsq%\%patch%-%r%
+echo Forced backed up.
+goto int
 
 :randomizer
 :rand
@@ -1152,9 +1214,10 @@ explorer.exe %rootsq% & goto int
 :lagit
 set dest=lags & goto startup
 :lags
+set "crash="
 set /p crash=Input host:
-if %crash%==back goto int
-if "%crash%==" goto int
+if %crash% == "back" (goto int)
+if NOT DEFINED crash (goto int)
 echo Working...
 echo @echo off > %crashoutput%
 echo color f0 >>%crashoutput%
@@ -1183,6 +1246,7 @@ set dest=spinger & goto startup
 :spinger
 set /p ping=Input host:
 if %ping%==back goto int
+if %ping%=="" goto int
 if %ping%==euw set "ping=prod.euw1.lol.riotgames.com"
 echo Working...
 echo Pinging to %ping% from %r% >%pingeroutput%
@@ -1206,14 +1270,19 @@ call :gEcho 8a "DONE"
 goto int
 
 :javaver
+:jv
 set dest=sjava & goto startup
 :sjava
 echo Detecting Java version...
-java -version
+java -version || echo Java couldn't be found
 call :gEcho 8a "DONE" & goto int
 
 :calc
 calc.exe & goto int
+
+:gEchotest
+call :gEcho c "WARNING!:" & echo Enabling Compatibility mode will disable some features. & call :gEcho c "WARNING!:" & echo Enable Compatibilty mode just in case it should be enabled anyways.
+goto int
 
 :system
 :sys
@@ -1253,9 +1322,12 @@ start %sysoutput%
 call :gEcho 8a "DONE"
 goto int
 
-:del
-del /f /q %rootsq%\*.txt
-del /f /q %rootsq%\*.bat
+:juan
+echo pene && goto int
+:clearcache
+:cc
+if EXIST %rootsq%\*.txt (del /f /q %rootsq%\*.txt)
+if EXIST %rootsq%\*.bat (del /f /q %rootsq%\*.bat)
 echo Successfully deleted cache files.
 goto int
 
@@ -1289,7 +1361,13 @@ if defined !chkPerms! (
 	del "%~2" > nul 2>&1i & set admin=1 & exit /b
 )
 
+:conSize  winWidth  winHeight  bufWidth  bufHeight
+mode con: cols=%1 lines=%2
+if EXIST powershell -command "&{$H=get-host;$W=$H.ui.rawui;$B=$W.buffersize;$B.width=%3;$B.height=%4;$W.buffersize=$B;}"
+exit /b
+
 :off
-::msg %username% penesito se va
+:quit
+:exit
 echo x=msgbox("Thank you for flying Root" ,0+64, "Root") >%rootsq%\off.Root.vbs & start %rootsq%\off.Root.vbs & ping localhost /n 2 >nul & del /f /q %rootsq%\off.Root.vbs
 exit

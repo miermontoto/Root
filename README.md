@@ -2,9 +2,7 @@
 General purpose batch file. Runs "modules" using batch.
 
 ## Modules
-Do `list`or `mods` for a list of valid outputs. (patch-18 onwards)
-
-Do `help` for a list of valid outputs. (patch-23 onwards)
+Do `list`, `mods` (patch-18 onwards) or `help` for a list of valid outputs. (patch-23 onwards)
 
 ### [Downloads](http://www.github.com/GijonDev/Root/releases)
 **Or download latest version [here](https://github.com/GijonDev/Root/releases/download/patch-23/Root.cmd)**
@@ -14,9 +12,10 @@ Do `help` for a list of valid outputs. (patch-23 onwards)
 Root by Juan Mier is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0
 
 This project uses some of [npocmaka](http://www.github.com/npocmaka)'s code. You can read his project's [license](https://github.com/npocmaka/batch.scripts/blob/master/LICENSE) here.
-I do NOT take credit for any code that doesn't belong to myself. All of his code is credited *in* the file. n
+I do NOT take credit for any code that doesn't belong to myself. All of his code is credited *in* the file.
 
 ### **cecho is NOT supported since patch-20**
+You can download cecho.exe and specify it's path to Root between patch-16 and patch-20 for better visual elements.
 
 
 ## FAQ

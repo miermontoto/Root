@@ -5,8 +5,8 @@ General purpose batch file. Runs "modules" using batch.
 Do `list`, `mods` (patch-18 onwards) or `help` for a list of valid outputs. (patch-23 onwards)
 
 ### [Downloads](http://www.github.com/GijonDev/Root/releases)
-**Or download latest version [here](https://github.com/GijonDev/Root/releases/download/patch-23/Root.cmd)**
-### Last updated version: [patch-23](https://github.com/GijonDev/Root/blob/master/Root.cmd) (11/6/2020)
+**Or download latest version [here](https://github.com/GijonDev/Root/releases/download/patch-24/Root.cmd)**
+### Last updated version: [patch-24](https://github.com/GijonDev/Root/blob/master/Root.cmd) (05/01/2021)
 
 ## License
 Root by Juan Mier is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0

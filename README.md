@@ -17,5 +17,5 @@ I do NOT take credit for any code that doesn't belong to myself. All of his code
 ### **cecho is NOT supported anymore since patch-20**
 You can download cecho.exe and specify it's path to Root between patch-16 and patch-20 to enable colored messages.
 
-### Why .cmd and not .bat?
+### Why .cmd instead of .bat
 A: https://stackoverflow.com/a/12011048/7049909
